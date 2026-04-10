@@ -132,15 +132,42 @@ footer.site p { margin: 6px 0; }
 .partner-btn:hover { background: #0f2640; }
 .partner-bottom { margin: 24px 0 0; padding: 16px 20px; background: #f5f7fa; border-radius: 6px; font-size: 13px; line-height: 1.8; color: #555; text-align: left; }
 
+/* ヘッダー内レイアウト（左テキスト+右バナー） */
+.header-inner { display: flex; gap: 32px; align-items: flex-start; justify-content: space-between; }
+.header-text { flex: 1; min-width: 0; }
+.header-manual { flex: 0 0 240px; background: rgba(255,255,255,0.08); border: 1px solid rgba(255,255,255,0.18); border-radius: 10px; padding: 16px; text-decoration: none; color: white; display: block; transition: all 0.2s; backdrop-filter: blur(6px); }
+.header-manual:hover { background: rgba(255,255,255,0.14); transform: translateY(-2px); color: white; }
+.header-manual img { display: block; width: 100%; height: auto; border-radius: 4px; box-shadow: 0 6px 16px rgba(0,0,0,0.35); margin-bottom: 12px; }
+.header-manual-label { display: inline-block; background: #d35400; color: white; font-size: 10px; font-weight: 700; padding: 3px 8px; border-radius: 999px; letter-spacing: 0.05em; margin-bottom: 8px; }
+.header-manual-title { font-size: 13px; font-weight: 700; line-height: 1.55; margin: 0 0 6px; }
+.header-manual-cta { font-size: 12px; opacity: 0.9; display: flex; align-items: center; gap: 4px; }
+.header-manual-cta::after { content: "→"; transition: transform 0.2s; }
+.header-manual:hover .header-manual-cta::after { transform: translateX(3px); }
+
+/* スクロール追従フローティングバナー */
+.floating-manual { position: fixed; right: 20px; bottom: 20px; width: 170px; background: white; border-radius: 10px; box-shadow: 0 8px 24px rgba(0,0,0,0.18); padding: 12px; text-decoration: none; color: #1a3a5c; z-index: 100; opacity: 0; transform: translateY(20px); pointer-events: none; transition: opacity 0.3s, transform 0.3s; border: 2px solid #d35400; }
+.floating-manual.visible { opacity: 1; transform: translateY(0); pointer-events: auto; }
+.floating-manual:hover { transform: translateY(-3px); box-shadow: 0 12px 28px rgba(0,0,0,0.22); color: #1a3a5c; }
+.floating-manual img { display: block; width: 100%; height: auto; border-radius: 4px; box-shadow: 0 4px 10px rgba(0,0,0,0.2); margin-bottom: 8px; }
+.floating-manual-label { display: inline-block; background: #d35400; color: white; font-size: 9px; font-weight: 700; padding: 2px 7px; border-radius: 999px; margin-bottom: 5px; }
+.floating-manual-title { font-size: 11px; font-weight: 700; line-height: 1.5; margin: 0 0 4px; color: #1a3a5c; }
+.floating-manual-cta { font-size: 10px; color: #d35400; font-weight: 700; }
+.floating-close { position: absolute; top: -8px; right: -8px; width: 22px; height: 22px; background: #1a3a5c; color: white; border-radius: 50%; border: none; cursor: pointer; font-size: 13px; line-height: 1; display: flex; align-items: center; justify-content: center; box-shadow: 0 2px 6px rgba(0,0,0,0.25); }
+.floating-close:hover { background: #0f2640; }
+
 @media (max-width: 900px) {
   .download-grid { grid-template-columns: repeat(2, 1fr); }
   .partner-grid { grid-template-columns: 1fr; gap: 16px; }
+  .header-inner { flex-direction: column; gap: 24px; }
+  .header-manual { flex: 0 0 auto; width: 100%; max-width: 320px; }
 }
 @media (max-width: 600px) {
   .download-section, .partner-section { padding: 24px 20px; }
   .download-grid { grid-template-columns: 1fr; gap: 16px; }
   .download-card { padding: 20px 18px; }
   .partner-card { padding: 22px 20px; }
+  .floating-manual { width: 130px; right: 12px; bottom: 12px; padding: 10px; }
+  .floating-manual-title { font-size: 10px; }
 }
 </style>
 </head>
@@ -158,17 +185,54 @@ footer.site p { margin: 6px 0; }
 </nav>
 <header class="site">
   <div class="container">
-    <span class="header-badge">毎日自動更新中</span>
-    <h1>補助金情報フィード</h1>
-    <p class="lead">全国47都道府県と国（経済産業省・中小企業庁ほか）が公募する補助金・助成金情報を自動収集し、毎日更新しています。「自社で使える補助金を探したい」「最新の公募情報をまとめてチェックしたい」中小企業経営者・士業・コンサルタントの方の情報収集にご活用ください。</p>
-    <p class="lead-sub">※本サイトは立ち上げたばかりのため、まだ収録されていない補助金・助成金も多くあります。現在も収集範囲を順次拡大している最中です。掲載情報は参考としてご利用いただき、正式な申請にあたっては必ず各補助金の公式ページで最新の公募要領をご確認ください。</p>
-    <div class="stats">
-      <div class="stat"><span class="stat-num">164</span><span class="stat-label">収録中の公募補助金</span></div>
-      <div class="stat"><span class="stat-num">37</span><span class="stat-label">対応都道府県</span></div>
-      <div class="stat"><span class="stat-num">2026-04-10</span><span class="stat-label">最終更新日</span></div>
+    <div class="header-inner">
+      <div class="header-text">
+        <span class="header-badge">毎日自動更新中</span>
+        <h1>補助金情報フィード</h1>
+        <p class="lead">全国47都道府県と国（経済産業省・中小企業庁ほか）が公募する補助金・助成金情報を自動収集し、毎日更新しています。「自社で使える補助金を探したい」「最新の公募情報をまとめてチェックしたい」中小企業経営者・士業・コンサルタントの方の情報収集にご活用ください。</p>
+        <p class="lead-sub">※本サイトは立ち上げたばかりのため、まだ収録されていない補助金・助成金も多くあります。現在も収集範囲を順次拡大している最中です。掲載情報は参考としてご利用いただき、正式な申請にあたっては必ず各補助金の公式ページで最新の公募要領をご確認ください。</p>
+        <div class="stats">
+          <div class="stat"><span class="stat-num">164</span><span class="stat-label">収録中の公募補助金</span></div>
+          <div class="stat"><span class="stat-num">37</span><span class="stat-label">対応都道府県</span></div>
+          <div class="stat"><span class="stat-num">2026-04-10</span><span class="stat-label">最終更新日</span></div>
+        </div>
+      </div>
+      <a class="header-manual" href="https://www.funnel-build.com/ht3" target="_blank" rel="noopener" id="header-manual-link">
+        <img src="https://raw.githubusercontent.com/WellConsultant/hojokin-lp-assets/main/book_cover.jpg" alt="補助金獲得実務マニュアル" loading="lazy">
+        <span class="header-manual-label">実務マニュアル</span>
+        <p class="header-manual-title">補助金獲得実務マニュアル<br>（3つの計画書テンプレート付き）</p>
+        <span class="header-manual-cta">詳しく見る</span>
+      </a>
     </div>
   </div>
 </header>
+
+<a class="floating-manual" href="https://www.funnel-build.com/ht3" target="_blank" rel="noopener" id="floating-manual">
+  <button type="button" class="floating-close" aria-label="閉じる" onclick="event.preventDefault();event.stopPropagation();document.getElementById('floating-manual').style.display='none';">&times;</button>
+  <img src="https://raw.githubusercontent.com/WellConsultant/hojokin-lp-assets/main/book_cover.jpg" alt="補助金獲得実務マニュアル" loading="lazy">
+  <span class="floating-manual-label">実務マニュアル</span>
+  <p class="floating-manual-title">補助金獲得実務マニュアル</p>
+  <span class="floating-manual-cta">詳しく見る →</span>
+</a>
+
+<script>
+(function() {
+  var floating = document.getElementById('floating-manual');
+  var headerLink = document.getElementById('header-manual-link');
+  if (!floating || !headerLink) return;
+  function check() {
+    var rect = headerLink.getBoundingClientRect();
+    if (rect.bottom < 0) {
+      floating.classList.add('visible');
+    } else {
+      floating.classList.remove('visible');
+    }
+  }
+  window.addEventListener('scroll', check, { passive: true });
+  window.addEventListener('resize', check);
+  check();
+})();
+</script>
 
 <main class="container">
 
