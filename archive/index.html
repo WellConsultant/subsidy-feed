@@ -5,22 +5,52 @@
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>アーカイブ一覧 | 補助金情報フィード</title>
 <style>
-body { font-family: -apple-system, "Hiragino Sans", sans-serif; max-width: 800px; margin: 40px auto; padding: 20px; background: #f5f7fa; color: #1a1a1a; }
-h1 { color: #1a3a5c; border-bottom: 2px solid #1a3a5c; padding-bottom: 10px; }
-.back { display: inline-block; margin-bottom: 20px; color: #1a3a5c; text-decoration: none; }
-.back:hover { text-decoration: underline; }
+* { box-sizing: border-box; }
+body { font-family: -apple-system, "Hiragino Sans", sans-serif; margin: 0; background: #f5f7fa; color: #1a1a1a; line-height: 1.7; }
+.container { max-width: 800px; margin: 0 auto; padding: 0 20px; }
+.site-nav { background: #122a44; padding: 14px 0; position: sticky; top: 0; z-index: 100; box-shadow: 0 2px 4px rgba(0,0,0,0.1); }
+.nav-inner { display: flex; justify-content: space-between; align-items: center; gap: 20px; }
+.nav-logo { color: white; font-weight: 700; text-decoration: none; font-size: 16px; }
+.nav-logo:hover { opacity: 0.85; }
+.nav-links { list-style: none; display: flex; gap: 24px; padding: 0; margin: 0; align-items: center; }
+.nav-links li { margin: 0; }
+.nav-links a { color: rgba(255,255,255,0.85); text-decoration: none; font-size: 14px; padding: 8px 0; }
+.nav-links a:hover { color: white; }
+.nav-cta { background: #d35400; color: white !important; padding: 10px 18px !important; border-radius: 6px; font-weight: 600; }
+.nav-cta:hover { background: #b34700; }
+main { padding: 40px 0; }
+h1 { color: #1a3a5c; border-bottom: 2px solid #1a3a5c; padding-bottom: 10px; margin-top: 0; }
 ul { list-style: none; padding: 0; background: white; border-radius: 8px; box-shadow: 0 1px 3px rgba(0,0,0,0.06); }
 li { border-bottom: 1px solid #eef0f3; }
 li:last-child { border-bottom: none; }
-a { display: block; padding: 14px 20px; text-decoration: none; color: #1a3a5c; }
-a:hover { background: #f0f3f7; }
+ul a { display: block; padding: 14px 20px; text-decoration: none; color: #1a3a5c; }
+ul a:hover { background: #f0f3f7; }
+@media (max-width: 720px) {
+  .nav-inner { flex-wrap: wrap; gap: 10px; justify-content: center; }
+  .nav-logo { font-size: 14px; flex-basis: 100%; text-align: center; }
+  .nav-links { gap: 14px; flex-wrap: wrap; justify-content: center; }
+  .nav-links a { font-size: 13px; }
+  .nav-cta { padding: 8px 14px !important; font-size: 13px; }
+}
 </style>
 </head>
 <body>
-<a class="back" href="../">← トップに戻る</a>
+<nav class="site-nav">
+  <div class="container nav-inner">
+    <a class="nav-logo" href="/">補助金情報フィード</a>
+    <ul class="nav-links">
+      <li><a href="/">トップ</a></li>
+      <li><a href="/archive/">アーカイブ</a></li>
+      <li><a href="https://www.funnel-build.com/" target="_blank" rel="noopener">運営会社</a></li>
+      <li><a class="nav-cta" href="https://www.funnel-build.com/hojokin-contact-legacy2" target="_blank" rel="noopener">お問い合わせ</a></li>
+    </ul>
+  </div>
+</nav>
+<main class="container">
 <h1>アーカイブ一覧</h1>
 <p>各日付の新着補助金情報のスナップショット</p>
 <ul><li><a href="2026-04-10.html">2026-04-10 の新着情報</a></li>
 </ul>
+</main>
 </body>
 </html>

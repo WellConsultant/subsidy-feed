@@ -11,6 +11,16 @@
 body { font-family: -apple-system, BlinkMacSystemFont, "Hiragino Sans", "Yu Gothic UI", sans-serif; margin: 0; background: #f5f7fa; color: #1a1a1a; line-height: 1.7; }
 a { color: #1a3a5c; }
 .container { max-width: 1100px; margin: 0 auto; padding: 0 20px; }
+.site-nav { background: #122a44; padding: 14px 0; position: sticky; top: 0; z-index: 100; box-shadow: 0 2px 4px rgba(0,0,0,0.1); }
+.nav-inner { display: flex; justify-content: space-between; align-items: center; gap: 20px; }
+.nav-logo { color: white; font-weight: 700; text-decoration: none; font-size: 16px; letter-spacing: 0.02em; }
+.nav-logo:hover { opacity: 0.85; }
+.nav-links { list-style: none; display: flex; gap: 24px; padding: 0; margin: 0; align-items: center; text-align: left; }
+.nav-links li { margin: 0; }
+.nav-links a { color: rgba(255,255,255,0.85); text-decoration: none; font-size: 14px; padding: 8px 0; transition: color 0.2s; }
+.nav-links a:hover { color: white; }
+.nav-cta { background: #d35400; color: white !important; padding: 10px 18px !important; border-radius: 6px; font-weight: 600; transition: background 0.2s; }
+.nav-cta:hover { background: #b34700; }
 header.site { background: linear-gradient(135deg, #1a3a5c 0%, #2c5282 100%); color: white; padding: 56px 0 44px; }
 header.site h1 { margin: 0 0 10px; font-size: 30px; font-weight: 700; letter-spacing: 0.02em; }
 header.site .lead { margin: 0; opacity: 0.9; font-size: 15px; }
@@ -58,7 +68,13 @@ td a:hover { text-decoration: underline; }
 footer.site { background: #1a1a1a; color: #999; padding: 36px 0; margin-top: 60px; font-size: 13px; text-align: center; }
 footer.site a { color: #ccc; }
 footer.site p { margin: 6px 0; }
-@media (max-width: 640px) {
+@media (max-width: 720px) {
+  .site-nav { padding: 12px 0; }
+  .nav-inner { flex-wrap: wrap; gap: 10px; justify-content: center; }
+  .nav-logo { font-size: 14px; flex-basis: 100%; text-align: center; }
+  .nav-links { gap: 14px; flex-wrap: wrap; justify-content: center; }
+  .nav-links a { font-size: 13px; padding: 6px 0; }
+  .nav-cta { padding: 8px 14px !important; font-size: 13px; }
   header.site { padding: 36px 0 28px; }
   header.site h1 { font-size: 22px; }
   .stat { padding: 12px 18px; }
@@ -74,6 +90,17 @@ footer.site p { margin: 6px 0; }
 </style>
 </head>
 <body>
+<nav class="site-nav">
+  <div class="container nav-inner">
+    <a class="nav-logo" href="/">補助金情報フィード</a>
+    <ul class="nav-links">
+      <li><a href="/">トップ</a></li>
+      <li><a href="/archive/">アーカイブ</a></li>
+      <li><a href="https://www.funnel-build.com/" target="_blank" rel="noopener">運営会社</a></li>
+      <li><a class="nav-cta" href="https://www.funnel-build.com/hojokin-contact-legacy2" target="_blank" rel="noopener">お問い合わせ</a></li>
+    </ul>
+  </div>
+</nav>
 <header class="site">
   <div class="container">
     <h1>補助金情報フィード</h1>
@@ -628,7 +655,7 @@ footer.site p { margin: 6px 0; }
 <section class="cta-section">
   <h2>補助金活用のご相談はこちらから</h2>
   <p>「自社で使える補助金が知りたい」「申請を任せたい」など、お気軽にどうぞ。</p>
-  <a class="cta-button" href="https://www.funnel-build.com/" target="_blank" rel="noopener">無料相談のお申し込み</a>
+  <a class="cta-button" href="https://www.funnel-build.com/hojokin-contact-legacy2" target="_blank" rel="noopener">無料相談のお申し込み</a>
 </section>
 
 
