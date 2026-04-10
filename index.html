@@ -22,8 +22,12 @@ a { color: #1a3a5c; }
 .nav-cta { background: #d35400; color: white !important; padding: 10px 18px !important; border-radius: 6px; font-weight: 600; transition: background 0.2s; }
 .nav-cta:hover { background: #b34700; }
 header.site { background: linear-gradient(135deg, #1a3a5c 0%, #2c5282 100%); color: white; padding: 56px 0 44px; }
-header.site h1 { margin: 0 0 10px; font-size: 30px; font-weight: 700; letter-spacing: 0.02em; }
-header.site .lead { margin: 0; opacity: 0.9; font-size: 15px; }
+header.site h1 { margin: 0 0 14px; font-size: 30px; font-weight: 700; letter-spacing: 0.02em; }
+header.site .lead { margin: 0 0 14px; opacity: 0.95; font-size: 16px; line-height: 1.85; max-width: 860px; }
+header.site .lead-sub { margin: 0; opacity: 0.85; font-size: 14px; line-height: 1.95; max-width: 860px; }
+.header-badge { display: inline-flex; align-items: center; gap: 7px; background: rgba(211,84,0,0.95); color: white; font-size: 12px; font-weight: 700; padding: 7px 14px; border-radius: 999px; letter-spacing: 0.06em; margin-bottom: 16px; }
+.header-badge::before { content: ""; width: 8px; height: 8px; background: #fff; border-radius: 50%; animation: pulse 2s ease-in-out infinite; }
+@keyframes pulse { 0%, 100% { opacity: 1; transform: scale(1); } 50% { opacity: 0.4; transform: scale(0.85); } }
 .stats { display: flex; gap: 16px; margin-top: 32px; flex-wrap: wrap; }
 .stat { background: rgba(255,255,255,0.12); padding: 16px 24px; border-radius: 8px; backdrop-filter: blur(4px); }
 .stat-num { display: block; font-size: 28px; font-weight: 700; line-height: 1; }
@@ -77,6 +81,9 @@ footer.site p { margin: 6px 0; }
   .nav-cta { padding: 8px 14px !important; font-size: 13px; }
   header.site { padding: 36px 0 28px; }
   header.site h1 { font-size: 22px; }
+  header.site .lead { font-size: 14px; line-height: 1.85; }
+  header.site .lead-sub { font-size: 12px; line-height: 1.9; }
+  .header-badge { font-size: 11px; padding: 6px 12px; }
   .stat { padding: 12px 18px; }
   .stat-num { font-size: 22px; }
   .section { margin: 32px 0; }
@@ -151,8 +158,10 @@ footer.site p { margin: 6px 0; }
 </nav>
 <header class="site">
   <div class="container">
+    <span class="header-badge">毎日自動更新中</span>
     <h1>補助金情報フィード</h1>
-    <p class="lead">全国の中小企業向け補助金・助成金情報を毎日自動更新</p>
+    <p class="lead">全国47都道府県と国（経済産業省・中小企業庁ほか）が公募する補助金・助成金情報を自動収集し、毎日更新しています。「自社で使える補助金を探したい」「最新の公募情報をまとめてチェックしたい」中小企業経営者・士業・コンサルタントの方の情報収集にご活用ください。</p>
+    <p class="lead-sub">※本サイトは立ち上げたばかりのため、まだ収録されていない補助金・助成金も多くあります。現在も収集範囲を順次拡大している最中です。掲載情報は参考としてご利用いただき、正式な申請にあたっては必ず各補助金の公式ページで最新の公募要領をご確認ください。</p>
     <div class="stats">
       <div class="stat"><span class="stat-num">164</span><span class="stat-label">収録中の公募補助金</span></div>
       <div class="stat"><span class="stat-num">37</span><span class="stat-label">対応都道府県</span></div>
