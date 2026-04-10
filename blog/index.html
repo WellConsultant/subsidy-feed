@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>補助金解説記事一覧｜補助金情報フィード</title>
-<meta name="description" content="全国の補助金・助成金を公募要領ベースでわかりやすく解説した記事一覧。設備投資・人材育成・研究開発・DX推進など、カテゴリ別に読める解説記事を公開しています。">
+<meta name="description" content="全国の補助金・助成金を公募要領ベースでわかりやすく解説した記事一覧。70件の解説記事を公開中。">
 <link rel="canonical" href="https://hojokin.well-c.biz/blog/">
 <style>
 * { box-sizing: border-box; }
@@ -29,6 +29,10 @@ header.page-head p { margin: 0; opacity: 0.9; font-size: 15px; line-height: 1.85
 
 main.container { padding-top: 40px; padding-bottom: 60px; }
 
+.blog-search { margin: 0 0 20px; }
+.blog-search input { width: 100%; padding: 14px 18px; border: 1px solid #d4dae2; border-radius: 8px; font-size: 14px; background: white; }
+.blog-search input:focus { outline: none; border-color: #1a3a5c; box-shadow: 0 0 0 3px rgba(26,58,92,0.12); }
+
 .blog-filters { display: flex; flex-wrap: wrap; gap: 10px; margin: 0 0 28px; }
 .blog-filter { background: white; border: 1px solid #e4e9ef; color: #1a3a5c; font-size: 13px; font-weight: 600; padding: 8px 16px; border-radius: 999px; cursor: pointer; transition: all 0.2s; }
 .blog-filter:hover { background: #f0f4f8; }
@@ -52,7 +56,8 @@ main.container { padding-top: 40px; padding-bottom: 60px; }
 .blog-card-tag { background: #f5f7fa; color: #1a3a5c; font-size: 10px; font-weight: 600; padding: 3px 8px; border-radius: 4px; }
 .blog-card-read { color: #d35400; font-weight: 700; }
 
-.empty-state { background: white; border-radius: 10px; padding: 60px 30px; text-align: center; color: #888; font-size: 14px; }
+.empty-state { background: white; border-radius: 10px; padding: 60px 30px; text-align: center; color: #888; font-size: 14px; display: none; }
+.empty-state.visible { display: block; }
 
 footer.site { background: #1a3a5c; color: rgba(255,255,255,0.85); padding: 28px 0; text-align: center; font-size: 13px; }
 footer.site p { margin: 6px 0; }
@@ -76,8 +81,8 @@ footer.site p { margin: 6px 0; }
     <ul class="nav-links">
       <li><a href="/">トップ</a></li>
       <li><a href="/blog/">解説記事</a></li>
+      <li><a href="/#download">無料ダウンロード</a></li>
       <li><a href="/archive/">アーカイブ</a></li>
-      <li><a href="https://www.funnel-build.com/" target="_blank" rel="noopener">運営会社</a></li>
       <li><a class="nav-cta" href="https://www.funnel-build.com/hojokin-contact-legacy2" target="_blank" rel="noopener">お問い合わせ</a></li>
     </ul>
   </div>
@@ -86,11 +91,15 @@ footer.site p { margin: 6px 0; }
 <header class="page-head">
   <div class="container">
     <h1>補助金解説記事</h1>
-    <p>公募要領ベースで、中小企業経営者・士業・コンサルタントの方向けに補助金の概要・対象・金額・申請方法をわかりやすく解説した記事一覧です。</p>
+    <p>公募要領ベースで、中小企業経営者・士業・コンサルタントの方向けに補助金の概要・対象・金額・申請方法をわかりやすく解説した記事一覧です。現在70件を公開しています。</p>
   </div>
 </header>
 
 <main class="container">
+
+  <div class="blog-search">
+    <input type="text" id="blog-search-input" placeholder="キーワード検索（補助金名・地域・業種など）">
+  </div>
 
   <div class="blog-filters">
     <button class="blog-filter active" data-filter="all">すべて</button>
@@ -98,28 +107,28 @@ footer.site p { margin: 6px 0; }
     <button class="blog-filter" data-filter="研究開発">研究開発</button>
     <button class="blog-filter" data-filter="人材育成">人材育成</button>
     <button class="blog-filter" data-filter="DX">DX・デジタル</button>
-    <button class="blog-filter" data-filter="環境対応">環境対応</button>
+    <button class="blog-filter" data-filter="環境">環境対応</button>
     <button class="blog-filter" data-filter="創業">創業</button>
+    <button class="blog-filter" data-filter="事業承継">事業承継</button>
+    <button class="blog-filter" data-filter="販路開拓">販路開拓</button>
   </div>
 
-  <p class="blog-count"><span id="visible-count">1</span>件の解説記事</p>
+  <p class="blog-count"><span id="visible-count">70</span>件の解説記事</p>
 
   <div class="blog-grid" id="blog-grid">
 
-    <article class="blog-card" data-tags="設備投資,循環経済,産業廃棄物削減,環境対応,研究開発,大分県">
-      <a href="/blog/2026-04-10-oita-junkan-keizai.html">
+    <article class="blog-card" data-tags="人材育成,組織運営支援,新規就農支援,地域活性化,福島県">
+      <a href="/blog/2026-04-10-fukushima.html">
         <div class="blog-card-head">
-          <span class="blog-card-region">大分県</span>
-          <p class="blog-card-amount">最大2,000万円<small>設備導入枠（賃上げ枠）</small></p>
+          <span class="blog-card-region">福島県</span>
+          <p class="blog-card-amount">100万円<small>補助上限</small></p>
         </div>
         <div class="blog-card-body">
           <div class="blog-card-tags">
-            <span class="blog-card-tag">設備投資</span>
-            <span class="blog-card-tag">環境対応</span>
-            <span class="blog-card-tag">研究開発</span>
+            <span class="blog-card-tag">人材育成</span><span class="blog-card-tag">組織運営支援</span><span class="blog-card-tag">新規就農支援</span>
           </div>
-          <h2>大分県ものづくり循環経済推進事業費補助金（令和8年度）</h2>
-          <p>産業廃棄物の発生抑制・減量化・再生利用に資する設備導入や研究開発を支援。補助率は最大2/3、上限2,000万円の大型補助制度です。申請期限は令和8年5月13日。</p>
+          <h2>令和８年度地域を支える農業者等確保総合事業（新規就農者サポート組織の活動支援）</h2>
+          <p>福島県が実施する新規就農者の確保・育成を目的とした補助金。市町村・JA等で構成される新規就農者サポート組織の設立・運営、住居・農地の借上げ、農機具導入、PR活動・相談会開催等に補助。補助率1/2または定額、上限50万円～…</p>
           <div class="blog-card-meta">
             <span>2026-04-10</span>
             <span class="blog-card-read">続きを読む →</span>
@@ -128,6 +137,1390 @@ footer.site p { margin: 6px 0; }
       </a>
     </article>
 
+    <article class="blog-card" data-tags="設備投資,省力化,カタログ注文型,全国">
+      <a href="/blog/2026-04-10-japan.html">
+        <div class="blog-card-head">
+          <span class="blog-card-region">全国</span>
+          <p class="blog-card-amount">公募要領参照</p>
+        </div>
+        <div class="blog-card-body">
+          <div class="blog-card-tags">
+            <span class="blog-card-tag">設備投資</span><span class="blog-card-tag">省力化</span><span class="blog-card-tag">カタログ注文型</span>
+          </div>
+          <h2>中小企業省力化投資補助事業（カタログ注文型）</h2>
+          <p>中小企業の省力化投資を支援する補助事業。カタログに登録された設備から選択して申請する仕組み。</p>
+          <div class="blog-card-meta">
+            <span>2026-04-10</span>
+            <span class="blog-card-read">続きを読む →</span>
+          </div>
+        </div>
+      </a>
+    </article>
+
+    <article class="blog-card" data-tags="研究開発,産学連携,技術開発,ものづくり,ソフトウェア開発,長野市">
+      <a href="/blog/2026-04-10-japan-2.html">
+        <div class="blog-card-head">
+          <span class="blog-card-region">長野市</span>
+          <p class="blog-card-amount">200万円<small>補助上限</small></p>
+        </div>
+        <div class="blog-card-body">
+          <div class="blog-card-tags">
+            <span class="blog-card-tag">研究開発</span><span class="blog-card-tag">産学連携</span><span class="blog-card-tag">技術開発</span>
+          </div>
+          <h2>長野市新技術等共同研究開発事業補助金</h2>
+          <p>長野市内の中小企業者等が研究機関等と共同で行う新技術・新材料・新製品の研究開発事業に対する補助金。「ものづくり枠」と「ソフトウエア枠」の2つの研究区分があり、補助対象経費の2/3以内、上限200万円を補助。研究機関等との…</p>
+          <div class="blog-card-meta">
+            <span>2026-04-10</span>
+            <span class="blog-card-read">続きを読む →</span>
+          </div>
+        </div>
+      </a>
+    </article>
+
+    <article class="blog-card" data-tags="人材育成,山形県">
+      <a href="/blog/2026-04-10-yamagata.html">
+        <div class="blog-card-head">
+          <span class="blog-card-region">山形県</span>
+          <p class="blog-card-amount">50万円<small>補助上限</small></p>
+        </div>
+        <div class="blog-card-body">
+          <div class="blog-card-tags">
+            <span class="blog-card-tag">人材育成</span>
+          </div>
+          <h2>山形県プロフェッショナル人材助成事業費補助金【副業・兼業人材活用促進型（新規利用枠）】</h2>
+          <p>過去に山形県プロフェッショナル人材戦略拠点を通した副業・兼業人材活用を行ったことのない企業が、副業・兼業プロフェッショナル人材との業務委託契約（6か月以内）を締結し、紹介手数料、報酬、交通費・宿泊費を支払った場合に、その…</p>
+          <div class="blog-card-meta">
+            <span>2026-04-10</span>
+            <span class="blog-card-read">続きを読む →</span>
+          </div>
+        </div>
+      </a>
+    </article>
+
+    <article class="blog-card" data-tags="店舗開業,商店街活性化,テナント誘致,地域振興,山口県周南市">
+      <a href="/blog/2026-04-10-japan-3.html">
+        <div class="blog-card-head">
+          <span class="blog-card-region">山口県周南市</span>
+          <p class="blog-card-amount">100万円<small>補助上限</small></p>
+        </div>
+        <div class="blog-card-body">
+          <div class="blog-card-tags">
+            <span class="blog-card-tag">店舗開業</span><span class="blog-card-tag">商店街活性化</span><span class="blog-card-tag">テナント誘致</span>
+          </div>
+          <h2>テナントミックス推進事業費補助金</h2>
+          <p>周南市中心商店街の空き店舗に出店する事業者を支援する補助金。店舗改装費は1階出店で最大100万円、2階・地下1階出店で最大50万円を補助率2分の1で支援。広告宣伝費は最大20万円まで2分の1で補助。開店後1年以上の営業継…</p>
+          <div class="blog-card-meta">
+            <span>2026-04-10</span>
+            <span class="blog-card-read">続きを読む →</span>
+          </div>
+        </div>
+      </a>
+    </article>
+
+    <article class="blog-card" data-tags="IT導入,研究開発,DX推進,新サービス開発,さいたま市">
+      <a href="/blog/2026-04-10-japan-4.html">
+        <div class="blog-card-head">
+          <span class="blog-card-region">さいたま市</span>
+          <p class="blog-card-amount">500万円<small>補助上限</small></p>
+        </div>
+        <div class="blog-card-body">
+          <div class="blog-card-tags">
+            <span class="blog-card-tag">IT導入</span><span class="blog-card-tag">研究開発</span><span class="blog-card-tag">DX推進</span>
+          </div>
+          <h2>デジタル技術活用新ビジネス・新サービス開発補助金</h2>
+          <p>さいたま市内の中小企業・中堅企業・リーディングエッジ企業が対象。デジタル技術を活用した新たなサービス開発やビジネスモデル変革に関わるシステム構築事業を支援。補助率は2/3（中小企業・中堅企業）または1/2（リーディングエ…</p>
+          <div class="blog-card-meta">
+            <span>2026-04-10</span>
+            <span class="blog-card-read">続きを読む →</span>
+          </div>
+        </div>
+      </a>
+    </article>
+
+    <article class="blog-card" data-tags="設備投資,航空宇宙,次世代モビリティ,サプライチェーン強化,愛知県">
+      <a href="/blog/2026-04-10-aichi.html">
+        <div class="blog-card-head">
+          <span class="blog-card-region">愛知県</span>
+          <p class="blog-card-amount">1.5億円<small>補助上限</small></p>
+        </div>
+        <div class="blog-card-body">
+          <div class="blog-card-tags">
+            <span class="blog-card-tag">設備投資</span><span class="blog-card-tag">航空宇宙</span><span class="blog-card-tag">次世代モビリティ</span>
+          </div>
+          <h2>航空宇宙産業高度強靭化補助金</h2>
+          <p>愛知県内に事業所を有する中小・中堅企業、大企業を対象とし、次期航空機開発プロジェクトへの参画並びに宇宙産業や次世代空モビリティ等の新興分野のサプライチェーンの強化及び供給力の向上に資する機械設備等の導入を支援。補助対象経…</p>
+          <div class="blog-card-meta">
+            <span>2026-04-10</span>
+            <span class="blog-card-read">続きを読む →</span>
+          </div>
+        </div>
+      </a>
+    </article>
+
+    <article class="blog-card" data-tags="海外展開,新商品開発,ブランディング,中小企業支援,滋賀県">
+      <a href="/blog/2026-04-10-shiga.html">
+        <div class="blog-card-head">
+          <span class="blog-card-region">滋賀県</span>
+          <p class="blog-card-amount">150万円<small>補助上限</small></p>
+        </div>
+        <div class="blog-card-body">
+          <div class="blog-card-tags">
+            <span class="blog-card-tag">海外展開</span><span class="blog-card-tag">新商品開発</span><span class="blog-card-tag">ブランディング</span>
+          </div>
+          <h2>滋賀県海外新商品開発支援事業補助金</h2>
+          <p>滋賀県内の中小企業者を対象とし、海外向け新商品開発・ブランディング事業に要する経費の1/2以内（500千円以上1,500千円以内）を補助する制度。補助事業期間は交付決定日から最長2027年2月28日まで。応募は2026年…</p>
+          <div class="blog-card-meta">
+            <span>2026-04-10</span>
+            <span class="blog-card-read">続きを読む →</span>
+          </div>
+        </div>
+      </a>
+    </article>
+
+    <article class="blog-card" data-tags="融資制度,中小企業支援,創業支援,設備投資,運転資金,香川県丸亀市">
+      <a href="/blog/2026-04-10-japan-5.html">
+        <div class="blog-card-head">
+          <span class="blog-card-region">香川県丸亀市</span>
+          <p class="blog-card-amount">700万円<small>補助上限</small></p>
+        </div>
+        <div class="blog-card-body">
+          <div class="blog-card-tags">
+            <span class="blog-card-tag">融資制度</span><span class="blog-card-tag">中小企業支援</span><span class="blog-card-tag">創業支援</span>
+          </div>
+          <h2>丸亀市融資制度（中小企業融資制度・年末短期緊急融資制度・団扇工業振興融資制度・創業支援融資制度）</h2>
+          <p>丸亀市内の中小企業者を対象とした融資制度。設備資金700万円、運転資金500万円を上限とし、年利2.1％～で融資。保証料補給金（保証料相当額）と利子補給金（年利1％相当額）を完済後に支給。創業支援では700万円上限で年利…</p>
+          <div class="blog-card-meta">
+            <span>2026-04-10</span>
+            <span class="blog-card-read">続きを読む →</span>
+          </div>
+        </div>
+      </a>
+    </article>
+
+    <article class="blog-card" data-tags="販路拡大,営業活動支援,県外進出,中小企業支援,ものづくり,宮城県">
+      <a href="/blog/2026-04-10-miyagi.html">
+        <div class="blog-card-head">
+          <span class="blog-card-region">宮城県</span>
+          <p class="blog-card-amount">30万円<small>補助上限</small></p>
+        </div>
+        <div class="blog-card-body">
+          <div class="blog-card-tags">
+            <span class="blog-card-tag">販路拡大</span><span class="blog-card-tag">営業活動支援</span><span class="blog-card-tag">県外進出</span>
+          </div>
+          <h2>営業活動強化支援事業補助金</h2>
+          <p>宮城県内のものづくり中小企業・小規模事業者が県外の発注企業への営業活動を行う際の旅費、宿泊費、営業資料作成費等を補助する事業。中小企業者は補助対象経費の1/2以内、小規模企業者は2/3以内を補助。補助上限額は通常10万円…</p>
+          <div class="blog-card-meta">
+            <span>2026-04-10</span>
+            <span class="blog-card-read">続きを読む →</span>
+          </div>
+        </div>
+      </a>
+    </article>
+
+    <article class="blog-card" data-tags="知的財産,地域連携,産業支援機関,中小企業支援,九州">
+      <a href="/blog/2026-04-10-japan-6.html">
+        <div class="blog-card-head">
+          <span class="blog-card-region">九州</span>
+          <p class="blog-card-amount">1,000万円<small>補助上限</small></p>
+        </div>
+        <div class="blog-card-body">
+          <div class="blog-card-tags">
+            <span class="blog-card-tag">知的財産</span><span class="blog-card-tag">地域連携</span><span class="blog-card-tag">産業支援機関</span>
+          </div>
+          <h2>令和８年度「中小企業等知的財産支援地域連携促進事業費補助金（中小企業等知的財産支援事業）」</h2>
+          <p>産業支援機関が地域ステークホルダーと連携して中小企業等への知的財産支援を行う事業に対する補助金。拡充型事業（申請区分A）は補助率1/2・上限1千万円、構築型事業（申請区分B）は定額・上限5百万円を補助。都道府県の中小企業…</p>
+          <div class="blog-card-meta">
+            <span>2026-04-10</span>
+            <span class="blog-card-read">続きを読む →</span>
+          </div>
+        </div>
+      </a>
+    </article>
+
+    <article class="blog-card" data-tags="研究開発,事業化支援,産学連携,新エネルギー,医療機器,バイオテクノロジー,先端技術,山口県">
+      <a href="/blog/2026-04-10-yamaguchi.html">
+        <div class="blog-card-head">
+          <span class="blog-card-region">山口県</span>
+          <p class="blog-card-amount">1,500万円<small>補助上限</small></p>
+        </div>
+        <div class="blog-card-body">
+          <div class="blog-card-tags">
+            <span class="blog-card-tag">研究開発</span><span class="blog-card-tag">事業化支援</span><span class="blog-card-tag">産学連携</span>
+          </div>
+          <h2>やまぐち産業イノベーション加速化補助金[アドバンス]</h2>
+          <p>環境・エネルギー、医療、バイオ関連分野における県内企業による事業化を促進するため、企業を含む2者以上による研究開発グループの戦略的な研究開発・事業化を支援。補助率2/3以内、年間500万円以上1500万円以下、事業期間は…</p>
+          <div class="blog-card-meta">
+            <span>2026-04-10</span>
+            <span class="blog-card-read">続きを読む →</span>
+          </div>
+        </div>
+      </a>
+    </article>
+
+    <article class="blog-card" data-tags="観光振興,送客促進,旅行商品造成,福岡県">
+      <a href="/blog/2026-04-10-fukuoka.html">
+        <div class="blog-card-head">
+          <span class="blog-card-region">福岡県</span>
+          <p class="blog-card-amount">公募要領参照</p>
+        </div>
+        <div class="blog-card-body">
+          <div class="blog-card-tags">
+            <span class="blog-card-tag">観光振興</span><span class="blog-card-tag">送客促進</span><span class="blog-card-tag">旅行商品造成</span>
+          </div>
+          <h2>福岡県内送客促進のための旅行商品造成・催行支援事業費補助金</h2>
+          <p>福岡県が旅行会社に対して県内送客促進のための旅行商品造成・催行を支援する補助金。第4条（2）において別で定めることとしている観光施設・観光素材について通知している文書。</p>
+          <div class="blog-card-meta">
+            <span>2026-04-10</span>
+            <span class="blog-card-read">続きを読む →</span>
+          </div>
+        </div>
+      </a>
+    </article>
+
+    <article class="blog-card" data-tags="安全衛生,設備投資,熱中症対策,作業環境改善,香川県丸亀市">
+      <a href="/blog/2026-04-10-japan-7.html">
+        <div class="blog-card-head">
+          <span class="blog-card-region">香川県丸亀市</span>
+          <p class="blog-card-amount">10万円<small>補助上限</small></p>
+        </div>
+        <div class="blog-card-body">
+          <div class="blog-card-tags">
+            <span class="blog-card-tag">安全衛生</span><span class="blog-card-tag">設備投資</span><span class="blog-card-tag">熱中症対策</span>
+          </div>
+          <h2>丸亀市事業者熱中症対策支援補助金</h2>
+          <p>WBGT値28度以上又は気温31度以上の環境下で連続1時間以上又は1日4時間を超えて作業を行う事業者を対象に、ファン付き作業服や冷却機能作業服、WBGT測定器、移動式スポットクーラー等の熱中症対策設備・用品の導入費用を補…</p>
+          <div class="blog-card-meta">
+            <span>2026-04-10</span>
+            <span class="blog-card-read">続きを読む →</span>
+          </div>
+        </div>
+      </a>
+    </article>
+
+    <article class="blog-card" data-tags="海外展開,ブランド力強化,ローカライズ,国際認証,販路拡大,徳島県">
+      <a href="/blog/2026-04-10-tokushima.html">
+        <div class="blog-card-head">
+          <span class="blog-card-region">徳島県</span>
+          <p class="blog-card-amount">100万円<small>補助上限</small></p>
+        </div>
+        <div class="blog-card-body">
+          <div class="blog-card-tags">
+            <span class="blog-card-tag">海外展開</span><span class="blog-card-tag">ブランド力強化</span><span class="blog-card-tag">ローカライズ</span>
+          </div>
+          <h2>県産品ブランド力強化支援費補助金</h2>
+          <p>徳島県内の中小企業等が実施する県産品の海外市場におけるブランド力強化事業（海外市場向け自社商品のローカライズ・新商品開発、国際認証取得等）に対し、補助率1/2、上限100万円で補助する制度。直近1年間以上の営業実績があり…</p>
+          <div class="blog-card-meta">
+            <span>2026-04-10</span>
+            <span class="blog-card-read">続きを読む →</span>
+          </div>
+        </div>
+      </a>
+    </article>
+
+    <article class="blog-card" data-tags="設備投資,防災,社会貢献,車両導入,災害対応,徳島県">
+      <a href="/blog/2026-04-10-tokushima-2.html">
+        <div class="blog-card-head">
+          <span class="blog-card-region">徳島県</span>
+          <p class="blog-card-amount">1,000万円<small>補助上限</small></p>
+        </div>
+        <div class="blog-card-body">
+          <div class="blog-card-tags">
+            <span class="blog-card-tag">設備投資</span><span class="blog-card-tag">防災</span><span class="blog-card-tag">社会貢献</span>
+          </div>
+          <h2>官民連携移動型車両等導入事業補助金</h2>
+          <p>徳島県内の事業者等が、避難所等で温かい食事の提供や快適なトイレ環境の確保等の被災者支援に活用される移動型車両（国の災害対応車両登録制度D-TRACEの登録基準を満たすもの）を購入する際の経費を補助。平時は営利を目的としな…</p>
+          <div class="blog-card-meta">
+            <span>2026-04-10</span>
+            <span class="blog-card-read">続きを読む →</span>
+          </div>
+        </div>
+      </a>
+    </article>
+
+    <article class="blog-card" data-tags="経営支援,価格転嫁,コンサルティング,富山県">
+      <a href="/blog/2026-04-10-toyama.html">
+        <div class="blog-card-head">
+          <span class="blog-card-region">富山県</span>
+          <p class="blog-card-amount">25万円<small>補助上限</small></p>
+        </div>
+        <div class="blog-card-body">
+          <div class="blog-card-tags">
+            <span class="blog-card-tag">経営支援</span><span class="blog-card-tag">価格転嫁</span><span class="blog-card-tag">コンサルティング</span>
+          </div>
+          <h2>価格転嫁サポート補助金</h2>
+          <p>富山県内の中小企業・小規模事業者を対象に、価格転嫁による経営改善を目的とするコンサルティング費用を補助する制度です。補助率は対象経費の1/2、補助上限額は25万円です。価格交渉方法のアドバイスや価格転嫁による利益拡大の戦…</p>
+          <div class="blog-card-meta">
+            <span>2026-04-10</span>
+            <span class="blog-card-read">続きを読む →</span>
+          </div>
+        </div>
+      </a>
+    </article>
+
+    <article class="blog-card" data-tags="設備投資,IT導入,研究開発,人材育成,生産性向上,デジタル化,鹿児島県">
+      <a href="/blog/2026-04-10-kagoshima.html">
+        <div class="blog-card-head">
+          <span class="blog-card-region">鹿児島県</span>
+          <p class="blog-card-amount">3,000万円<small>補助上限</small></p>
+        </div>
+        <div class="blog-card-body">
+          <div class="blog-card-tags">
+            <span class="blog-card-tag">設備投資</span><span class="blog-card-tag">IT導入</span><span class="blog-card-tag">研究開発</span>
+          </div>
+          <h2>ものづくり中核企業生産革新支援事業</h2>
+          <p>鹿児島県内に事業所を有する製造業を営む中小企業者（資本金3億円以下かつ従業員300人以下）を対象とし、デジタル技術導入による生産性向上、新製品・技術開発、多能工化に向けた人材育成システム整備の取組を支援。補助上限額3,0…</p>
+          <div class="blog-card-meta">
+            <span>2026-04-10</span>
+            <span class="blog-card-read">続きを読む →</span>
+          </div>
+        </div>
+      </a>
+    </article>
+
+    <article class="blog-card" data-tags="組織化支援,中小企業支援,連合会支援,福岡市">
+      <a href="/blog/2026-04-10-japan-8.html">
+        <div class="blog-card-head">
+          <span class="blog-card-region">福岡市</span>
+          <p class="blog-card-amount">公募要領参照</p>
+        </div>
+        <div class="blog-card-body">
+          <div class="blog-card-tags">
+            <span class="blog-card-tag">組織化支援</span><span class="blog-card-tag">中小企業支援</span><span class="blog-card-tag">連合会支援</span>
+          </div>
+          <h2>令和8年度 福岡市中小企業組織化促進等事業補助金</h2>
+          <p>福岡市内の中小企業者の組織化促進を目的とし、福岡市中小企業組織化促進等事業補助金交付要綱第3条に定める連合会を対象として補助金を交付する。令和8年度の1年間を対象期間とし、組合等の設立や運営支援などに要する経費を補助する…</p>
+          <div class="blog-card-meta">
+            <span>2026-04-10</span>
+            <span class="blog-card-read">続きを読む →</span>
+          </div>
+        </div>
+      </a>
+    </article>
+
+    <article class="blog-card" data-tags="設備投資,デジタル化,バリアフリー,インバウンド対応,移動支援,徳島県">
+      <a href="/blog/2026-04-10-tokushima-3.html">
+        <div class="blog-card-head">
+          <span class="blog-card-region">徳島県</span>
+          <p class="blog-card-amount">150万円<small>補助上限</small></p>
+        </div>
+        <div class="blog-card-body">
+          <div class="blog-card-tags">
+            <span class="blog-card-tag">設備投資</span><span class="blog-card-tag">デジタル化</span><span class="blog-card-tag">バリアフリー</span>
+          </div>
+          <h2>徳島県インバウンド等対応タクシーサービス導入推進事業費補助金</h2>
+          <p>徳島県内のタクシー事業者等を対象として、ユニバーサルデザインタクシーの導入や配車アプリ・キャッシュレス決済機器の導入等に対し、補助率2分の1以内で最大150万円（UD タクシー）または100万円（配車アプリ等）を補助する…</p>
+          <div class="blog-card-meta">
+            <span>2026-04-10</span>
+            <span class="blog-card-read">続きを読む →</span>
+          </div>
+        </div>
+      </a>
+    </article>
+
+    <article class="blog-card" data-tags="海外展開,販路拡大,市場開拓,越境EC,展示会出展,滋賀県">
+      <a href="/blog/2026-04-10-shiga-2.html">
+        <div class="blog-card-head">
+          <span class="blog-card-region">滋賀県</span>
+          <p class="blog-card-amount">350万円<small>補助上限</small></p>
+        </div>
+        <div class="blog-card-body">
+          <div class="blog-card-tags">
+            <span class="blog-card-tag">海外展開</span><span class="blog-card-tag">販路拡大</span><span class="blog-card-tag">市場開拓</span>
+          </div>
+          <h2>滋賀県海外市場開拓支援事業補助金</h2>
+          <p>滋賀県内の中小企業者が海外市場への売り込み事業を実施する際の経費を支援する補助金。調査・マーケティング費、見本市・商談会等出展経費、越境EC事業費、その他プロモーション運営費等が対象。補助率1/2以内、補助金額50万円以…</p>
+          <div class="blog-card-meta">
+            <span>2026-04-10</span>
+            <span class="blog-card-read">続きを読む →</span>
+          </div>
+        </div>
+      </a>
+    </article>
+
+    <article class="blog-card" data-tags="創業支援,設備投資,復興支援,福島県">
+      <a href="/blog/2026-04-10-fukushima-2.html">
+        <div class="blog-card-head">
+          <span class="blog-card-region">福島県</span>
+          <p class="blog-card-amount">3,000万円<small>補助上限</small></p>
+        </div>
+        <div class="blog-card-body">
+          <div class="blog-card-tags">
+            <span class="blog-card-tag">創業支援</span><span class="blog-card-tag">設備投資</span><span class="blog-card-tag">復興支援</span>
+          </div>
+          <h2>福島県創業促進・企業誘致に向けた設備投資等支援補助金</h2>
+          <p>福島県の12市町村において創業や事業展開を行う事業者を対象とした補助金。特定復興再生拠点区域等では補助率3/4・上限3,000万円、その他地域では補助率2/3・上限866.6万円で設備投資等を支援する。創業は公募開始日か…</p>
+          <div class="blog-card-meta">
+            <span>2026-04-10</span>
+            <span class="blog-card-read">続きを読む →</span>
+          </div>
+        </div>
+      </a>
+    </article>
+
+    <article class="blog-card" data-tags="生産性向上,人材育成,DX化,協力体制整備,企業グループ連携,新潟県">
+      <a href="/blog/2026-04-10-niigata.html">
+        <div class="blog-card-head">
+          <span class="blog-card-region">新潟県</span>
+          <p class="blog-card-amount">1,000万円<small>補助上限</small></p>
+        </div>
+        <div class="blog-card-body">
+          <div class="blog-card-tags">
+            <span class="blog-card-tag">生産性向上</span><span class="blog-card-tag">人材育成</span><span class="blog-card-tag">DX化</span>
+          </div>
+          <h2>令和8年度新潟県建設産業コラボレーション支援事業補助金</h2>
+          <p>新潟県が建設産業の経営基盤強化を目的として、2社以上の建設業許可を持つ中小企業で構成されるグループが、人材確保・育成、元請・下請間の生産性向上、除雪の協力体制整備のいずれかの課題解決に向けて連携して行う取組に対し、補助率…</p>
+          <div class="blog-card-meta">
+            <span>2026-04-10</span>
+            <span class="blog-card-read">続きを読む →</span>
+          </div>
+        </div>
+      </a>
+    </article>
+
+    <article class="blog-card" data-tags="研究開発,省エネ,脱炭素,新製品開発,設備投資,福岡県">
+      <a href="/blog/2026-04-10-fukuoka-2.html">
+        <div class="blog-card-head">
+          <span class="blog-card-region">福岡県</span>
+          <p class="blog-card-amount">500万円<small>補助上限</small></p>
+        </div>
+        <div class="blog-card-body">
+          <div class="blog-card-tags">
+            <span class="blog-card-tag">研究開発</span><span class="blog-card-tag">省エネ</span><span class="blog-card-tag">脱炭素</span>
+          </div>
+          <h2>令和８年度脱炭素社会実現のための省エネ新製品開発支援補助金（１次募集）</h2>
+          <p>福岡県内に事業所を有する中小企業者等が行う脱炭素社会実現のための省エネにつながる新製品開発を対象とし、補助率1/2以内、上限500万円で支援。事業終了後2年程度以内で上市が見込める製品開発を推奨。賃上げを行う場合は上乗せ…</p>
+          <div class="blog-card-meta">
+            <span>2026-04-10</span>
+            <span class="blog-card-read">続きを読む →</span>
+          </div>
+        </div>
+      </a>
+    </article>
+
+    <article class="blog-card" data-tags="働き方改革,人材確保,人材育成,販路拡大,デジタル化,カーボンニュートラル,事業承継,SDGs,知的財産,特産品開発,丸亀市">
+      <a href="/blog/2026-04-10-japan-9.html">
+        <div class="blog-card-head">
+          <span class="blog-card-region">丸亀市</span>
+          <p class="blog-card-amount">20万円<small>補助上限</small></p>
+        </div>
+        <div class="blog-card-body">
+          <div class="blog-card-tags">
+            <span class="blog-card-tag">働き方改革</span><span class="blog-card-tag">人材確保</span><span class="blog-card-tag">人材育成</span>
+          </div>
+          <h2>令和8年度 丸亀市産業振興支援補助金</h2>
+          <p>丸亀市内の中小企業者・中小企業団体を対象に、働き方改革、人材確保、販路開拓、デジタル化、カーボンニュートラルなど15分野の事業に対し、経費の一部を補助。補助率は2/3（一部3/4）、補助上限額は5万円から20万円まで分野…</p>
+          <div class="blog-card-meta">
+            <span>2026-04-10</span>
+            <span class="blog-card-read">続きを読む →</span>
+          </div>
+        </div>
+      </a>
+    </article>
+
+    <article class="blog-card" data-tags="商店街振興,インフラ整備,地域活性化,神奈川県">
+      <a href="/blog/2026-04-10-kanagawa.html">
+        <div class="blog-card-head">
+          <span class="blog-card-region">神奈川県</span>
+          <p class="blog-card-amount">500万円<small>補助上限</small></p>
+        </div>
+        <div class="blog-card-body">
+          <div class="blog-card-tags">
+            <span class="blog-card-tag">商店街振興</span><span class="blog-card-tag">インフラ整備</span><span class="blog-card-tag">地域活性化</span>
+          </div>
+          <h2>商店街リバイバル支援事業費補助金</h2>
+          <p>神奈川県が商店街団体のアーチ・アーケード撤去を支援する補助金。撤去前の調査点検費用から撤去工事費用、撤去後の集客力強化活動費用まで総合的に支援。補助率は1/2（会員数40以下の団体は2/3）。アーチ・アーケード撤去後の新…</p>
+          <div class="blog-card-meta">
+            <span>2026-04-10</span>
+            <span class="blog-card-read">続きを読む →</span>
+          </div>
+        </div>
+      </a>
+    </article>
+
+    <article class="blog-card" data-tags="電気料金支援,エネルギー負担軽減,中小企業支援,神奈川県">
+      <a href="/blog/2026-04-10-kanagawa-2.html">
+        <div class="blog-card-head">
+          <span class="blog-card-region">神奈川県</span>
+          <p class="blog-card-amount">公募要領参照</p>
+        </div>
+        <div class="blog-card-body">
+          <div class="blog-card-tags">
+            <span class="blog-card-tag">電気料金支援</span><span class="blog-card-tag">エネルギー負担軽減</span><span class="blog-card-tag">中小企業支援</span>
+          </div>
+          <h2>神奈川県中小製造業等特別高圧受電者支援金</h2>
+          <p>神奈川県が特別高圧で受電する中小企業等の電気料金負担を軽減するため支援金を交付。製造業の工場・倉庫の単独事業所・店子事業所は電力使用量に応じて月額1kWhあたり0.7円～2.3円を支給。商業施設・オフィスビル等のテナント…</p>
+          <div class="blog-card-meta">
+            <span>2026-04-10</span>
+            <span class="blog-card-read">続きを読む →</span>
+          </div>
+        </div>
+      </a>
+    </article>
+
+    <article class="blog-card" data-tags="商品開発,販路拡大,市場調査,知的財産権,大分県">
+      <a href="/blog/2026-04-10-oita.html">
+        <div class="blog-card-head">
+          <span class="blog-card-region">大分県</span>
+          <p class="blog-card-amount">200万円<small>補助上限</small></p>
+        </div>
+        <div class="blog-card-body">
+          <div class="blog-card-tags">
+            <span class="blog-card-tag">商品開発</span><span class="blog-card-tag">販路拡大</span><span class="blog-card-tag">市場調査</span>
+          </div>
+          <h2>おおいた中小企業活力創出基金助成金</h2>
+          <p>大分県内の中小企業者・創業希望者・NPO法人等が、将来的に企業の顔となり得る旗艦商品の開発や既存商品改良、販路開拓等を行う事業に対して助成。商品開発支援事業と販路開拓支援事業の2つの類型があり、補助率は2/3以内で上限2…</p>
+          <div class="blog-card-meta">
+            <span>2026-04-10</span>
+            <span class="blog-card-read">続きを読む →</span>
+          </div>
+        </div>
+      </a>
+    </article>
+
+    <article class="blog-card" data-tags="設備投資,事業拡大,長野県長野市">
+      <a href="/blog/2026-04-10-japan-10.html">
+        <div class="blog-card-head">
+          <span class="blog-card-region">長野県長野市</span>
+          <p class="blog-card-amount">公募要領参照</p>
+        </div>
+        <div class="blog-card-body">
+          <div class="blog-card-tags">
+            <span class="blog-card-tag">設備投資</span><span class="blog-card-tag">事業拡大</span>
+          </div>
+          <h2>長野市商工業助成事業</h2>
+          <p>長野市商工業振興条例に基づく助成事業の実施規則。対象事業の認定を受けた事業者に対して助成金を交付する制度。事業着手前の認定申請、事業完了後の交付申請という二段階の手続きが必要。市税の納付状況の確認や実地調査を経て助成金が…</p>
+          <div class="blog-card-meta">
+            <span>2026-04-10</span>
+            <span class="blog-card-read">続きを読む →</span>
+          </div>
+        </div>
+      </a>
+    </article>
+
+    <article class="blog-card" data-tags="知的財産支援,地域連携,中小企業支援,近畿地方">
+      <a href="/blog/2026-04-10-japan-11.html">
+        <div class="blog-card-head">
+          <span class="blog-card-region">近畿地方</span>
+          <p class="blog-card-amount">公募要領参照</p>
+        </div>
+        <div class="blog-card-body">
+          <div class="blog-card-tags">
+            <span class="blog-card-tag">知的財産支援</span><span class="blog-card-tag">地域連携</span><span class="blog-card-tag">中小企業支援</span>
+          </div>
+          <h2>令和8年度中小企業等知的財産支援地域連携促進事業費補助金（中小企業等知的財産支援事業）</h2>
+          <p>中小企業等の知的財産支援を行う地域ステークホルダーが連携して実施する支援事業に対する補助金。A（地域中小企業支援拡充型事業）とB（地域中小企業支援構築型事業）の2区分があり、既存支援施策の拡充や新たな支援施策の構築を支援…</p>
+          <div class="blog-card-meta">
+            <span>2026-04-10</span>
+            <span class="blog-card-read">続きを読む →</span>
+          </div>
+        </div>
+      </a>
+    </article>
+
+    <article class="blog-card" data-tags="創業支援,徳島県北島町">
+      <a href="/blog/2026-04-10-japan-12.html">
+        <div class="blog-card-head">
+          <span class="blog-card-region">徳島県北島町</span>
+          <p class="blog-card-amount">公募要領参照</p>
+        </div>
+        <div class="blog-card-body">
+          <div class="blog-card-tags">
+            <span class="blog-card-tag">創業支援</span>
+          </div>
+          <h2>北島町創業支援補助金</h2>
+          <p>この文書は北島町創業支援補助金の中止（廃止）申請書の様式であり、補助金制度の詳細な内容は記載されていません。申請者が既に交付決定を受けた補助事業について、中止または廃止を申請する際に使用する書類です。</p>
+          <div class="blog-card-meta">
+            <span>2026-04-10</span>
+            <span class="blog-card-read">続きを読む →</span>
+          </div>
+        </div>
+      </a>
+    </article>
+
+    <article class="blog-card" data-tags="DX推進,IT導入,設備投資,経営課題解決,長野市">
+      <a href="/blog/2026-04-10-japan-13.html">
+        <div class="blog-card-head">
+          <span class="blog-card-region">長野市</span>
+          <p class="blog-card-amount">500万円<small>補助上限</small></p>
+        </div>
+        <div class="blog-card-body">
+          <div class="blog-card-tags">
+            <span class="blog-card-tag">DX推進</span><span class="blog-card-tag">IT導入</span><span class="blog-card-tag">設備投資</span>
+          </div>
+          <h2>長野市中小企業ＤＸモデル支援事業補助金</h2>
+          <p>長野市内の中小企業を対象に、DX推進による経営課題解決のための取組を支援。機器導入費や謝金等が対象経費となり、補助率1/2、上限額は事業規模に応じて300万円～500万円。モデル事業として事例展開への協力が必要。</p>
+          <div class="blog-card-meta">
+            <span>2026-04-10</span>
+            <span class="blog-card-read">続きを読む →</span>
+          </div>
+        </div>
+      </a>
+    </article>
+
+    <article class="blog-card" data-tags="DX推進,IT導入,システム導入,生産性向上,中小企業支援,デジタル化,さいたま市">
+      <a href="/blog/2026-04-10-japan-14.html">
+        <div class="blog-card-head">
+          <span class="blog-card-region">さいたま市</span>
+          <p class="blog-card-amount">40万円<small>補助上限</small></p>
+        </div>
+        <div class="blog-card-body">
+          <div class="blog-card-tags">
+            <span class="blog-card-tag">DX推進</span><span class="blog-card-tag">IT導入</span><span class="blog-card-tag">システム導入</span>
+          </div>
+          <h2>令和8年度さいたま市DX推進補助金</h2>
+          <p>さいたま市内の中小企業者・個人事業主・団体を対象に、新たにシステム・ソフトウェア等を導入し生産性向上に取り組む事業に対して補助金を交付。補助率2/3、上限40万円で、生産性向上に資するシステム・ソフトウェア購入費及び関連…</p>
+          <div class="blog-card-meta">
+            <span>2026-04-10</span>
+            <span class="blog-card-read">続きを読む →</span>
+          </div>
+        </div>
+      </a>
+    </article>
+
+    <article class="blog-card" data-tags="設備投資,機械設備導入,低金利融資,小規模企業支援,宮城県">
+      <a href="/blog/2026-04-10-miyagi-2.html">
+        <div class="blog-card-head">
+          <span class="blog-card-region">宮城県</span>
+          <p class="blog-card-amount">1億円<small>補助上限</small></p>
+        </div>
+        <div class="blog-card-body">
+          <div class="blog-card-tags">
+            <span class="blog-card-tag">設備投資</span><span class="blog-card-tag">機械設備導入</span><span class="blog-card-tag">低金利融資</span>
+          </div>
+          <h2>小規模企業者等設備貸与事業</h2>
+          <p>宮城県内の小規模企業者を対象に、工作機械、建設機械、車両、印刷機等の設備導入を支援。設備販売業者から設備を購入して企業に貸与する制度で、年利1.1%から最長10年間の低金利貸与が可能。信用保証料不要で金融機関の借入枠外で…</p>
+          <div class="blog-card-meta">
+            <span>2026-04-10</span>
+            <span class="blog-card-read">続きを読む →</span>
+          </div>
+        </div>
+      </a>
+    </article>
+
+    <article class="blog-card" data-tags="研究開発,サーキュラーエコノミー,リサイクル技術,富山県">
+      <a href="/blog/2026-04-10-toyama-2.html">
+        <div class="blog-card-head">
+          <span class="blog-card-region">富山県</span>
+          <p class="blog-card-amount">500万円<small>補助上限</small></p>
+        </div>
+        <div class="blog-card-body">
+          <div class="blog-card-tags">
+            <span class="blog-card-tag">研究開発</span><span class="blog-card-tag">サーキュラーエコノミー</span><span class="blog-card-tag">リサイクル技術</span>
+          </div>
+          <h2>令和8年度 アルミ産業成長力強化戦略推進事業 アルミ循環配慮事業費補助金</h2>
+          <p>富山県内の企業を対象として、アルミ関連産業におけるサーキュラーエコノミー移行を支援する補助金。設計段階からリサイクル配慮された製品の製造技術やアルミリサイクル技術の高度化研究開発に最大500万円、補助率2/3（県内大学等…</p>
+          <div class="blog-card-meta">
+            <span>2026-04-10</span>
+            <span class="blog-card-read">続きを読む →</span>
+          </div>
+        </div>
+      </a>
+    </article>
+
+    <article class="blog-card" data-tags="研究開発,製品開発,販路拡大,地域資源活用,農商工連携,新商品開発,新サービス開発,事業化支援,マーケティング,北海道">
+      <a href="/blog/2026-04-10-hokkaido.html">
+        <div class="blog-card-head">
+          <span class="blog-card-region">北海道</span>
+          <p class="blog-card-amount">150万円<small>補助上限</small></p>
+        </div>
+        <div class="blog-card-body">
+          <div class="blog-card-tags">
+            <span class="blog-card-tag">研究開発</span><span class="blog-card-tag">製品開発</span><span class="blog-card-tag">販路拡大</span>
+          </div>
+          <h2>2026年度北海道中小企業新応援ファンド事業（地域資源活用型事業化実現事業・製品開発チャレンジ支援事業）</h2>
+          <p>北海道の中小企業者等が道内の地域資源を活用した新商品・新サービスの開発から販路開拓まで、または本格開発着手前の事前検証・検査・分析に対して助成する。地域資源活用型は上限150万円・補助率1/2、製品開発チャレンジは上限5…</p>
+          <div class="blog-card-meta">
+            <span>2026-04-10</span>
+            <span class="blog-card-read">続きを読む →</span>
+          </div>
+        </div>
+      </a>
+    </article>
+
+    <article class="blog-card" data-tags="事業再開,新規投資,販路開拓,復興支援,福島県">
+      <a href="/blog/2026-04-10-fukushima-3.html">
+        <div class="blog-card-head">
+          <span class="blog-card-region">福島県</span>
+          <p class="blog-card-amount">4,000万円<small>補助上限</small></p>
+        </div>
+        <div class="blog-card-body">
+          <div class="blog-card-tags">
+            <span class="blog-card-tag">事業再開</span><span class="blog-card-tag">新規投資</span><span class="blog-card-tag">販路開拓</span>
+          </div>
+          <h2>福島県原子力被災事業者事業再開等支援補助金</h2>
+          <p>福島県の12市町村内で事業を行う原子力被災事業者を対象とした補助金。事業再開や新規投資、販路開拓等の事業展開投資を支援する。通常は補助率3/4以内で上限975万円、特定復興再生拠点区域等では補助率4/5以内で上限1,04…</p>
+          <div class="blog-card-meta">
+            <span>2026-04-10</span>
+            <span class="blog-card-read">続きを読む →</span>
+          </div>
+        </div>
+      </a>
+    </article>
+
+    <article class="blog-card" data-tags="観光振興,地域活性化,インバウンド,観光コンテンツ,受入環境整備,旅行商品開発,デジタル化,産業観光,富山県">
+      <a href="/blog/2026-04-10-toyama-3.html">
+        <div class="blog-card-head">
+          <span class="blog-card-region">富山県</span>
+          <p class="blog-card-amount">100万円<small>補助上限</small></p>
+        </div>
+        <div class="blog-card-body">
+          <div class="blog-card-tags">
+            <span class="blog-card-tag">観光振興</span><span class="blog-card-tag">地域活性化</span><span class="blog-card-tag">インバウンド</span>
+          </div>
+          <h2>持続可能な観光地域づくり支援事業費補助金</h2>
+          <p>富山県内の観光事業者等を対象とし、新たな旅行商品の造成、観光コンテンツの造成・磨き上げ、観光客向け受入環境整備を支援。旅行商品造成は1名1泊当たり2千円で上限10万円、コンテンツ造成等は補助率2分の1以内で上限100万円…</p>
+          <div class="blog-card-meta">
+            <span>2026-04-10</span>
+            <span class="blog-card-read">続きを読む →</span>
+          </div>
+        </div>
+      </a>
+    </article>
+
+    <article class="blog-card" data-tags="販路拡大,ブランド化,認知度向上,宮城県">
+      <a href="/blog/2026-04-10-miyagi-3.html">
+        <div class="blog-card-head">
+          <span class="blog-card-region">宮城県</span>
+          <p class="blog-card-amount">500万円<small>補助上限</small></p>
+        </div>
+        <div class="blog-card-body">
+          <div class="blog-card-tags">
+            <span class="blog-card-tag">販路拡大</span><span class="blog-card-tag">ブランド化</span><span class="blog-card-tag">認知度向上</span>
+          </div>
+          <h2>県産水産物の販路開拓強化支援事業（県産水産物ブランド化に対する取組支援事業）</h2>
+          <p>宮城県内の水産加工・流通業者等で構成された団体を対象に、県産水産物のブランド化及びブランドの認知度向上に資する取組を支援する補助金。最大500万円、2/3補助率で、イベント開催やパンフレット作成等の幅広いブランド化活動を…</p>
+          <div class="blog-card-meta">
+            <span>2026-04-10</span>
+            <span class="blog-card-read">続きを読む →</span>
+          </div>
+        </div>
+      </a>
+    </article>
+
+    <article class="blog-card" data-tags="電力料金高騰対策,中小企業支援,三重県">
+      <a href="/blog/2026-04-10-mie.html">
+        <div class="blog-card-head">
+          <span class="blog-card-region">三重県</span>
+          <p class="blog-card-amount">公募要領参照</p>
+        </div>
+        <div class="blog-card-body">
+          <div class="blog-card-tags">
+            <span class="blog-card-tag">電力料金高騰対策</span><span class="blog-card-tag">中小企業支援</span>
+          </div>
+          <h2>特別高圧電力料金高騰対策支援金（第5期）</h2>
+          <p>三重県内で特別高圧電力を契約する中小企業者等及び商業施設等に入居する中小企業者等を対象とした電力料金高騰対策支援金。令和8年1月分から3月分の電力使用量に対して2円/kWh を支給する。申請期間は令和8年4月10日から6…</p>
+          <div class="blog-card-meta">
+            <span>2026-04-10</span>
+            <span class="blog-card-read">続きを読む →</span>
+          </div>
+        </div>
+      </a>
+    </article>
+
+    <article class="blog-card" data-tags="研究開発,新技術開発,新製品開発,EV関連,岡山県">
+      <a href="/blog/2026-04-10-okayama.html">
+        <div class="blog-card-head">
+          <span class="blog-card-region">岡山県</span>
+          <p class="blog-card-amount">2,000万円<small>補助上限</small></p>
+        </div>
+        <div class="blog-card-body">
+          <div class="blog-card-tags">
+            <span class="blog-card-tag">研究開発</span><span class="blog-card-tag">新技術開発</span><span class="blog-card-tag">新製品開発</span>
+          </div>
+          <h2>令和８年度「きらめき岡山創成ファンド支援事業」</h2>
+          <p>岡山県内に事業所を持つ中小企業を対象とした研究開発支援事業。新技術・新製品の研究開発に対し補助率2/3以内、上限2,000万円の助成。助成期間は22か月以内。EV関連部品の軽量化や静音化などに資する研究開発については専用…</p>
+          <div class="blog-card-meta">
+            <span>2026-04-10</span>
+            <span class="blog-card-read">続きを読む →</span>
+          </div>
+        </div>
+      </a>
+    </article>
+
+    <article class="blog-card" data-tags="EV,FCV,電気自動車,燃料電池車,車両導入,環境対策,脱炭素,岡山県">
+      <a href="/blog/2026-04-10-okayama-2.html">
+        <div class="blog-card-head">
+          <span class="blog-card-region">岡山県</span>
+          <p class="blog-card-amount">公募要領参照</p>
+        </div>
+        <div class="blog-card-body">
+          <div class="blog-card-tags">
+            <span class="blog-card-tag">EV</span><span class="blog-card-tag">FCV</span><span class="blog-card-tag">電気自動車</span>
+          </div>
+          <h2>事業者向けEV・FCV車両導入支援事業補助金</h2>
+          <p>岡山県が事業者のEV（電気自動車）・FCV（燃料電池車）車両導入を支援する補助金。法人・個人事業主・市町村が対象。令和8年度内に初度登録し岡山県内で使用する車両が対象。申請期限は令和9年2月10日、実績報告は令和9年3月…</p>
+          <div class="blog-card-meta">
+            <span>2026-04-10</span>
+            <span class="blog-card-read">続きを読む →</span>
+          </div>
+        </div>
+      </a>
+    </article>
+
+    <article class="blog-card" data-tags="人材育成,リスキリング,研修派遣,DX人材,経営戦略,知識習得,技術習得,広島県">
+      <a href="/blog/2026-04-10-hiroshima.html">
+        <div class="blog-card-head">
+          <span class="blog-card-region">広島県</span>
+          <p class="blog-card-amount">200万円<small>補助上限</small></p>
+        </div>
+        <div class="blog-card-body">
+          <div class="blog-card-tags">
+            <span class="blog-card-tag">人材育成</span><span class="blog-card-tag">リスキリング</span><span class="blog-card-tag">研修派遣</span>
+          </div>
+          <h2>令和８年度リスキリング人材育成補助金</h2>
+          <p>広島県内に本社を置く中堅企業・中小企業等が、正社員を大学院や企業等にリスキリング派遣し経営戦略に必要な知識・技術を習得させる取組を支援。長期滞在型と長期通い型の2つの研修区分があり、補助率は2/3（優良企業は3/4）、上…</p>
+          <div class="blog-card-meta">
+            <span>2026-04-10</span>
+            <span class="blog-card-read">続きを読む →</span>
+          </div>
+        </div>
+      </a>
+    </article>
+
+    <article class="blog-card" data-tags="研究開発,産学連携,実用化支援,産業化支援,医療・ヘルスケア,複数年度事業,山口県">
+      <a href="/blog/2026-04-10-yamaguchi-2.html">
+        <div class="blog-card-head">
+          <span class="blog-card-region">山口県</span>
+          <p class="blog-card-amount">3,000万円<small>補助上限</small></p>
+        </div>
+        <div class="blog-card-body">
+          <div class="blog-card-tags">
+            <span class="blog-card-tag">研究開発</span><span class="blog-card-tag">産学連携</span><span class="blog-card-tag">実用化支援</span>
+          </div>
+          <h2>やまぐち再生医療等実用化・産業化推進補助金</h2>
+          <p>山口県が再生医療、細胞治療、遺伝子治療等の県内における事業化を目指す先導的、先進的な研究開発・実証試験に対して補助する制度。2者以上による研究開発グループが対象で、補助率1/2以内、補助限度額3000万円、補助下限額10…</p>
+          <div class="blog-card-meta">
+            <span>2026-04-10</span>
+            <span class="blog-card-read">続きを読む →</span>
+          </div>
+        </div>
+      </a>
+    </article>
+
+    <article class="blog-card" data-tags="設備投資,人材育成,環境対応,認証取得,IT導入,愛媛県">
+      <a href="/blog/2026-04-10-ehime.html">
+        <div class="blog-card-head">
+          <span class="blog-card-region">愛媛県</span>
+          <p class="blog-card-amount">200万円<small>補助上限</small></p>
+        </div>
+        <div class="blog-card-body">
+          <div class="blog-card-tags">
+            <span class="blog-card-tag">設備投資</span><span class="blog-card-tag">人材育成</span><span class="blog-card-tag">環境対応</span>
+          </div>
+          <h2>令和８年度愛媛県優良産業廃棄物処理業者育成支援事業費補助金</h2>
+          <p>愛媛県が優良産業廃棄物処理業者の育成支援を目的として実施する補助金。対象は優良認定業者または優良認定取得を目指す産廃処理業者で県内に事業所を有するもの。重量計測機器設置、人材育成、ドローン購入・研修、エコアクション21認…</p>
+          <div class="blog-card-meta">
+            <span>2026-04-10</span>
+            <span class="blog-card-read">続きを読む →</span>
+          </div>
+        </div>
+      </a>
+    </article>
+
+    <article class="blog-card" data-tags="設備投資,再生可能エネルギー,脱炭素,省エネ,徳島県">
+      <a href="/blog/2026-04-10-tokushima-4.html">
+        <div class="blog-card-head">
+          <span class="blog-card-region">徳島県</span>
+          <p class="blog-card-amount">1,000万円<small>補助上限</small></p>
+        </div>
+        <div class="blog-card-body">
+          <div class="blog-card-tags">
+            <span class="blog-card-tag">設備投資</span><span class="blog-card-tag">再生可能エネルギー</span><span class="blog-card-tag">脱炭素</span>
+          </div>
+          <h2>令和8年度徳島県地域脱炭素移行・再エネ推進事業補助金（事業者向け太陽光発電設備・蓄電池補助事業）</h2>
+          <p>徳島県内に事業所を有する中小企業者等を対象に、太陽光発電設備・蓄電池の導入を支援する補助制度。太陽光発電設備は5万円/kW（上限500万円）、蓄電池は1/3補助、併設の場合は上限1,000万円。発電電力の50%以上を自家…</p>
+          <div class="blog-card-meta">
+            <span>2026-04-10</span>
+            <span class="blog-card-read">続きを読む →</span>
+          </div>
+        </div>
+      </a>
+    </article>
+
+    <article class="blog-card" data-tags="研究開発,実証実験,エビデンス構築,ヘルスケア,健康増進,山口県">
+      <a href="/blog/2026-04-10-yamaguchi-3.html">
+        <div class="blog-card-head">
+          <span class="blog-card-region">山口県</span>
+          <p class="blog-card-amount">500万円<small>補助上限</small></p>
+        </div>
+        <div class="blog-card-body">
+          <div class="blog-card-tags">
+            <span class="blog-card-tag">研究開発</span><span class="blog-card-tag">実証実験</span><span class="blog-card-tag">エビデンス構築</span>
+          </div>
+          <h2>ヘルスケアエビデンス構築促進補助金</h2>
+          <p>山口県内の中小企業を対象に、やまぐちヘルスラボを活用してヘルスケア関連製品・サービスのエビデンス構築に向けた実証事業を支援。補助率2/3、上限500万円で、食品・機器・アプリ・健康経営支援サービス等が対象。採択件数は2件…</p>
+          <div class="blog-card-meta">
+            <span>2026-04-10</span>
+            <span class="blog-card-read">続きを読む →</span>
+          </div>
+        </div>
+      </a>
+    </article>
+
+    <article class="blog-card" data-tags="事業者指定,倒産支援,中小企業支援,福岡県">
+      <a href="/blog/2026-04-10-fukuoka-3.html">
+        <div class="blog-card-head">
+          <span class="blog-card-region">福岡県</span>
+          <p class="blog-card-amount">公募要領参照</p>
+        </div>
+        <div class="blog-card-body">
+          <div class="blog-card-tags">
+            <span class="blog-card-tag">事業者指定</span><span class="blog-card-tag">倒産支援</span><span class="blog-card-tag">中小企業支援</span>
+          </div>
+          <h2>福岡県指定再生手続開始申立等事業者指定要領</h2>
+          <p>福岡県が中小企業振興資金融資制度において、倒産した事業者の中から県指定事業者を指定するための制度です。破産手続開始申立等をした事業者で、負債総額3,000万円以上かつ50万円以上の債権を有する県内関連中小企業者が5社以上…</p>
+          <div class="blog-card-meta">
+            <span>2026-04-10</span>
+            <span class="blog-card-read">続きを読む →</span>
+          </div>
+        </div>
+      </a>
+    </article>
+
+    <article class="blog-card" data-tags="事業承継,経営支援,専門家活用,設備投資,新商品開発,長崎県">
+      <a href="/blog/2026-04-10-nagasaki.html">
+        <div class="blog-card-head">
+          <span class="blog-card-region">長崎県</span>
+          <p class="blog-card-amount">50万円<small>補助上限</small></p>
+        </div>
+        <div class="blog-card-body">
+          <div class="blog-card-tags">
+            <span class="blog-card-tag">事業承継</span><span class="blog-card-tag">経営支援</span><span class="blog-card-tag">専門家活用</span>
+          </div>
+          <h2>長崎県事業承継促進・後継者事業展開支援補助金</h2>
+          <p>長崎県内の中小・小規模事業者等を対象に、事業承継に向けた取組みや承継後の前向きな事業展開にかかる費用を支援する補助金。補助上限は50万円、補助率は1/2以内（小規模企業者は2/3以内）。長崎県事業承継・引継ぎ支援センター…</p>
+          <div class="blog-card-meta">
+            <span>2026-04-10</span>
+            <span class="blog-card-read">続きを読む →</span>
+          </div>
+        </div>
+      </a>
+    </article>
+
+    <article class="blog-card" data-tags="販路拡大,国際展開,展示会出展,群馬県">
+      <a href="/blog/2026-04-10-gunma.html">
+        <div class="blog-card-head">
+          <span class="blog-card-region">群馬県</span>
+          <p class="blog-card-amount">200万円<small>補助上限</small></p>
+        </div>
+        <div class="blog-card-body">
+          <div class="blog-card-tags">
+            <span class="blog-card-tag">販路拡大</span><span class="blog-card-tag">国際展開</span><span class="blog-card-tag">展示会出展</span>
+          </div>
+          <h2>EXPOチャレンジ支援補助金</h2>
+          <p>群馬県内に主たる事業所を有する中堅・中小企業者を対象とした展示会出展支援補助金。国内展示会は補助率2分の1で上限100万円、海外展示会は補助率3分の2で上限200万円を支援。出展料、装飾・設営費、広告宣伝費、通訳・翻訳費…</p>
+          <div class="blog-card-meta">
+            <span>2026-04-10</span>
+            <span class="blog-card-read">続きを読む →</span>
+          </div>
+        </div>
+      </a>
+    </article>
+
+    <article class="blog-card" data-tags="研究開発,販路拡大,新製品開発,中小企業支援,長野市">
+      <a href="/blog/2026-04-10-japan-15.html">
+        <div class="blog-card-head">
+          <span class="blog-card-region">長野市</span>
+          <p class="blog-card-amount">50万円<small>補助上限</small></p>
+        </div>
+        <div class="blog-card-body">
+          <div class="blog-card-tags">
+            <span class="blog-card-tag">研究開発</span><span class="blog-card-tag">販路拡大</span><span class="blog-card-tag">新製品開発</span>
+          </div>
+          <h2>長野市新製品開発・販路開拓事業補助金</h2>
+          <p>長野市内の中小企業者等が行う新製品開発事業及び販路開拓事業に対する補助金。新製品開発事業は補助率1/2・上限30万円、販路開拓事業は補助率1/2・上限50万円を交付。調査研究、試作品製造、展示会出展等の費用が対象。</p>
+          <div class="blog-card-meta">
+            <span>2026-04-10</span>
+            <span class="blog-card-read">続きを読む →</span>
+          </div>
+        </div>
+      </a>
+    </article>
+
+    <article class="blog-card" data-tags="創業支援,事業承継,第二創業,デジタル技術活用,地域課題解決,社会的事業,スタートアップ,徳島県">
+      <a href="/blog/2026-04-10-tokushima-5.html">
+        <div class="blog-card-head">
+          <span class="blog-card-region">徳島県</span>
+          <p class="blog-card-amount">200万円<small>補助上限</small></p>
+        </div>
+        <div class="blog-card-body">
+          <div class="blog-card-tags">
+            <span class="blog-card-tag">創業支援</span><span class="blog-card-tag">事業承継</span><span class="blog-card-tag">第二創業</span>
+          </div>
+          <h2>とくしま創業促進費補助金</h2>
+          <p>徳島県内で新たに創業する者及びSociety5.0関連業種等で事業承継・第二創業する者を対象とした補助金。社会的事業の分野でデジタル技術を活用し地域課題の解決に資する事業が対象。補助率は1/2以内で、スタートアップ枠は最…</p>
+          <div class="blog-card-meta">
+            <span>2026-04-10</span>
+            <span class="blog-card-read">続きを読む →</span>
+          </div>
+        </div>
+      </a>
+    </article>
+
+    <article class="blog-card" data-tags="創業支援,デジタル技術活用,地域課題解決,事業承継,第二創業,栃木県">
+      <a href="/blog/2026-04-10-tochigi.html">
+        <div class="blog-card-head">
+          <span class="blog-card-region">栃木県</span>
+          <p class="blog-card-amount">200万円<small>補助上限</small></p>
+        </div>
+        <div class="blog-card-body">
+          <div class="blog-card-tags">
+            <span class="blog-card-tag">創業支援</span><span class="blog-card-tag">デジタル技術活用</span><span class="blog-card-tag">地域課題解決</span>
+          </div>
+          <h2>令和8年度地域課題解決型創業支援補助金</h2>
+          <p>栃木県内で地域課題を解決するためデジタル技術を活用して創業・事業承継・第二創業する中小企業者等に対し、人件費・店舗等借入費・設備費・知的財産権関連経費・謝金旅費・広報費・外注費・委託費を補助対象とし、補助率2分の1以内、…</p>
+          <div class="blog-card-meta">
+            <span>2026-04-10</span>
+            <span class="blog-card-read">続きを読む →</span>
+          </div>
+        </div>
+      </a>
+    </article>
+
+    <article class="blog-card" data-tags="IT導入,人材育成,デジタル化,長崎県">
+      <a href="/blog/2026-04-10-nagasaki-2.html">
+        <div class="blog-card-head">
+          <span class="blog-card-region">長崎県</span>
+          <p class="blog-card-amount">100万円<small>補助上限</small></p>
+        </div>
+        <div class="blog-card-body">
+          <div class="blog-card-tags">
+            <span class="blog-card-tag">IT導入</span><span class="blog-card-tag">人材育成</span><span class="blog-card-tag">デジタル化</span>
+          </div>
+          <h2>令和８年度 長崎県 デジタル力向上支援事業費補助金</h2>
+          <p>長崎県内の中小企業者等を対象に、デジタルに関する講座受講や資格取得（人材育成費）及びそれに併せたIT機器・デジタルツールの導入（導入費）を支援する補助金です。補助率は2/3以内、人材育成費が5万円未満の場合は上限50万円…</p>
+          <div class="blog-card-meta">
+            <span>2026-04-10</span>
+            <span class="blog-card-read">続きを読む →</span>
+          </div>
+        </div>
+      </a>
+    </article>
+
+    <article class="blog-card" data-tags="販路拡大,海外展開,展示会出展,岡山県">
+      <a href="/blog/2026-04-10-okayama-3.html">
+        <div class="blog-card-head">
+          <span class="blog-card-region">岡山県</span>
+          <p class="blog-card-amount">100万円<small>補助上限</small></p>
+        </div>
+        <div class="blog-card-body">
+          <div class="blog-card-tags">
+            <span class="blog-card-tag">販路拡大</span><span class="blog-card-tag">海外展開</span><span class="blog-card-tag">展示会出展</span>
+          </div>
+          <h2>岡山デニム世界進出支援事業</h2>
+          <p>岡山県内の繊維企業を対象に、海外展示会への出展や海外バイヤーが参加する国内展示会への出展を支援。海外一般展示会は出展料等の1/2以内（上限50万円）、大規模展示会は2/3以内（上限100万円）、国内展示会は1/2以内（上…</p>
+          <div class="blog-card-meta">
+            <span>2026-04-10</span>
+            <span class="blog-card-read">続きを読む →</span>
+          </div>
+        </div>
+      </a>
+    </article>
+
+    <article class="blog-card" data-tags="販路拡大,創業支援,広告宣伝,丸亀市">
+      <a href="/blog/2026-04-10-japan-16.html">
+        <div class="blog-card-head">
+          <span class="blog-card-region">丸亀市</span>
+          <p class="blog-card-amount">30万円<small>補助上限</small></p>
+        </div>
+        <div class="blog-card-body">
+          <div class="blog-card-tags">
+            <span class="blog-card-tag">販路拡大</span><span class="blog-card-tag">創業支援</span><span class="blog-card-tag">広告宣伝</span>
+          </div>
+          <h2>丸亀市創業支援事業補助金</h2>
+          <p>丸亀市内で新たに事業を開始した創業者に対し、販路開拓を目的とした広告宣伝費や印刷製本費を支援する補助金。創業1年未満で特定創業支援等事業による支援を受けた事業者が対象。補助率は2/3、上限額は30万円。週5日以上営業し3…</p>
+          <div class="blog-card-meta">
+            <span>2026-04-10</span>
+            <span class="blog-card-read">続きを読む →</span>
+          </div>
+        </div>
+      </a>
+    </article>
+
+    <article class="blog-card" data-tags="設備投資,IT導入,農業,施設園芸,ICT技術,京都府">
+      <a href="/blog/2026-04-10-kyoto.html">
+        <div class="blog-card-head">
+          <span class="blog-card-region">京都府</span>
+          <p class="blog-card-amount">公募要領参照</p>
+        </div>
+        <div class="blog-card-body">
+          <div class="blog-card-tags">
+            <span class="blog-card-tag">設備投資</span><span class="blog-card-tag">IT導入</span><span class="blog-card-tag">農業</span>
+          </div>
+          <h2>ICT施設園芸モデル整備事業</h2>
+          <p>京都府内の認定農業者等が、50m/s以上の風速又は50kg/平方メートル以上の積雪荷重に耐える低コスト耐候性ハウスとICT技術を同時に導入する場合に、補助対象経費の30%以内を補助。事業完了後3箇年以内に年間売上2,00…</p>
+          <div class="blog-card-meta">
+            <span>2026-04-10</span>
+            <span class="blog-card-read">続きを読む →</span>
+          </div>
+        </div>
+      </a>
+    </article>
+
+    <article class="blog-card" data-tags="事業承継,M&amp;A,中小企業支援,長野市">
+      <a href="/blog/2026-04-10-japan-17.html">
+        <div class="blog-card-head">
+          <span class="blog-card-region">長野市</span>
+          <p class="blog-card-amount">50万円<small>補助上限</small></p>
+        </div>
+        <div class="blog-card-body">
+          <div class="blog-card-tags">
+            <span class="blog-card-tag">事業承継</span><span class="blog-card-tag">M&amp;A</span><span class="blog-card-tag">中小企業支援</span>
+          </div>
+          <h2>長野市事業承継促進補助金</h2>
+          <p>長野市内の中小企業者を対象に、指定支援機関の支援を受けて事業承継またはM&amp;Aを行う際の初期診断、企業価値算出、計画作成、仲介手数料、デューデリジェンス費用などを補助。補助率2分の1、上限50万円。1年以上同一事業を営む法…</p>
+          <div class="blog-card-meta">
+            <span>2026-04-10</span>
+            <span class="blog-card-read">続きを読む →</span>
+          </div>
+        </div>
+      </a>
+    </article>
+
+    <article class="blog-card" data-tags="設備投資,高付加価値化,製造業,サービス業,中小企業支援,三重県">
+      <a href="/blog/2026-04-10-mie-2.html">
+        <div class="blog-card-head">
+          <span class="blog-card-region">三重県</span>
+          <p class="blog-card-amount">公募要領参照</p>
+        </div>
+        <div class="blog-card-body">
+          <div class="blog-card-tags">
+            <span class="blog-card-tag">設備投資</span><span class="blog-card-tag">高付加価値化</span><span class="blog-card-tag">製造業</span>
+          </div>
+          <h2>令和8年度中堅・中小企業高付加価値化投資促進補助金</h2>
+          <p>中堅・中小企業が高付加価値化を目指す設備投資に対して補助金を交付する制度。製造業型とサービス産業型の2類型があり、総事業費150,000,000円のうち補助対象投資額50,000,000円に対して補助を行う。</p>
+          <div class="blog-card-meta">
+            <span>2026-04-10</span>
+            <span class="blog-card-read">続きを読む →</span>
+          </div>
+        </div>
+      </a>
+    </article>
+
+    <article class="blog-card" data-tags="研究開発,環境・循環型社会,サーキュラーエコノミー,宮城県">
+      <a href="/blog/2026-04-10-miyagi-4.html">
+        <div class="blog-card-head">
+          <span class="blog-card-region">宮城県</span>
+          <p class="blog-card-amount">1,000万円<small>補助上限</small></p>
+        </div>
+        <div class="blog-card-body">
+          <div class="blog-card-tags">
+            <span class="blog-card-tag">研究開発</span><span class="blog-card-tag">環境・循環型社会</span><span class="blog-card-tag">サーキュラーエコノミー</span>
+          </div>
+          <h2>令和８年度サーキュラーデザイン・リーディングモデル構築支援事業費補助金</h2>
+          <p>宮城県内の製造業者等を対象に、サーキュラーデザイン（資源の循環に配慮した設計）に基づく製品の試作開発等を支援。補助率2/3以内、上限額1事業あたり1,000万円（2か年度合計）。2か年度以内の事業期間で、完了後3年以内の…</p>
+          <div class="blog-card-meta">
+            <span>2026-04-10</span>
+            <span class="blog-card-read">続きを読む →</span>
+          </div>
+        </div>
+      </a>
+    </article>
+
+    <article class="blog-card" data-tags="店舗開業支援,中心市街地活性化,空き店舗活用,長野県">
+      <a href="/blog/2026-04-10-nagano.html">
+        <div class="blog-card-head">
+          <span class="blog-card-region">長野県</span>
+          <p class="blog-card-amount">100万円<small>補助上限</small></p>
+        </div>
+        <div class="blog-card-body">
+          <div class="blog-card-tags">
+            <span class="blog-card-tag">店舗開業支援</span><span class="blog-card-tag">中心市街地活性化</span><span class="blog-card-tag">空き店舗活用</span>
+          </div>
+          <h2>空き店舗等活用事業補助金</h2>
+          <p>長野市の中心市街地（長野、篠ノ井、松代の各地区）にある空き店舗等を賃借して出店する個人及び法人事業者を対象に、改修費や改築費、附帯設備設置費用の1/2を補助する制度。補助上限額は通常60万円、指定通りでの出店は100万円…</p>
+          <div class="blog-card-meta">
+            <span>2026-04-10</span>
+            <span class="blog-card-read">続きを読む →</span>
+          </div>
+        </div>
+      </a>
+    </article>
+
+    <article class="blog-card" data-tags="設備投資,循環経済,産業廃棄物削減,環境対応,研究開発,大分県">
+      <a href="/blog/2026-04-10-oita-2.html">
+        <div class="blog-card-head">
+          <span class="blog-card-region">大分県</span>
+          <p class="blog-card-amount">2,000万円<small>補助上限</small></p>
+        </div>
+        <div class="blog-card-body">
+          <div class="blog-card-tags">
+            <span class="blog-card-tag">設備投資</span><span class="blog-card-tag">循環経済</span><span class="blog-card-tag">産業廃棄物削減</span>
+          </div>
+          <h2>大分県ものづくり循環経済推進事業費補助金</h2>
+          <p>大分県内の中小企業者が実施する、産業廃棄物の発生抑制・減量化・再生利用に資する設備導入事業及び研究開発事業を支援する補助金。設備導入枠では通常枠1/2・賃上げ枠2/3の補助率で最大2,000万円（発生抑制・減量化・マテリ…</p>
+          <div class="blog-card-meta">
+            <span>2026-04-10</span>
+            <span class="blog-card-read">続きを読む →</span>
+          </div>
+        </div>
+      </a>
+    </article>
+
+    <article class="blog-card" data-tags="災害復旧,資金繰り支援,低利融資,売上減少対策,宮城県">
+      <a href="/blog/2026-04-10-miyagi-5.html">
+        <div class="blog-card-head">
+          <span class="blog-card-region">宮城県</span>
+          <p class="blog-card-amount">5,000万円<small>補助上限</small></p>
+        </div>
+        <div class="blog-card-body">
+          <div class="blog-card-tags">
+            <span class="blog-card-tag">災害復旧</span><span class="blog-card-tag">資金繰り支援</span><span class="blog-card-tag">低利融資</span>
+          </div>
+          <h2>災害復旧対策資金（一般枠）</h2>
+          <p>仙台塩釜港の重油流出事故で売上が10％以上減少した宮城県内中小企業者等に対し、1災害あたり5,000万円を限度として年2.0％以内の低利で運転資金・設備資金を融資する制度。償還期間は10年以内（据置2年以内）で、信用保証…</p>
+          <div class="blog-card-meta">
+            <span>2026-04-10</span>
+            <span class="blog-card-read">続きを読む →</span>
+          </div>
+        </div>
+      </a>
+    </article>
+
+    <article class="blog-card" data-tags="エネルギー支援,料金高騰対策,中小企業支援,三重県">
+      <a href="/blog/2026-04-10-mie-3.html">
+        <div class="blog-card-head">
+          <span class="blog-card-region">三重県</span>
+          <p class="blog-card-amount">公募要領参照</p>
+        </div>
+        <div class="blog-card-body">
+          <div class="blog-card-tags">
+            <span class="blog-card-tag">エネルギー支援</span><span class="blog-card-tag">料金高騰対策</span><span class="blog-card-tag">中小企業支援</span>
+          </div>
+          <h2>工業用LPガス料金高騰対策支援金（第4期）</h2>
+          <p>三重県内に本社又は事業所等を有し、工業用LPガスを契約し、三重県内で利用する中小企業者等を対象に、令和8年1月から3月に納品されたガスの購入量に対して8円/kg（17.464円/㎥、4.248円/L）の支援金を支給する制…</p>
+          <div class="blog-card-meta">
+            <span>2026-04-10</span>
+            <span class="blog-card-read">続きを読む →</span>
+          </div>
+        </div>
+      </a>
+    </article>
+
+    <article class="blog-card" data-tags="研究開発,技術開発,産学連携,新エネルギー,医療機器,バイオテクノロジー,山口県">
+      <a href="/blog/2026-04-10-yamaguchi-4.html">
+        <div class="blog-card-head">
+          <span class="blog-card-region">山口県</span>
+          <p class="blog-card-amount">500万円<small>補助上限</small></p>
+        </div>
+        <div class="blog-card-body">
+          <div class="blog-card-tags">
+            <span class="blog-card-tag">研究開発</span><span class="blog-card-tag">技術開発</span><span class="blog-card-tag">産学連携</span>
+          </div>
+          <h2>やまぐち産業イノベーション加速化補助金［カタパルト］</h2>
+          <p>山口県が環境・エネルギー、医療、バイオ関連分野における県内企業による事業化を促進するため、2者以上による研究開発グループの先導的・先進的な研究開発に対し補助率2/3以内・上限500万円・下限100万円で支援する補助金。事…</p>
+          <div class="blog-card-meta">
+            <span>2026-04-10</span>
+            <span class="blog-card-read">続きを読む →</span>
+          </div>
+        </div>
+      </a>
+    </article>
+
+    <article class="blog-card" data-tags="研究開発,宇宙産業,衛星データ活用,IT導入,産学連携,山口県">
+      <a href="/blog/2026-04-10-yamaguchi-5.html">
+        <div class="blog-card-head">
+          <span class="blog-card-region">山口県</span>
+          <p class="blog-card-amount">1,500万円<small>補助上限</small></p>
+        </div>
+        <div class="blog-card-body">
+          <div class="blog-card-tags">
+            <span class="blog-card-tag">研究開発</span><span class="blog-card-tag">宇宙産業</span><span class="blog-card-tag">衛星データ活用</span>
+          </div>
+          <h2>衛星データ活用ビジネス創出支援事業補助金</h2>
+          <p>山口県が宇宙利用産業分野における県内での衛星データを活用した新事業創出を促進するため、県内中小企業を含む2者以上の研究開発グループによる事業化のための研究開発を支援。補助率2/3、上限1500万円、下限300万円で1年間…</p>
+          <div class="blog-card-meta">
+            <span>2026-04-10</span>
+            <span class="blog-card-read">続きを読む →</span>
+          </div>
+        </div>
+      </a>
+    </article>
+
+    <article class="blog-card" data-tags="制度融資,信用保証,設備投資,運転資金,創業支援,事業承継,DX推進,脱炭素,雇用創出,経営安定,山口県">
+      <a href="/blog/2026-04-10-yamaguchi-6.html">
+        <div class="blog-card-head">
+          <span class="blog-card-region">山口県</span>
+          <p class="blog-card-amount">5億円<small>補助上限</small></p>
+        </div>
+        <div class="blog-card-body">
+          <div class="blog-card-tags">
+            <span class="blog-card-tag">制度融資</span><span class="blog-card-tag">信用保証</span><span class="blog-card-tag">設備投資</span>
+          </div>
+          <h2>山口県中小企業制度融資</h2>
+          <p>山口県内の中小企業者等が事業資金を借り入れる際に、信用保証協会が公的保証人となり融資を円滑化する制度。規模要件は製造業等で資本金3億円以下または従業員300人以下等。固定金利で23の資金メニューを用意。保証料率は0.34…</p>
+          <div class="blog-card-meta">
+            <span>2026-04-10</span>
+            <span class="blog-card-read">続きを読む →</span>
+          </div>
+        </div>
+      </a>
+    </article>
+
+    <article class="blog-card" data-tags="販路拡大,展示会出展,自動車産業,中小企業支援,愛知県">
+      <a href="/blog/2026-04-10-aichi-2.html">
+        <div class="blog-card-head">
+          <span class="blog-card-region">愛知県</span>
+          <p class="blog-card-amount">50万円<small>補助上限</small></p>
+        </div>
+        <div class="blog-card-body">
+          <div class="blog-card-tags">
+            <span class="blog-card-tag">販路拡大</span><span class="blog-card-tag">展示会出展</span><span class="blog-card-tag">自動車産業</span>
+          </div>
+          <h2>中小・中堅自動車サプライヤー販路開拓支援補助金（展示会出展支援補助金）</h2>
+          <p>愛知県内の中小・中堅自動車サプライヤーが、東京ビッグサイトや幕張メッセなどの大規模展示会に出展する際の経費を支援。米国関税措置の影響を受けている企業を対象とし、出展料や施工費、装飾費、運搬費等が補助対象。補助率は2/3以…</p>
+          <div class="blog-card-meta">
+            <span>2026-04-10</span>
+            <span class="blog-card-read">続きを読む →</span>
+          </div>
+        </div>
+      </a>
+    </article>
+
+    <article class="blog-card" data-tags="研究開発,環境・省エネ,DX・デジタル化,産学連携,富山県">
+      <a href="/blog/2026-04-10-toyama-4.html">
+        <div class="blog-card-head">
+          <span class="blog-card-region">富山県</span>
+          <p class="blog-card-amount">100万円<small>補助上限</small></p>
+        </div>
+        <div class="blog-card-body">
+          <div class="blog-card-tags">
+            <span class="blog-card-tag">研究開発</span><span class="blog-card-tag">環境・省エネ</span><span class="blog-card-tag">DX・デジタル化</span>
+          </div>
+          <h2>令和8年度 アルミ産業成長力強化戦略推進事業 アルミバリューチェーン連携強化事業費補助金</h2>
+          <p>富山県内の中小企業を代表企業とする2社以上の研究共同体を対象に、アルミバリューチェーンに関係したプロセス開発や省資源、省エネ、リサイクル等の環境負荷低減技術開発を支援する補助金です。補助率は1/2以内、上限額は100万円…</p>
+          <div class="blog-card-meta">
+            <span>2026-04-10</span>
+            <span class="blog-card-read">続きを読む →</span>
+          </div>
+        </div>
+      </a>
+    </article>
+
+    <article class="blog-card" data-tags="設備投資,循環経済,産業廃棄物削減,環境対応,研究開発,大分県">
+      <a href="/blog/2026-04-10-oita-junkan-keizai.html">
+        <div class="blog-card-head">
+          <span class="blog-card-region">大分県</span>
+          <p class="blog-card-amount">2,000万円<small>補助上限</small></p>
+        </div>
+        <div class="blog-card-body">
+          <div class="blog-card-tags">
+            <span class="blog-card-tag">設備投資</span><span class="blog-card-tag">循環経済</span><span class="blog-card-tag">産業廃棄物削減</span>
+          </div>
+          <h2>大分県ものづくり循環経済推進事業費補助金</h2>
+          <p>大分県内の中小企業者が実施する、産業廃棄物の発生抑制・減量化・再生利用に資する設備導入事業及び研究開発事業を支援する補助金。設備導入枠では通常枠1/2・賃上げ枠2/3の補助率で最大2,000万円（発生抑制・減量化・マテリ…</p>
+          <div class="blog-card-meta">
+            <span>2026-04-10</span>
+            <span class="blog-card-read">続きを読む →</span>
+          </div>
+        </div>
+      </a>
+    </article>
+
+  </div>
+
+  <div class="empty-state" id="empty-state">
+    該当する記事が見つかりませんでした。キーワードやフィルタを変更してお試しください。
   </div>
 
   <a href="/" style="display:inline-block;margin-top:36px;color:#1a3a5c;text-decoration:none;font-weight:600;font-size:14px;">← 補助金情報フィード トップへ戻る</a>
@@ -147,30 +1540,45 @@ footer.site p { margin: 6px 0; }
   var buttons = document.querySelectorAll('.blog-filter');
   var cards = document.querySelectorAll('.blog-card');
   var countEl = document.getElementById('visible-count');
+  var emptyEl = document.getElementById('empty-state');
+  var searchEl = document.getElementById('blog-search-input');
+  var currentFilter = 'all';
+  var currentQuery = '';
 
-  function updateCount() {
+  function applyFilters() {
     var visible = 0;
     cards.forEach(function(card) {
-      if (card.style.display !== 'none') visible++;
+      var tags = (card.dataset.tags || '').toLowerCase();
+      var text = card.textContent.toLowerCase();
+      var matchFilter = (currentFilter === 'all' || tags.indexOf(currentFilter.toLowerCase()) !== -1);
+      var matchQuery = (!currentQuery || text.indexOf(currentQuery) !== -1 || tags.indexOf(currentQuery) !== -1);
+      if (matchFilter && matchQuery) {
+        card.style.display = '';
+        visible++;
+      } else {
+        card.style.display = 'none';
+      }
     });
     countEl.textContent = visible;
+    if (visible === 0) {
+      emptyEl.classList.add('visible');
+    } else {
+      emptyEl.classList.remove('visible');
+    }
   }
 
   buttons.forEach(function(btn) {
     btn.addEventListener('click', function() {
-      var filter = btn.dataset.filter;
       buttons.forEach(function(b) { b.classList.remove('active'); });
       btn.classList.add('active');
-      cards.forEach(function(card) {
-        var tags = card.dataset.tags || '';
-        if (filter === 'all' || tags.indexOf(filter) !== -1) {
-          card.style.display = '';
-        } else {
-          card.style.display = 'none';
-        }
-      });
-      updateCount();
+      currentFilter = btn.dataset.filter;
+      applyFilters();
     });
+  });
+
+  searchEl.addEventListener('input', function() {
+    currentQuery = searchEl.value.trim().toLowerCase();
+    applyFilters();
   });
 })();
 </script>
