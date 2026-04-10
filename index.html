@@ -95,6 +95,70 @@ footer.site p { margin: 6px 0; }
   .cta-button { padding: 16px 32px; font-size: 15px; }
   th, td { padding: 10px 8px; font-size: 13px; }
 }
+@media (max-width: 600px) {
+  .new-section { padding: 18px 14px; }
+  .new-section .table-wrap,
+  .pref-block .table-wrap { overflow-x: visible; }
+  .new-section table,
+  .pref-block table { display: block; width: 100%; }
+  .new-section thead,
+  .pref-block thead { display: none; }
+  .new-section tbody,
+  .pref-block tbody { display: block; }
+  .new-section tbody tr,
+  .pref-block tbody tr {
+    display: block;
+    background: white;
+    border: 1px solid #e4e9ef;
+    border-radius: 8px;
+    padding: 12px 14px;
+    margin-bottom: 10px;
+  }
+  .new-section tbody tr:hover,
+  .pref-block tbody tr:hover { background: white; }
+  .new-section tbody td,
+  .pref-block tbody td {
+    display: block;
+    padding: 0;
+    border: none;
+    text-align: left;
+    font-size: 14px;
+    line-height: 1.65;
+    white-space: normal;
+    color: #1a3a5c;
+  }
+  .new-section tbody td.pref {
+    display: inline-block;
+    background: #eaf0f7;
+    color: #1a3a5c;
+    font-size: 11px;
+    font-weight: 700;
+    padding: 3px 10px;
+    border-radius: 10px;
+    margin: 0 0 8px;
+    white-space: nowrap;
+    text-align: center;
+  }
+  .new-section tbody td.date {
+    display: block;
+    font-size: 11px;
+    color: #888;
+    margin-top: 8px;
+    text-align: left;
+  }
+  .new-section tbody td.date::before { content: "公募終了："; }
+  .pref-block tbody td.date {
+    display: inline-block;
+    font-size: 11px;
+    color: #888;
+    margin: 6px 14px 0 0;
+    text-align: left;
+  }
+  .pref-block tbody td.date:nth-of-type(2)::before { content: "開始："; }
+  .pref-block tbody td.date:nth-of-type(3)::before { content: "終了："; }
+  .pref-block summary { padding: 14px 16px; }
+  .pref-name { font-size: 14px; }
+}
 
 /* ========= 無料ダウンロードセクション ========= */
 .download-section { background: white; padding: 36px 32px; border-radius: 10px; box-shadow: 0 2px 8px rgba(26,58,92,0.08); }
