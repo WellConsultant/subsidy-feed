@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>補助金解説記事一覧｜補助金情報フィード</title>
+<meta name="description" content="全国の補助金・助成金を公募要領ベースでわかりやすく解説した記事一覧。設備投資・人材育成・研究開発・DX推進など、カテゴリ別に読める解説記事を公開しています。">
+<link rel="canonical" href="https://hojokin.well-c.biz/blog/">
+<style>
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body { font-family: -apple-system, BlinkMacSystemFont, "Hiragino Sans", "Yu Gothic UI", sans-serif; margin: 0; background: #f5f7fa; color: #1a1a1a; line-height: 1.7; }
+a { color: #1a3a5c; }
+.container { max-width: 1100px; margin: 0 auto; padding: 0 20px; }
+
+nav.site-nav { background: #1a3a5c; padding: 14px 0; }
+.nav-inner { display: flex; align-items: center; justify-content: space-between; }
+.nav-logo { color: white; text-decoration: none; font-weight: 700; font-size: 15px; }
+.nav-links { list-style: none; display: flex; gap: 24px; padding: 0; margin: 0; align-items: center; text-align: left; }
+.nav-links li { margin: 0; }
+.nav-links a { color: rgba(255,255,255,0.85); text-decoration: none; font-size: 14px; padding: 8px 0; transition: color 0.2s; }
+.nav-links a:hover { color: white; }
+.nav-cta { background: #d35400; color: white !important; padding: 10px 18px !important; border-radius: 6px; font-weight: 600; transition: background 0.2s; }
+.nav-cta:hover { background: #b34700; }
+
+header.page-head { background: linear-gradient(135deg, #1a3a5c 0%, #2c5282 100%); color: white; padding: 56px 0 44px; }
+header.page-head h1 { margin: 0 0 12px; font-size: 28px; font-weight: 700; letter-spacing: 0.02em; }
+header.page-head p { margin: 0; opacity: 0.9; font-size: 15px; line-height: 1.85; max-width: 760px; }
+
+main.container { padding-top: 40px; padding-bottom: 60px; }
+
+.blog-filters { display: flex; flex-wrap: wrap; gap: 10px; margin: 0 0 28px; }
+.blog-filter { background: white; border: 1px solid #e4e9ef; color: #1a3a5c; font-size: 13px; font-weight: 600; padding: 8px 16px; border-radius: 999px; cursor: pointer; transition: all 0.2s; }
+.blog-filter:hover { background: #f0f4f8; }
+.blog-filter.active { background: #1a3a5c; color: white; border-color: #1a3a5c; }
+
+.blog-count { font-size: 13px; color: #666; margin: 0 0 20px; text-align: left; }
+
+.blog-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(320px, 1fr)); gap: 24px; }
+.blog-card { background: white; border-radius: 10px; overflow: hidden; box-shadow: 0 2px 10px rgba(26,58,92,0.06); transition: transform 0.2s, box-shadow 0.2s; display: flex; flex-direction: column; }
+.blog-card:hover { transform: translateY(-3px); box-shadow: 0 8px 20px rgba(26,58,92,0.12); }
+.blog-card a { text-decoration: none; color: #1a1a1a; display: flex; flex-direction: column; height: 100%; }
+.blog-card-head { background: linear-gradient(135deg, #1a3a5c 0%, #2c5282 100%); color: white; padding: 20px 22px; }
+.blog-card-region { display: inline-block; background: rgba(255,255,255,0.18); font-size: 11px; font-weight: 700; padding: 4px 10px; border-radius: 999px; letter-spacing: 0.04em; margin-bottom: 10px; }
+.blog-card-amount { font-size: 20px; font-weight: 700; margin: 0; }
+.blog-card-amount small { font-size: 12px; opacity: 0.85; font-weight: 500; display: block; margin-top: 2px; }
+.blog-card-body { padding: 20px 22px; flex: 1; display: flex; flex-direction: column; }
+.blog-card-body h2 { font-size: 16px; line-height: 1.55; margin: 0 0 10px; color: #1a3a5c; font-weight: 700; text-align: left; }
+.blog-card-body p { font-size: 13px; line-height: 1.85; color: #555; margin: 0 0 14px; text-align: left; flex: 1; }
+.blog-card-meta { display: flex; justify-content: space-between; align-items: center; font-size: 11px; color: #888; border-top: 1px solid #eef1f5; padding-top: 12px; }
+.blog-card-tags { display: flex; gap: 6px; flex-wrap: wrap; margin-bottom: 10px; }
+.blog-card-tag { background: #f5f7fa; color: #1a3a5c; font-size: 10px; font-weight: 600; padding: 3px 8px; border-radius: 4px; }
+.blog-card-read { color: #d35400; font-weight: 700; }
+
+.empty-state { background: white; border-radius: 10px; padding: 60px 30px; text-align: center; color: #888; font-size: 14px; }
+
+footer.site { background: #1a3a5c; color: rgba(255,255,255,0.85); padding: 28px 0; text-align: center; font-size: 13px; }
+footer.site p { margin: 6px 0; }
+
+@media (max-width: 600px) {
+  header.page-head { padding: 36px 0 28px; }
+  header.page-head h1 { font-size: 22px; }
+  header.page-head p { font-size: 13px; }
+  .blog-grid { grid-template-columns: 1fr; gap: 16px; }
+  .nav-inner { flex-wrap: wrap; gap: 12px; justify-content: center; }
+  .nav-logo { flex-basis: 100%; text-align: center; }
+  .nav-links { gap: 14px; flex-wrap: wrap; justify-content: center; }
+}
+</style>
+</head>
+<body>
+
+<nav class="site-nav">
+  <div class="container nav-inner">
+    <a class="nav-logo" href="/">補助金情報フィード</a>
+    <ul class="nav-links">
+      <li><a href="/">トップ</a></li>
+      <li><a href="/blog/">解説記事</a></li>
+      <li><a href="/archive/">アーカイブ</a></li>
+      <li><a href="https://www.funnel-build.com/" target="_blank" rel="noopener">運営会社</a></li>
+      <li><a class="nav-cta" href="https://www.funnel-build.com/hojokin-contact-legacy2" target="_blank" rel="noopener">お問い合わせ</a></li>
+    </ul>
+  </div>
+</nav>
+
+<header class="page-head">
+  <div class="container">
+    <h1>補助金解説記事</h1>
+    <p>公募要領ベースで、中小企業経営者・士業・コンサルタントの方向けに補助金の概要・対象・金額・申請方法をわかりやすく解説した記事一覧です。</p>
+  </div>
+</header>
+
+<main class="container">
+
+  <div class="blog-filters">
+    <button class="blog-filter active" data-filter="all">すべて</button>
+    <button class="blog-filter" data-filter="設備投資">設備投資</button>
+    <button class="blog-filter" data-filter="研究開発">研究開発</button>
+    <button class="blog-filter" data-filter="人材育成">人材育成</button>
+    <button class="blog-filter" data-filter="DX">DX・デジタル</button>
+    <button class="blog-filter" data-filter="環境対応">環境対応</button>
+    <button class="blog-filter" data-filter="創業">創業</button>
+  </div>
+
+  <p class="blog-count"><span id="visible-count">1</span>件の解説記事</p>
+
+  <div class="blog-grid" id="blog-grid">
+
+    <article class="blog-card" data-tags="設備投資,循環経済,産業廃棄物削減,環境対応,研究開発,大分県">
+      <a href="/blog/2026-04-10-oita-junkan-keizai.html">
+        <div class="blog-card-head">
+          <span class="blog-card-region">大分県</span>
+          <p class="blog-card-amount">最大2,000万円<small>設備導入枠（賃上げ枠）</small></p>
+        </div>
+        <div class="blog-card-body">
+          <div class="blog-card-tags">
+            <span class="blog-card-tag">設備投資</span>
+            <span class="blog-card-tag">環境対応</span>
+            <span class="blog-card-tag">研究開発</span>
+          </div>
+          <h2>大分県ものづくり循環経済推進事業費補助金（令和8年度）</h2>
+          <p>産業廃棄物の発生抑制・減量化・再生利用に資する設備導入や研究開発を支援。補助率は最大2/3、上限2,000万円の大型補助制度です。申請期限は令和8年5月13日。</p>
+          <div class="blog-card-meta">
+            <span>2026-04-10</span>
+            <span class="blog-card-read">続きを読む →</span>
+          </div>
+        </div>
+      </a>
+    </article>
+
+  </div>
+
+  <a href="/" style="display:inline-block;margin-top:36px;color:#1a3a5c;text-decoration:none;font-weight:600;font-size:14px;">← 補助金情報フィード トップへ戻る</a>
+
+</main>
+
+<footer class="site">
+  <div class="container">
+    <p>本サイトは公的機関が公開している補助金情報を自動収集しています。</p>
+    <p>最新・正確な情報は必ず各補助金の公式ページでご確認ください。</p>
+    <p>&copy; Well Consultant</p>
+  </div>
+</footer>
+
+<script>
+(function() {
+  var buttons = document.querySelectorAll('.blog-filter');
+  var cards = document.querySelectorAll('.blog-card');
+  var countEl = document.getElementById('visible-count');
+
+  function updateCount() {
+    var visible = 0;
+    cards.forEach(function(card) {
+      if (card.style.display !== 'none') visible++;
+    });
+    countEl.textContent = visible;
+  }
+
+  buttons.forEach(function(btn) {
+    btn.addEventListener('click', function() {
+      var filter = btn.dataset.filter;
+      buttons.forEach(function(b) { b.classList.remove('active'); });
+      btn.classList.add('active');
+      cards.forEach(function(card) {
+        var tags = card.dataset.tags || '';
+        if (filter === 'all' || tags.indexOf(filter) !== -1) {
+          card.style.display = '';
+        } else {
+          card.style.display = 'none';
+        }
+      });
+      updateCount();
+    });
+  });
+})();
+</script>
+
+</body>
+</html>

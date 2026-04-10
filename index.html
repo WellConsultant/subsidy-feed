@@ -133,6 +133,25 @@ footer.site p { margin: 6px 0; }
 .partner-btn:hover { background: #0f2640; }
 .partner-bottom { margin: 24px 0 0; padding: 16px 20px; background: #f5f7fa; border-radius: 6px; font-size: 13px; line-height: 1.8; color: #555; text-align: left; }
 
+/* 解説記事セクション（トップページ） */
+.blog-section { background: white; padding: 36px 32px; border-radius: 10px; box-shadow: 0 2px 8px rgba(26,58,92,0.08); }
+.blog-section .section-title { margin-top: 0; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 12px; }
+.blog-section-more { font-size: 13px; color: #d35400; font-weight: 700; text-decoration: none; }
+.blog-section-more:hover { text-decoration: underline; }
+.blog-section-note { font-size: 13px; color: #666; margin: 0 0 24px; text-align: left; }
+.blog-top-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 20px; }
+.blog-top-card { background: white; border: 1px solid #e4e9ef; border-radius: 8px; overflow: hidden; transition: transform 0.2s, box-shadow 0.2s, border-color 0.2s; display: flex; flex-direction: column; }
+.blog-top-card:hover { transform: translateY(-3px); box-shadow: 0 8px 20px rgba(26,58,92,0.12); border-color: #d35400; }
+.blog-top-card a { text-decoration: none; color: #1a1a1a; display: flex; flex-direction: column; height: 100%; }
+.blog-top-card-head { background: linear-gradient(135deg, #1a3a5c 0%, #2c5282 100%); color: white; padding: 16px 18px; }
+.blog-top-card-region { display: inline-block; background: rgba(255,255,255,0.18); font-size: 10px; font-weight: 700; padding: 3px 9px; border-radius: 999px; letter-spacing: 0.04em; margin-bottom: 8px; }
+.blog-top-card-amount { font-size: 17px; font-weight: 700; margin: 0; line-height: 1.4; }
+.blog-top-card-amount small { font-size: 11px; opacity: 0.85; font-weight: 500; display: block; margin-top: 2px; }
+.blog-top-card-body { padding: 16px 18px; flex: 1; display: flex; flex-direction: column; }
+.blog-top-card-body h3 { font-size: 14px; line-height: 1.55; margin: 0 0 8px; color: #1a3a5c; font-weight: 700; text-align: left; }
+.blog-top-card-body p { font-size: 12px; line-height: 1.8; color: #555; margin: 0 0 12px; text-align: left; flex: 1; }
+.blog-top-card-read { font-size: 11px; color: #d35400; font-weight: 700; text-align: right; }
+
 /* ヘッダー内レイアウト（左テキスト+右バナー） */
 .header-inner { display: flex; gap: 32px; align-items: flex-start; justify-content: space-between; }
 .header-text { flex: 1; min-width: 0; }
@@ -161,14 +180,17 @@ footer.site p { margin: 6px 0; }
   .partner-grid { grid-template-columns: 1fr; gap: 16px; }
   .header-inner { flex-direction: column; gap: 24px; }
   .header-manual { flex: 0 0 auto; width: 100%; max-width: 320px; }
+  .blog-top-grid { grid-template-columns: repeat(2, 1fr); }
 }
 @media (max-width: 600px) {
-  .download-section, .partner-section { padding: 24px 20px; }
+  .download-section, .partner-section, .blog-section { padding: 24px 20px; }
   .download-grid { grid-template-columns: 1fr; gap: 16px; }
   .download-card { padding: 20px 18px; }
   .partner-card { padding: 22px 20px; }
   .floating-manual { width: 130px; right: 12px; bottom: 12px; padding: 10px; }
   .floating-manual-title { font-size: 10px; }
+  .blog-top-grid { grid-template-columns: 1fr; gap: 14px; }
+  .blog-section .section-title { flex-direction: column; align-items: flex-start; }
 }
 </style>
 </head>
@@ -178,6 +200,8 @@ footer.site p { margin: 6px 0; }
     <a class="nav-logo" href="/">補助金情報フィード</a>
     <ul class="nav-links">
       <li><a href="/">トップ</a></li>
+      <li><a href="/blog/">解説記事</a></li>
+      <li><a href="/#download">無料ダウンロード</a></li>
       <li><a href="/archive/">アーカイブ</a></li>
       <li><a href="https://www.funnel-build.com/" target="_blank" rel="noopener">運営会社</a></li>
       <li><a class="nav-cta" href="https://www.funnel-build.com/hojokin-contact-legacy2" target="_blank" rel="noopener">お問い合わせ</a></li>
@@ -260,6 +284,31 @@ footer.site p { margin: 6px 0; }
 <tr><td class="pref">埼玉県</td><td>デジタル技術活用新ビジネス・新サービス開発補助金</td><td class="date">2033-05-29</td></tr>
 </tbody>
     </table>
+  </div>
+</section>
+
+<section class="section blog-section" id="blog-latest">
+  <h2 class="section-title">
+    <span>詳しく解説した記事 <span class="badge">1件</span></span>
+    <a class="blog-section-more" href="/blog/">すべての記事を見る →</a>
+  </h2>
+  <p class="blog-section-note">公募要領をベースに、補助金の概要・対象・金額・申請方法をわかりやすく解説しています。中小企業経営者・士業・コンサルタントの方の情報収集にご活用ください。</p>
+  <div class="blog-top-grid">
+
+    <article class="blog-top-card">
+      <a href="/blog/2026-04-10-oita-junkan-keizai.html">
+        <div class="blog-top-card-head">
+          <span class="blog-top-card-region">大分県</span>
+          <p class="blog-top-card-amount">最大2,000万円<small>設備導入枠（賃上げ枠）</small></p>
+        </div>
+        <div class="blog-top-card-body">
+          <h3>大分県ものづくり循環経済推進事業費補助金（令和8年度）</h3>
+          <p>産業廃棄物の発生抑制・減量化・再生利用に資する設備導入や研究開発を支援。補助率は最大2/3、上限2,000万円の大型補助制度です。</p>
+          <p class="blog-top-card-read">続きを読む →</p>
+        </div>
+      </a>
+    </article>
+
   </div>
 </section>
 
