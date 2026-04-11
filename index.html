@@ -195,19 +195,19 @@ footer.site .footer-company a { color: #7bb3ff; }
 .shindan-cta { display: flex; justify-content: center; margin-top: 24px; }
 .shindan-btn { display: inline-block; padding: 16px 40px; background: #1a3a5c; color: white; border: none; border-radius: 8px; font-size: 16px; font-weight: 700; cursor: pointer; transition: background 0.2s; }
 .shindan-btn:hover { background: #2a4a6c; }
-/* Typeformポップアップの閉じる×に「閉じる」ラベルを添える */
-.tf-v1-close { position: relative !important; }
+/* Typeformポップアップの閉じる×（左下）の右側に「閉じる」ラベルを添える */
+.tf-v1-close { position: relative !important; overflow: visible !important; }
 .tf-v1-close::after {
   content: "閉じる";
   position: absolute;
-  right: calc(100% + 8px);
+  left: calc(100% + 6px);
   top: 50%;
   transform: translateY(-50%);
-  font-size: 12px;
+  font-size: 11px;
   font-weight: 700;
   color: #fff;
-  background: rgba(20,30,50,0.85);
-  padding: 5px 10px;
+  background: rgba(20,30,50,0.9);
+  padding: 4px 9px;
   border-radius: 4px;
   white-space: nowrap;
   pointer-events: none;
