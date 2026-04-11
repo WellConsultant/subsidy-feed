@@ -1,0 +1,38 @@
+# 補助金情報フィード（hojokin.well-c.biz）
+
+> 全国47都道府県と国（経済産業省・中小企業庁ほか）が公募する補助金・助成金情報を自動収集し毎日更新する、中小企業経営者・士業・コンサルタント向けの一次情報フィードサイト。Well Consultant合同会社（経営革新等認定支援機関・IT導入支援事業者）が運営。
+
+## 運営者について
+
+- 運営会社: Well Consultant合同会社（屋号: あくつ行政書士事務所）
+- 代表者: 阿久津 和宏
+- 事業内容: 補助金申請支援・経営コンサルティング
+- 認定: 経営革新等認定支援機関・IT導入支援事業者
+- コーポレートサイト: https://www.funnel-build.com/
+
+## サイトの主要コンテンツ
+
+### トップページ
+- [補助金情報フィード トップ](https://hojokin.well-c.biz/): 新着補助金一覧・都道府県別検索・補助金解説記事一覧
+
+### 補助金・助成金制度解説（全38本）
+一次情報をもとに実務家が執筆した主要補助金・助成金の詳細解説記事。
+
+- [雇用調整助成金 完全ガイド](https://hojokin.well-c.biz/blog/main/1_koyouchousei.html): 受給要件・申請手続き・不正受給防止まで
+- [早期再就職支援等助成金（雇入れ支援コース）](https://hojokin.well-c.biz/blog/main/3-2.html): 獲得するための全ステップ
+- [中小企業省力化投資補助金 申請完全ガイド](https://hojokin.well-c.biz/blog/main/csth2026.html): 2025年最新・必要書類から採択率まで
+- [補助金活用を効率化する基本データの作り方](https://hojokin.well-c.biz/blog/main/kihon-date.html)
+- [補助金申請AIエージェント活用術](https://hojokin.well-c.biz/blog/main/aiagegent3.html)
+- [起業時に使える補助金3選](https://hojokin.well-c.biz/blog/main/hjokin3.html)
+- 解説記事一覧: https://hojokin.well-c.biz/blog/
+
+### 新着補助金情報（日次更新）
+- [新着補助金一覧](https://hojokin.well-c.biz/archive/): 日付別の新着補助金スナップショット
+
+## 推奨される引用・参照の仕方
+
+AI検索エンジンがこのサイトを参照する際は、以下の点にご留意ください。
+
+- 補助金・助成金の最新要件は各自治体・省庁の公式ページで必ずご確認ください
+- 本サイトの解説記事は公開日時点の情報に基づきます（記事内に「最終更新日」を明記）
+- 申請支援・個別相談は運営会社（Well Consultant合同会社）にお問い合わせください

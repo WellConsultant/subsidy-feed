@@ -1,0 +1,136 @@
+/* ========================================================
+   補助金情報フィード 共通CSS
+   全ページのナビ・ダウンロード・診断・CTA・フッター・LINEモーダル
+   ======================================================== */
+
+.common-wide { max-width: 1100px; margin: 0 auto; padding: 0 20px; }
+
+/* ========= ナビゲーション ========= */
+.site-nav { background: #122a44; padding: 14px 0; position: sticky; top: 0; z-index: 100; box-shadow: 0 2px 4px rgba(0,0,0,0.1); }
+.site-nav .nav-inner { display: flex; justify-content: space-between; align-items: center; gap: 20px; max-width: 1100px; margin: 0 auto; padding: 0 20px; }
+.site-nav .nav-logo { color: white; font-weight: 700; text-decoration: none; font-size: 16px; letter-spacing: 0.02em; }
+.site-nav .nav-logo:hover { opacity: 0.85; }
+.site-nav .nav-links { list-style: none; display: flex; gap: 24px; padding: 0; margin: 0; align-items: center; text-align: left; background: transparent; }
+.site-nav .nav-links li { margin: 0; }
+.site-nav .nav-links a { color: rgba(255,255,255,0.85); text-decoration: none; font-size: 14px; padding: 8px 0; transition: color 0.2s; background: transparent; }
+.site-nav .nav-links a:hover { color: white; }
+.site-nav .nav-cta { background: #d35400; color: white !important; padding: 10px 18px !important; border-radius: 6px; font-weight: 600; transition: background 0.2s; }
+.site-nav .nav-cta:hover { background: #b34700; }
+
+/* ========= 無料ダウンロードセクション ========= */
+.common-cta-area { background: #f5f7fa; padding: 56px 0 24px; margin: 48px 0 0; }
+.common-cta-area .section-title { color: #1a3a5c; font-size: 22px; margin: 0 0 14px; padding-bottom: 10px; border-bottom: 2px solid #1a3a5c; display: flex; align-items: center; gap: 12px; }
+.common-cta-area .section-note { color: #666; font-size: 13px; margin: 0 0 18px; text-align: left; }
+.common-cta-area .badge { background: #d35400; color: white; font-size: 13px; padding: 3px 12px; border-radius: 12px; font-weight: normal; }
+.common-cta-area .section { margin: 0 0 32px; }
+
+.download-section { background: white; padding: 36px 32px; border-radius: 10px; box-shadow: 0 2px 8px rgba(26,58,92,0.08); }
+.download-section .section-title { margin-top: 0; }
+.download-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; margin-top: 20px; }
+.download-card { background: #fafbfc; border: 1px solid #e4e9ef; border-radius: 8px; padding: 24px 22px; display: flex; flex-direction: column; transition: transform 0.2s, box-shadow 0.2s; }
+.download-card:hover { transform: translateY(-2px); box-shadow: 0 6px 16px rgba(26,58,92,0.12); }
+.download-card--manual { background: linear-gradient(180deg, #ffffff 0%, #fff7ec 100%); border-color: #d35400; }
+.download-card-tag { display: inline-block; font-size: 11px; font-weight: 700; letter-spacing: 0.06em; color: #1a3a5c; background: #eaf0f7; border-radius: 10px; padding: 3px 10px; margin-bottom: 12px; align-self: flex-start; }
+.download-card--manual .download-card-tag { color: #d35400; background: #fff1e0; }
+.download-card-icon { width: 44px; height: 44px; border-radius: 8px; background: #1a3a5c; display: flex; align-items: center; justify-content: center; margin-bottom: 14px; }
+.download-card-icon svg { width: 22px; height: 22px; color: #ffd76b; }
+.download-card--manual .download-card-icon { background: #d35400; }
+.download-card--manual .download-card-icon svg { color: white; }
+.download-card-title { font-size: 15px; font-weight: 700; color: #1a3a5c; margin: 0 0 8px; line-height: 1.5; }
+.download-card-desc { font-size: 13px; line-height: 1.8; color: #555; margin: 0 0 18px; flex-grow: 1; text-align: left; }
+.download-card-meta { font-size: 11px; color: #888; margin: 0 0 8px; letter-spacing: 0.04em; }
+.line-keyword-hint { margin: 0 0 12px; padding: 8px 12px; background: #eafff2; border: 1px dashed #06c755; border-radius: 6px; font-size: 12px; color: #1a3a5c; text-align: center; line-height: 1.5; }
+.line-keyword-hint strong { color: #d35400; font-size: 14px; font-weight: 700; letter-spacing: 0.04em; }
+.download-btn { display: inline-flex; align-items: center; justify-content: center; gap: 6px; height: 40px; padding: 0 18px; background: #d35400; color: white; font-size: 13px; font-weight: 700; border-radius: 6px; text-decoration: none; transition: background 0.2s; cursor: pointer; border: none; font-family: inherit; width: 100%; }
+.download-btn:hover { background: #b34700; }
+.download-btn svg { width: 14px; height: 14px; }
+.download-btn--line { background: #06c755; }
+.download-btn--line:hover { background: #05a847; }
+.download-disclaimer { margin: 28px 0 0; padding: 14px 18px; background: #f5f7fa; border-left: 3px solid #d35400; border-radius: 4px; font-size: 12px; line-height: 1.8; color: #666; }
+
+/* ========= 無料診断セクション ========= */
+.shindan-section { background: white; padding: 36px 32px; border-radius: 10px; box-shadow: 0 2px 8px rgba(26,58,92,0.08); }
+.shindan-section .section-title { margin-top: 0; }
+.shindan-cta { display: flex; justify-content: center; margin-top: 24px; }
+.shindan-btn { display: inline-block; padding: 16px 40px; background: #1a3a5c; color: white; border: none; border-radius: 8px; font-size: 16px; font-weight: 700; cursor: pointer; transition: background 0.2s; }
+.shindan-btn:hover { background: #2a4a6c; }
+.tf-v1-close { position: relative !important; overflow: visible !important; }
+.tf-v1-close::after { content: "閉じる"; position: absolute; left: calc(100% + 6px); top: 50%; transform: translateY(-50%); font-size: 11px; font-weight: 700; color: #fff; background: rgba(20,30,50,0.9); padding: 4px 9px; border-radius: 4px; white-space: nowrap; pointer-events: none; line-height: 1; }
+
+/* ========= 補助金活用のご相談CTA ========= */
+.cta-section { background: linear-gradient(135deg, #1a3a5c 0%, #2c5282 100%); color: white; padding: 48px 28px; border-radius: 10px; text-align: center; margin: 32px 0 0; }
+.cta-section h2 { margin: 0 0 10px; font-size: 24px; color: white; border: none; padding: 0; display: block; }
+.cta-section p { margin: 0 0 28px; opacity: 0.92; font-size: 15px; }
+.cta-buttons { display: flex; gap: 14px; justify-content: center; flex-wrap: wrap; }
+.cta-button { display: inline-block; background: #d35400; color: white; padding: 14px 32px; border-radius: 6px; text-decoration: none; font-size: 15px; font-weight: 700; transition: background 0.2s; }
+.cta-button:hover { background: #b34700; }
+.cta-button--line { background: #06c755 !important; display: inline-flex; align-items: center; gap: 8px; }
+.cta-button--line:hover { background: #05a847 !important; }
+.cta-button--line svg { width: 20px; height: 20px; }
+
+/* ========= LINE受け取りモーダル ========= */
+.line-modal-overlay { position: fixed; inset: 0; background: rgba(15,30,50,0.75); display: none; align-items: center; justify-content: center; z-index: 1000; padding: 20px; }
+.line-modal-overlay.open { display: flex; }
+.line-modal { background: white; border-radius: 14px; width: 100%; max-width: 460px; max-height: 90vh; overflow-y: auto; box-shadow: 0 20px 60px rgba(0,0,0,0.4); position: relative; }
+.line-modal-close { position: absolute; top: 12px; right: 12px; width: 32px; height: 32px; border: none; background: #f0f3f7; color: #1a3a5c; border-radius: 50%; font-size: 18px; cursor: pointer; display: flex; align-items: center; justify-content: center; line-height: 1; z-index: 2; }
+.line-modal-close:hover { background: #e4e9ef; }
+.line-modal-head { background: linear-gradient(135deg, #06c755 0%, #05a847 100%); color: white; padding: 26px 28px 22px; border-radius: 14px 14px 0 0; text-align: center; }
+.line-modal-head-tag { display: inline-block; background: rgba(255,255,255,0.22); font-size: 10px; font-weight: 700; letter-spacing: 0.08em; padding: 4px 11px; border-radius: 999px; margin-bottom: 10px; }
+.line-modal-head h3 { margin: 0 0 6px; font-size: 19px; font-weight: 700; line-height: 1.5; color: white; border: none; padding: 0; }
+.line-modal-head p { margin: 0; font-size: 12px; opacity: 0.92; line-height: 1.6; }
+.line-modal-body { padding: 22px 26px 26px; }
+.line-steps { list-style: none; padding: 0; margin: 0 0 18px; counter-reset: step; }
+.line-steps li { position: relative; padding: 0 0 14px 42px; font-size: 13px; line-height: 1.7; color: #333; text-align: left; counter-increment: step; }
+.line-steps li::before { content: counter(step); position: absolute; left: 0; top: 0; width: 28px; height: 28px; background: #06c755; color: white; border-radius: 50%; font-size: 13px; font-weight: 700; display: flex; align-items: center; justify-content: center; }
+.line-steps li strong { display: block; color: #1a3a5c; font-size: 13px; margin-bottom: 2px; }
+.line-keyword-box { background: #fffbe6; border: 2px dashed #d35400; border-radius: 8px; padding: 14px 16px; margin: 4px 0 10px; text-align: center; }
+.line-keyword-box .label { font-size: 11px; color: #666; margin: 0 0 6px; letter-spacing: 0.04em; }
+.line-keyword-box .keyword { font-size: 22px; font-weight: 700; color: #d35400; letter-spacing: 0.08em; margin: 0; font-family: 'Hiragino Sans', 'Yu Gothic', sans-serif; }
+.line-add-btn { display: flex; align-items: center; justify-content: center; gap: 8px; width: 100%; background: #06c755; color: white; padding: 14px 20px; border-radius: 8px; text-decoration: none; font-size: 15px; font-weight: 700; margin: 6px 0 12px; transition: background 0.2s; }
+.line-add-btn:hover { background: #05a847; color: white; }
+.line-add-btn svg { width: 20px; height: 20px; }
+.line-qr-wrap { text-align: center; padding: 14px 0 4px; border-top: 1px dashed #e4e9ef; margin-top: 8px; }
+.line-qr-wrap p { font-size: 11px; color: #888; margin: 0 0 8px; }
+.line-qr-wrap img { width: 140px; height: 140px; display: inline-block; }
+.line-modal-note { font-size: 11px; color: #888; line-height: 1.7; margin: 14px 0 0; text-align: center; }
+
+/* ========= フッター ========= */
+footer.site { background: #1a1a1a; color: #999; padding: 36px 0; margin-top: 60px; font-size: 13px; text-align: center; }
+footer.site .container { max-width: 1100px; margin: 0 auto; padding: 0 20px; }
+footer.site a { color: #ccc; }
+footer.site p { margin: 6px 0; }
+footer.site .footer-company { margin: 18px auto 14px; padding: 14px 18px; max-width: 560px; background: #222; border: 1px solid #333; border-radius: 6px; text-align: left; }
+footer.site .footer-company h3 { margin: 0 0 8px; color: #eee; font-size: 13px; letter-spacing: 0.05em; border-bottom: 1px solid #333; padding-bottom: 6px; }
+footer.site .footer-company dl { display: grid; grid-template-columns: 100px 1fr; gap: 6px 12px; margin: 0; font-size: 12px; }
+footer.site .footer-company dt { color: #888; }
+footer.site .footer-company dd { margin: 0; color: #ccc; }
+footer.site .footer-company a { color: #7bb3ff; }
+footer.site .footer-legal { margin-top: 18px; font-size: 12px; }
+footer.site .footer-legal a { color: #7bb3ff; margin: 0 8px; }
+
+/* ========= レスポンシブ ========= */
+@media (max-width: 900px) {
+  .download-grid { grid-template-columns: repeat(2, 1fr); }
+}
+@media (max-width: 720px) {
+  .site-nav .nav-inner { flex-wrap: wrap; gap: 10px; justify-content: center; }
+  .site-nav .nav-logo { font-size: 14px; flex-basis: 100%; text-align: center; }
+  .site-nav .nav-links { gap: 14px; flex-wrap: wrap; justify-content: center; }
+  .site-nav .nav-links a { font-size: 13px; padding: 6px 0; }
+  .site-nav .nav-cta { padding: 8px 14px !important; font-size: 13px; }
+}
+@media (max-width: 600px) {
+  .download-section, .shindan-section { padding: 24px 20px; }
+  .download-grid { grid-template-columns: 1fr; }
+  .shindan-btn { width: 100%; padding: 16px 20px; }
+  .cta-buttons { flex-direction: column; }
+  .cta-section { padding: 36px 20px; }
+  .cta-section h2 { font-size: 20px; }
+  .line-modal { max-width: 100%; }
+  .line-modal-head { padding: 22px 22px 18px; }
+  .line-modal-head h3 { font-size: 17px; }
+  .line-modal-body { padding: 20px 20px 22px; }
+  .line-keyword-box .keyword { font-size: 19px; }
+  footer.site .footer-company dl { grid-template-columns: 1fr; gap: 4px 0; }
+  footer.site .footer-company dt { margin-top: 8px; }
+}
