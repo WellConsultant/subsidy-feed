@@ -190,7 +190,14 @@ footer.site .footer-company a { color: #7bb3ff; }
 .cta-button--line { background: #06c755 !important; display: inline-flex; align-items: center; gap: 8px; }
 .cta-button--line:hover { background: #05a847 !important; }
 .cta-button--line svg { width: 20px; height: 20px; }
+.shindan-section { background: white; padding: 36px 32px; border-radius: 10px; box-shadow: 0 2px 8px rgba(26,58,92,0.08); }
+.shindan-section .section-title { margin-top: 0; }
+.shindan-cta { display: flex; justify-content: center; margin-top: 24px; }
+.shindan-btn { display: inline-block; padding: 16px 40px; background: #1a3a5c; color: white; border: none; border-radius: 8px; font-size: 16px; font-weight: 700; cursor: pointer; transition: background 0.2s; }
+.shindan-btn:hover { background: #2a4a6c; }
 @media (max-width: 600px) {
+  .shindan-section { padding: 24px 18px; }
+  .shindan-btn { width: 100%; padding: 16px 20px; }
   .cta-buttons { flex-direction: column; }
 }
 .download-btn { display: inline-flex; align-items: center; justify-content: center; gap: 6px; height: 40px; padding: 0 18px; background: #d35400; color: white; font-size: 13px; font-weight: 700; border-radius: 6px; text-decoration: none; transition: background 0.2s; cursor: pointer; border: none; font-family: inherit; width: 100%; }
@@ -309,6 +316,7 @@ footer.site .footer-company a { color: #7bb3ff; }
   .blog-section .section-title { flex-direction: column; align-items: flex-start; }
 }
 </style>
+<script src="//embed.typeform.com/next/embed.js" defer></script>
 </head>
 <body>
 <nav class="site-nav">
@@ -318,6 +326,7 @@ footer.site .footer-company a { color: #7bb3ff; }
       <li><a href="/">トップ</a></li>
       <li><a href="/blog/">解説記事</a></li>
       <li><a href="/#download">無料ダウンロード</a></li>
+      <li><a href="/#shindan">無料診断</a></li>
       <li><a href="/archive/">アーカイブ</a></li>
       <li><a class="nav-cta" href="https://www.funnel-build.com/hojokin-contact-legacy2" target="_blank" rel="noopener">お問い合わせ</a></li>
     </ul>
@@ -1103,6 +1112,14 @@ footer.site .footer-company a { color: #7bb3ff; }
   <p class="download-disclaimer">※本テンプレートは参考様式です。最新の正式様式・公募要領は必ず各補助金の公式サイトをご確認ください。電子申請入力シートは申請時に提出するものではなく、申請準備用の下書きシートです。補助金制度は予告なく内容が変更されることがあります。</p>
 </section>
 
+<section class="section shindan-section" id="shindan">
+  <h2 class="section-title">無料補助金診断</h2>
+  <p class="section-note">1分ほどの質問に答えるだけで、自社で活用できそうな補助金をご案内します。どの補助金を選べばよいか分からない方は、まずこちらからお試しください。</p>
+  <div class="shindan-cta">
+    <button type="button" class="shindan-btn" data-tf-popup="01K3TA3ECCY7VG1Z9C6W6G5HJK" data-tf-opacity="100" data-tf-iframe-props="title=補助金診断" data-tf-transitive-search-params data-tf-medium="snippet" data-tf-size="100">無料診断を始める</button>
+  </div>
+</section>
+
 <section class="cta-section">
   <h2>補助金活用のご相談はこちらから</h2>
   <p>「自社で使える補助金が知りたい」「申請を任せたい」など、お気軽にどうぞ。</p>
@@ -1151,7 +1168,7 @@ footer.site .footer-company a { color: #7bb3ff; }
     </div>
 
   </div>
-  <p class="section-note" style="margin-top:24px;">※ご興味のある方は、まず各サイトで詳細をご確認ください。個別のご相談は<a href="https://www.funnel-build.com/hojokin-contact-legacy2" target="_blank" rel="noopener">お問い合わせフォーム</a>からお気軽にどうぞ。</p>
+  <p class="section-note" style="margin-top:24px;">※ご興味のある方は、まず各サイトで詳細をご確認ください。<a href="https://www.funnel-build.com/hojokin-contact-legacy2" target="_blank" rel="noopener">補助金申請に関するお問い合わせはこちら</a>からお気軽にどうぞ。</p>
 </section>
 </main>
 
