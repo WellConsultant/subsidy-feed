@@ -200,6 +200,7 @@ FOOTER_HTML = '''<footer class="site">
   <div class="container">
     <p>本サイトは公的機関が公開している補助金情報を自動収集しています。</p>
     <p>最新・正確な情報は必ず各補助金の公式ページでご確認ください。</p>
+    <p><a href="https://lp.well-c.biz/gkc/" target="_blank" rel="noopener" style="color:#7bb3ff;">行政書士開業キット 公式ミニサイト</a></p>
     <p>&copy; Well Consultant</p>
   </div>
 </footer>'''
