@@ -44,8 +44,15 @@ main.article .article-cta .cta-btn:hover { background: #b34700; }
 .back-link { display: inline-block; margin: 24px 0 0; color: #1a3a5c; text-decoration: none; font-size: 14px; font-weight: 600; }
 .back-link:hover { text-decoration: underline; }
 
-footer.site { background: #1a1a1a; color: rgba(255,255,255,0.85); padding: 28px 0; text-align: center; font-size: 13px; margin-top: 40px; }
+footer.site { background: #1a1a1a; color: #999; padding: 36px 0; margin-top: 60px; font-size: 13px; text-align: center; }
+footer.site a { color: #ccc; }
 footer.site p { margin: 6px 0; }
+footer.site .footer-company { margin: 18px auto 14px; padding: 14px 18px; max-width: 560px; background: #222; border: 1px solid #333; border-radius: 6px; text-align: left; }
+footer.site .footer-company h3 { margin: 0 0 8px; color: #eee; font-size: 13px; letter-spacing: 0.05em; border-bottom: 1px solid #333; padding-bottom: 6px; }
+footer.site .footer-company dl { display: grid; grid-template-columns: 100px 1fr; gap: 6px 12px; margin: 0; font-size: 12px; }
+footer.site .footer-company dt { color: #888; }
+footer.site .footer-company dd { margin: 0; color: #ccc; }
+footer.site .footer-company a { color: #7bb3ff; }
 
 @media (max-width: 600px) {
   body { font-size: 15px; }
@@ -464,6 +471,18 @@ footer.site p { margin: 6px 0; }
   <div class="container">
     <p>本サイトは公的機関が公開している補助金情報を自動収集しています。</p>
     <p>最新・正確な情報は必ず各補助金の公式ページでご確認ください。</p>
+    <div class="footer-company">
+      <h3>運営会社</h3>
+      <dl>
+        <dt>会社名</dt><dd>ウェルコンサルタント株式会社</dd>
+        <dt>代表者</dt><dd>阿久津 和宏</dd>
+        <dt>事業内容</dt><dd>補助金申請支援・経営コンサルティング</dd>
+        <dt>コーポレートサイト</dt><dd><a href="https://www.funnel-build.com/" target="_blank" rel="noopener">https://www.funnel-build.com/</a></dd>
+        <dt>お問い合わせ</dt><dd><a href="https://www.funnel-build.com/hojokin-contact-legacy2" target="_blank" rel="noopener">補助金申請に関するお問い合わせはこちら</a></dd>
+        <dt>プライバシーポリシー</dt><dd><a href="https://www.funnel-build.com/privacy-poricy" target="_blank" rel="noopener">プライバシーポリシー</a></dd>
+        <dt>特商法表記</dt><dd><a href="https://www.funnel-build.com/tokushouhou-hyouki" target="_blank" rel="noopener">特定商取引法に基づく表記</a></dd>
+      </dl>
+    </div>
     <p>&copy; Well Consultant</p>
   </div>
 </footer>
