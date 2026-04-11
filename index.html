@@ -195,17 +195,9 @@ footer.site .footer-company a { color: #7bb3ff; }
 .shindan-cta { display: flex; justify-content: center; margin-top: 24px; }
 .shindan-btn { display: inline-block; padding: 16px 40px; background: #1a3a5c; color: white; border: none; border-radius: 8px; font-size: 16px; font-weight: 700; cursor: pointer; transition: background 0.2s; }
 .shindan-btn:hover { background: #2a4a6c; }
-.shindan-modal-overlay { position: fixed; inset: 0; background: rgba(15,30,50,0.8); display: none; align-items: center; justify-content: center; z-index: 1100; padding: 20px; }
-.shindan-modal-overlay.open { display: flex; }
-.shindan-modal { background: white; border-radius: 12px; width: 100%; max-width: 900px; height: 85vh; max-height: 760px; position: relative; box-shadow: 0 20px 60px rgba(0,0,0,0.4); overflow: hidden; }
-.shindan-modal-close { position: absolute; top: 10px; right: 10px; width: 34px; height: 34px; border: none; background: rgba(255,255,255,0.92); color: #1a3a5c; border-radius: 50%; font-size: 20px; cursor: pointer; z-index: 2; box-shadow: 0 2px 6px rgba(0,0,0,0.15); }
-.shindan-modal-close:hover { background: #fff; }
-.shindan-modal-body { width: 100%; height: 100%; }
-.shindan-modal-body > div[data-tf-live] { width: 100%; height: 100%; }
 @media (max-width: 600px) {
   .shindan-section { padding: 24px 18px; }
   .shindan-btn { width: 100%; padding: 16px 20px; }
-  .shindan-modal { height: 92vh; max-height: none; border-radius: 10px; }
   .cta-buttons { flex-direction: column; }
 }
 .download-btn { display: inline-flex; align-items: center; justify-content: center; gap: 6px; height: 40px; padding: 0 18px; background: #d35400; color: white; font-size: 13px; font-weight: 700; border-radius: 6px; text-decoration: none; transition: background 0.2s; cursor: pointer; border: none; font-family: inherit; width: 100%; }
@@ -1124,7 +1116,7 @@ footer.site .footer-company a { color: #7bb3ff; }
   <h2 class="section-title">無料補助金診断</h2>
   <p class="section-note">1分ほどの質問に答えるだけで、自社で活用できそうな補助金をご案内します。どの補助金を選べばよいか分からない方は、まずこちらからお試しください。</p>
   <div class="shindan-cta">
-    <button type="button" class="shindan-btn" id="shindanOpenBtn">無料診断を始める</button>
+    <button type="button" class="shindan-btn" data-tf-popup="OMp3whh3" data-tf-opacity="100" data-tf-size="100" data-tf-iframe-props="title=補助金・助成金AI診断" data-tf-transitive-search-params data-tf-medium="snippet">無料診断を始める</button>
   </div>
 </section>
 
@@ -1272,48 +1264,5 @@ footer.site .footer-company a { color: #7bb3ff; }
 })();
 </script>
 
-<div class="shindan-modal-overlay" id="shindanModalOverlay" role="dialog" aria-modal="true" aria-labelledby="shindanModalTitle">
-  <div class="shindan-modal">
-    <button type="button" class="shindan-modal-close" id="shindanModalClose" aria-label="閉じる">&times;</button>
-    <h3 id="shindanModalTitle" class="sr-only" style="position:absolute;left:-9999px;">無料補助金診断</h3>
-    <div class="shindan-modal-body" id="shindanModalBody"></div>
-  </div>
-</div>
-<script src="//embed.typeform.com/next/embed.js"></script>
-<script>
-(function(){
-  var openBtn = document.getElementById('shindanOpenBtn');
-  var overlay = document.getElementById('shindanModalOverlay');
-  var closeBtn = document.getElementById('shindanModalClose');
-  var body = document.getElementById('shindanModalBody');
-  if(!openBtn || !overlay || !closeBtn || !body) return;
-  var loaded = false;
-  function openModal(){
-    if(!loaded){
-      var div = document.createElement('div');
-      div.setAttribute('data-tf-live', '01K8ZXZQVPDQYN0DSFCP25J5G7');
-      body.appendChild(div);
-      if(window.tf && typeof window.tf.load === 'function'){
-        window.tf.load();
-      }
-      loaded = true;
-    }
-    overlay.classList.add('open');
-    document.body.style.overflow = 'hidden';
-  }
-  function closeModal(){
-    overlay.classList.remove('open');
-    document.body.style.overflow = '';
-  }
-  openBtn.addEventListener('click', openModal);
-  closeBtn.addEventListener('click', closeModal);
-  overlay.addEventListener('click', function(e){
-    if(e.target === overlay) closeModal();
-  });
-  document.addEventListener('keydown', function(e){
-    if(e.key === 'Escape' && overlay.classList.contains('open')) closeModal();
-  });
-})();
-</script>
 </body>
 </html>
