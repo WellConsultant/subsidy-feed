@@ -1,0 +1,130 @@
+/* projects/lib/packages/yggdrasil-blueprints/__generated__/dist/video.css */
+[data-page-element="VideoBackground/V1"] {
+  z-index: -998;
+  top: 0px;
+  left: 0px;
+  line-height: 0;
+  position: fixed;
+  width: 100%;
+  height: 100%;
+}
+[data-page-element="VideoBackground/V1"] .backgroundOverlay {
+  z-index: 1;
+  position: absolute;
+  left: 0px;
+  top: 0px;
+  width: 100%;
+  height: 100%;
+  display: none;
+}
+[data-page-element="Video/V1"] {
+  margin-top: 15px;
+  max-width: 100%;
+  text-align: center;
+  flex-basis: 100%;
+  align-self: stretch;
+  width: 100%;
+}
+.elVideo {
+  position: relative;
+  overflow: hidden;
+  border-radius: inherit;
+  line-height: 0;
+}
+.vjs-big-play-button {
+  z-index: 100 !important;
+}
+.elVideo video {
+  position: relative;
+  top: 0;
+  left: 0;
+  width: 100% !important;
+  box-sizing: border-box;
+  border-radius: inherit;
+}
+.elVideo iframe {
+  border-radius: inherit;
+}
+[data-page-element="Video/V2"] {
+  margin-top: 15px;
+  max-width: 100%;
+  text-align: center;
+  flex-basis: 100%;
+  align-self: stretch;
+  width: 100%;
+}
+.elVideo {
+  position: relative;
+  overflow: hidden;
+  border-radius: inherit;
+}
+.vjs-big-play-button {
+  z-index: 100 !important;
+}
+.elVideo video {
+  position: relative;
+  top: 0;
+  left: 0;
+  width: 100% !important;
+  box-sizing: border-box;
+  border-radius: inherit;
+}
+.elVideo iframe {
+  z-index: 3;
+  border-radius: inherit;
+}
+.video-placeholder {
+  height: 400px !important;
+  box-sizing: border-box;
+  background-color: #2b2b2b;
+  border: 1px solid rgba(0, 0, 0, 0.2);
+  text-align: center;
+  background-image: url(/editor/videoplaceholderbg.png);
+  background-position: center center;
+  background-repeat: no-repeat;
+  box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.3);
+  border-radius: inherit;
+  color: white;
+  cursor: help;
+}
+.video-placeholder .elVideo {
+  display: none !important;
+}
+[data-page-element="VideoPopup/V1"] {
+  margin-top: 15px;
+}
+[data-page-element="VideoPopup/V1"] .elModal {
+  padding-left: 20px;
+  padding-right: 20px;
+  cursor: pointer;
+  justify-content: center;
+  align-items: center;
+  background: rgba(0, 0, 0, 0.4);
+}
+[data-page-element="VideoPopup/V1"] .elImage {
+  cursor: pointer;
+}
+[data-page-element="VideoPopup/V1"] .elPopupVideoContainer {
+  position: relative;
+  width: 1100px;
+  max-width: 100%;
+}
+[data-page-element="VideoPopup/V1"] .elVideoWrapper {
+  margin: 0px;
+}
+[data-page-element="VideoPopup/V1"] .elPopupVideoContainerClose {
+  display: flex;
+  z-index: 9999;
+  position: absolute;
+  right: -20px;
+  top: -20px;
+  cursor: pointer;
+  width: 35px;
+  height: 35px;
+  border-radius: 50%;
+  color: #fff;
+  align-items: center;
+  justify-content: center;
+  background: #031a01;
+}
+/*# sourceMappingURL=video-BYKAPKP6.css.map */
