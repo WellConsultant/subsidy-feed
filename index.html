@@ -192,12 +192,11 @@ footer.site .footer-company a { color: #7bb3ff; }
 .cta-button--line svg { width: 20px; height: 20px; }
 .shindan-section { background: white; padding: 36px 32px; border-radius: 10px; box-shadow: 0 2px 8px rgba(26,58,92,0.08); }
 .shindan-section .section-title { margin-top: 0; }
-.shindan-cta { display: flex; justify-content: center; margin-top: 24px; }
-.shindan-btn { display: inline-block; padding: 16px 40px; background: #1a3a5c; color: white; border: none; border-radius: 8px; font-size: 16px; font-weight: 700; cursor: pointer; transition: background 0.2s; }
-.shindan-btn:hover { background: #2a4a6c; }
+.shindan-embed { margin-top: 24px; width: 100%; height: 600px; border-radius: 8px; overflow: hidden; }
+.shindan-embed > div { width: 100%; height: 100%; }
 @media (max-width: 600px) {
   .shindan-section { padding: 24px 18px; }
-  .shindan-btn { width: 100%; padding: 16px 20px; }
+  .shindan-embed { height: 520px; }
   .cta-buttons { flex-direction: column; }
 }
 .download-btn { display: inline-flex; align-items: center; justify-content: center; gap: 6px; height: 40px; padding: 0 18px; background: #d35400; color: white; font-size: 13px; font-weight: 700; border-radius: 6px; text-decoration: none; transition: background 0.2s; cursor: pointer; border: none; font-family: inherit; width: 100%; }
@@ -1115,8 +1114,8 @@ footer.site .footer-company a { color: #7bb3ff; }
 <section class="section shindan-section" id="shindan">
   <h2 class="section-title">無料補助金診断</h2>
   <p class="section-note">1分ほどの質問に答えるだけで、自社で活用できそうな補助金をご案内します。どの補助金を選べばよいか分からない方は、まずこちらからお試しください。</p>
-  <div class="shindan-cta">
-    <button type="button" class="shindan-btn" data-tf-popup="01K8ZXZQVPDQYN0DSFCP25J5G7" data-tf-opacity="100" data-tf-iframe-props="title=補助金診断" data-tf-transitive-search-params data-tf-medium="snippet" data-tf-size="100">無料診断を始める</button>
+  <div class="shindan-embed">
+    <div data-tf-live="01K8ZXZQVPDQYN0DSFCP25J5G7"></div>
   </div>
 </section>
 
