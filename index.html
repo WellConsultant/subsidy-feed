@@ -73,6 +73,12 @@ td a:hover { text-decoration: underline; }
 footer.site { background: #1a1a1a; color: #999; padding: 36px 0; margin-top: 60px; font-size: 13px; text-align: center; }
 footer.site a { color: #ccc; }
 footer.site p { margin: 6px 0; }
+footer.site .footer-company { margin: 18px auto 14px; padding: 14px 18px; max-width: 560px; background: #222; border: 1px solid #333; border-radius: 6px; text-align: left; }
+footer.site .footer-company h3 { margin: 0 0 8px; color: #eee; font-size: 13px; letter-spacing: 0.05em; border-bottom: 1px solid #333; padding-bottom: 6px; }
+footer.site .footer-company dl { display: grid; grid-template-columns: 100px 1fr; gap: 6px 12px; margin: 0; font-size: 12px; }
+footer.site .footer-company dt { color: #888; }
+footer.site .footer-company dd { margin: 0; color: #ccc; }
+footer.site .footer-company a { color: #7bb3ff; }
 @media (max-width: 720px) {
   .site-nav { padding: 12px 0; }
   .nav-inner { flex-wrap: wrap; gap: 10px; justify-content: center; }
@@ -180,16 +186,11 @@ footer.site p { margin: 6px 0; }
 .line-keyword-hint strong { color: #d35400; font-size: 14px; font-weight: 700; letter-spacing: 0.04em; }
 .line-keyword-hint--manual { background: #fff7ec; border-color: #d35400; }
 .line-keyword-hint--manual strong { color: #d35400; }
-.shindan-section { background: white; padding: 36px 32px; border-radius: 10px; box-shadow: 0 2px 8px rgba(26,58,92,0.08); }
-.shindan-section .section-title { margin-top: 0; }
-.shindan-embed { margin-top: 20px; }
-.shindan-embed [data-tf-widget] { width: 100%; height: 560px; }
 .cta-buttons { display: flex; gap: 14px; justify-content: center; flex-wrap: wrap; }
 .cta-button--line { background: #06c755 !important; display: inline-flex; align-items: center; gap: 8px; }
 .cta-button--line:hover { background: #05a847 !important; }
 .cta-button--line svg { width: 20px; height: 20px; }
 @media (max-width: 600px) {
-  .shindan-section { padding: 24px 18px; }
   .cta-buttons { flex-direction: column; }
 }
 .download-btn { display: inline-flex; align-items: center; justify-content: center; gap: 6px; height: 40px; padding: 0 18px; background: #d35400; color: white; font-size: 13px; font-weight: 700; border-radius: 6px; text-decoration: none; transition: background 0.2s; cursor: pointer; border: none; font-family: inherit; width: 100%; }
@@ -308,7 +309,6 @@ footer.site p { margin: 6px 0; }
   .blog-section .section-title { flex-direction: column; align-items: flex-start; }
 }
 </style>
-<script src="//embed.typeform.com/next/embed.js" defer></script>
 </head>
 <body>
 <nav class="site-nav">
@@ -318,7 +318,6 @@ footer.site p { margin: 6px 0; }
       <li><a href="/">トップ</a></li>
       <li><a href="/blog/">解説記事</a></li>
       <li><a href="/#download">無料ダウンロード</a></li>
-      <li><a href="/#shindan">無料診断</a></li>
       <li><a href="/archive/">アーカイブ</a></li>
       <li><a class="nav-cta" href="https://www.funnel-build.com/hojokin-contact-legacy2" target="_blank" rel="noopener">お問い合わせ</a></li>
     </ul>
@@ -1104,14 +1103,6 @@ footer.site p { margin: 6px 0; }
   <p class="download-disclaimer">※本テンプレートは参考様式です。最新の正式様式・公募要領は必ず各補助金の公式サイトをご確認ください。電子申請入力シートは申請時に提出するものではなく、申請準備用の下書きシートです。補助金制度は予告なく内容が変更されることがあります。</p>
 </section>
 
-<section class="section shindan-section" id="shindan">
-  <h2 class="section-title">無料補助金診断</h2>
-  <p class="section-note">1分ほどの質問に答えるだけで、自社で活用できそうな補助金をご案内します。どの補助金を選べばよいか分からない方は、まずこちらからお試しください。</p>
-  <div class="shindan-embed">
-    <div data-tf-widget="01K3TA3ECCY7VG1Z9C6W6G5HJK" data-tf-opacity="100" data-tf-iframe-props="title=補助金診断" data-tf-transitive-search-params data-tf-medium="snippet" style="width:100%;height:560px;"></div>
-  </div>
-</section>
-
 <section class="cta-section">
   <h2>補助金活用のご相談はこちらから</h2>
   <p>「自社で使える補助金が知りたい」「申請を任せたい」など、お気軽にどうぞ。</p>
@@ -1168,6 +1159,16 @@ footer.site p { margin: 6px 0; }
   <div class="container">
     <p>本サイトは公的機関が公開している補助金情報を自動収集しています。</p>
     <p>最新・正確な情報は必ず各補助金の公式ページでご確認ください。</p>
+    <div class="footer-company">
+      <h3>運営会社</h3>
+      <dl>
+        <dt>会社名</dt><dd>ウェルコンサルタント株式会社</dd>
+        <dt>代表者</dt><dd>阿久津 和宏</dd>
+        <dt>事業内容</dt><dd>補助金申請支援・経営コンサルティング</dd>
+        <dt>コーポレートサイト</dt><dd><a href="https://www.funnel-build.com/" target="_blank" rel="noopener">https://www.funnel-build.com/</a></dd>
+        <dt>お問い合わせ</dt><dd><a href="https://www.funnel-build.com/hojokin-contact-legacy2" target="_blank" rel="noopener">お問い合わせフォーム</a></dd>
+      </dl>
+    </div>
     <p>&copy; Well Consultant</p>
   </div>
 </footer>
