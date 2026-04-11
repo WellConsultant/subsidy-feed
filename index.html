@@ -195,10 +195,29 @@ footer.site .footer-company a { color: #7bb3ff; }
 .shindan-cta { display: flex; justify-content: center; margin-top: 24px; }
 .shindan-btn { display: inline-block; padding: 16px 40px; background: #1a3a5c; color: white; border: none; border-radius: 8px; font-size: 16px; font-weight: 700; cursor: pointer; transition: background 0.2s; }
 .shindan-btn:hover { background: #2a4a6c; }
+/* Typeformポップアップの閉じる×に「閉じる」ラベルを添える */
+.tf-v1-close { position: relative !important; }
+.tf-v1-close::after {
+  content: "閉じる";
+  position: absolute;
+  right: calc(100% + 8px);
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 12px;
+  font-weight: 700;
+  color: #fff;
+  background: rgba(20,30,50,0.85);
+  padding: 5px 10px;
+  border-radius: 4px;
+  white-space: nowrap;
+  pointer-events: none;
+  line-height: 1;
+}
 @media (max-width: 600px) {
   .shindan-section { padding: 24px 18px; }
   .shindan-btn { width: 100%; padding: 16px 20px; }
   .cta-buttons { flex-direction: column; }
+  .tf-v1-close::after { font-size: 11px; padding: 4px 8px; }
 }
 .download-btn { display: inline-flex; align-items: center; justify-content: center; gap: 6px; height: 40px; padding: 0 18px; background: #d35400; color: white; font-size: 13px; font-weight: 700; border-radius: 6px; text-decoration: none; transition: background 0.2s; cursor: pointer; border: none; font-family: inherit; width: 100%; }
 .download-btn:hover { background: #b34700; }
@@ -328,7 +347,7 @@ footer.site .footer-company a { color: #7bb3ff; }
       <li><a href="/#download">無料ダウンロード</a></li>
       <li><a href="/#shindan">無料診断</a></li>
       <li><a href="/archive/">アーカイブ</a></li>
-      <li><a class="nav-cta" href="https://www.funnel-build.com/hojokin-contact-legacy2" target="_blank" rel="noopener">お問い合わせ</a></li>
+      <li><a class="nav-cta" href="/#soudan">無料相談</a></li>
     </ul>
   </div>
 </nav>
@@ -1120,11 +1139,11 @@ footer.site .footer-company a { color: #7bb3ff; }
   </div>
 </section>
 
-<section class="cta-section">
+<section class="cta-section" id="soudan">
   <h2>補助金活用のご相談はこちらから</h2>
   <p>「自社で使える補助金が知りたい」「申請を任せたい」など、お気軽にどうぞ。</p>
   <div class="cta-buttons">
-    <a class="cta-button" href="https://www.funnel-build.com/hojokin-contact-legacy2" target="_blank" rel="noopener">無料相談のお申し込み</a>
+    <a class="cta-button" href="https://www.funnel-build.com/hojokin-contact-legacy2" target="_blank" rel="noopener">お問い合わせ</a>
     <a class="cta-button cta-button--line" href="https://lin.ee/6Gv8kc3" target="_blank" rel="noopener">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M19.365 9.863c.349 0 .63.285.63.631 0 .345-.281.63-.63.63H17.61v1.125h1.755c.349 0 .63.283.63.63 0 .344-.281.629-.63.629h-2.386c-.345 0-.627-.285-.627-.629V8.108c0-.345.282-.63.63-.63h2.386c.346 0 .627.285.627.63 0 .349-.281.63-.63.63H17.61v1.125h1.755zm-3.855 3.016c0 .27-.174.51-.432.596-.064.021-.133.031-.199.031-.211 0-.391-.09-.51-.25l-2.443-3.317v2.94c0 .344-.279.629-.631.629-.346 0-.626-.285-.626-.629V8.108c0-.27.173-.51.43-.595.06-.023.136-.033.194-.033.195 0 .375.104.495.254l2.462 3.33V8.108c0-.345.282-.63.63-.63.345 0 .63.285.63.63v4.771zm-5.741 0c0 .344-.282.629-.631.629-.345 0-.627-.285-.627-.629V8.108c0-.345.282-.63.63-.63.346 0 .628.285.628.63v4.771zm-2.466.629H4.917c-.345 0-.63-.285-.63-.629V8.108c0-.345.285-.63.63-.63.348 0 .63.285.63.63v4.141h1.756c.348 0 .629.283.629.63 0 .344-.282.629-.629.629M24 10.314C24 4.943 18.615.572 12 .572S0 4.943 0 10.314c0 4.811 4.27 8.842 10.035 9.608.391.082.923.258 1.058.59.12.301.079.766.038 1.08l-.164 1.02c-.045.301-.24 1.186 1.049.645 1.291-.539 6.916-4.078 9.436-6.975C23.176 14.393 24 12.458 24 10.314"/></svg>
       LINEで相談する
