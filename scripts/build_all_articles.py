@@ -439,6 +439,9 @@ def render_article(item, region):
 <style>
 {PAGE_CSS}
 </style>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-CKY4MXRRK0"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){{dataLayer.push(arguments)}}gtag('js',new Date());gtag('config','G-CKY4MXRRK0');</script>
 </head>
 <body>
 
@@ -478,6 +481,7 @@ def render_article(item, region):
 
 {FOOTER_HTML}
 
+<script src="/assets/analytics.js" defer></script>
 </body>
 </html>
 '''

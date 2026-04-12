@@ -51,6 +51,10 @@ CTA_AREA = f'''
 
 COMMON_CSS_LINK = '<link rel="stylesheet" href="/assets/common.css">'
 TYPEFORM_SCRIPT = '<script src="//embed.typeform.com/next/embed.js" defer></script>'
+GTAG_SNIPPET = '''<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-CKY4MXRRK0"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag('js',new Date());gtag('config','G-CKY4MXRRK0');</script>'''
+ANALYTICS_SCRIPT = '<script src="/assets/analytics.js" defer></script>'
 
 # ---- 対象ファイル収集 ----
 targets = []
@@ -72,6 +76,10 @@ def inject(path: Path) -> bool:
     # 2) Typeform script 追加（既に含まれていれば skip）
     if 'embed.typeform.com/next/embed.js' not in html:
         html = html.replace('</head>', f'  {TYPEFORM_SCRIPT}\n</head>', 1)
+
+    # 2b) GA4 gtag 追加（既に含まれていれば skip）
+    if 'G-CKY4MXRRK0' not in html:
+        html = html.replace('</head>', f'  {GTAG_SNIPPET}\n</head>', 1)
 
     # 3) 既存ナビを共通ナビで置換
     nav_pattern = re.compile(r'<nav class="site-nav">.*?</nav>', re.DOTALL)
@@ -103,6 +111,10 @@ def inject(path: Path) -> bool:
 
     # 8) LINEモーダル＋JSを </body> 直前に挿入
     html = html.replace('</body>', f'\n{MODAL_HTML}\n\n{MODAL_JS}\n\n</body>', 1)
+
+    # 9) analytics.js 追加（既に含まれていれば skip）
+    if 'analytics.js' not in html:
+        html = html.replace('</body>', f'{ANALYTICS_SCRIPT}\n</body>', 1)
 
     if html != original:
         path.write_text(html, encoding="utf-8")

@@ -473,6 +473,9 @@ def render_article(data, url_map):
 <style>
 {PAGE_CSS}
 </style>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-CKY4MXRRK0"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){{dataLayer.push(arguments)}}gtag('js',new Date());gtag('config','G-CKY4MXRRK0');</script>
 </head>
 <body>
 
@@ -514,6 +517,7 @@ def render_article(data, url_map):
 
 {FOOTER_HTML}
 
+<script src="/assets/analytics.js" defer></script>
 </body>
 </html>
 '''
@@ -769,6 +773,9 @@ footer.site p {{ margin: 6px 0; }}
   .nav-links {{ gap: 14px; flex-wrap: wrap; justify-content: center; }}
 }}
 </style>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-CKY4MXRRK0"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){{dataLayer.push(arguments)}}gtag('js',new Date());gtag('config','G-CKY4MXRRK0');</script>
 </head>
 <body>
 
@@ -882,6 +889,7 @@ footer.site p {{ margin: 6px 0; }}
 }})();
 </script>
 
+<script src="/assets/analytics.js" defer></script>
 </body>
 </html>
 '''
