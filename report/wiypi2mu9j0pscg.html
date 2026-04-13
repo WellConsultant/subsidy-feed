@@ -613,9 +613,84 @@
   .mt-24 { margin-top: 24px; }
   .text-center { text-align: center; }
   .text-small { font-size: 13px; color: var(--gray-500); }
+
+  /* ===== Expiry Banner ===== */
+  .expiry-banner {
+    background: linear-gradient(90deg, var(--navy) 0%, var(--navy-light) 100%);
+    border-top: 3px solid var(--gold);
+    border-bottom: 3px solid var(--gold);
+    color: var(--white);
+    text-align: center;
+    padding: 10px 16px;
+    font-size: 0.85rem;
+    font-weight: 500;
+    letter-spacing: 0.03em;
+  }
+  .expiry-banner .expiry-label {
+    color: var(--gold);
+    font-weight: 700;
+    margin-right: 6px;
+  }
+  .expiry-banner .expiry-date {
+    color: #fef3c7;
+    font-weight: 700;
+  }
+
+  /* ===== Expired Overlay ===== */
+  #expired-overlay {
+    display: none;
+    position: fixed;
+    inset: 0;
+    background: var(--navy);
+    z-index: 9999;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    text-align: center;
+    padding: 32px;
+  }
+  #expired-overlay .expired-icon {
+    font-size: 3.5rem;
+    margin-bottom: 20px;
+  }
+  #expired-overlay h1 {
+    color: var(--gold);
+    font-size: 1.5rem;
+    font-weight: 700;
+    margin-bottom: 12px;
+    line-height: 1.5;
+  }
+  #expired-overlay p {
+    color: #cbd5e0;
+    font-size: 0.95rem;
+    line-height: 1.8;
+  }
+  #expired-overlay .expired-divider {
+    width: 60px;
+    height: 3px;
+    background: var(--gold);
+    margin: 16px auto;
+    border-radius: 2px;
+  }
 </style>
 </head>
 <body>
+
+<!-- ===== Expired Overlay ===== -->
+<div id="expired-overlay">
+  <div class="expired-icon">🔒</div>
+  <h1>この報告書は閲覧期限を過ぎました</h1>
+  <div class="expired-divider"></div>
+  <p>本資料の閲覧期限は <strong style="color:#fef3c7;">2026年5月13日</strong> でした。<br>内容に関するお問い合わせは下記までご連絡ください。<br><br>
+    <strong style="color:#d69e2e;">Well Consultant合同会社</strong><br>
+    <span style="color:#a0aec0;">info@fp-1.info</span>
+  </p>
+</div>
+
+<!-- ===== Expiry Banner (Top) ===== -->
+<div class="expiry-banner" id="expiry-banner-top">
+  <span class="expiry-label">⏰ 閲覧期限</span>この報告書の閲覧期限：<span class="expiry-date">2026年5月13日</span>
+</div>
 
 <!-- ===== Hero ===== -->
 <header class="hero">
@@ -871,11 +946,39 @@
   </div><!-- /container -->
 </main>
 
+<!-- ===== Expiry Banner (Bottom) ===== -->
+<div class="expiry-banner" id="expiry-banner-bottom">
+  <span class="expiry-label">⏰ 閲覧期限</span>この報告書の閲覧期限：<span class="expiry-date">2026年5月13日</span>
+</div>
+
 <!-- ===== Footer ===== -->
 <footer class="footer">
   <strong>Well Consultant合同会社 ／ あくつ行政書士事務所</strong><br>
   &copy; 2026 Well Consultant LLC / Akutsu Administrative Scrivener Office. All rights reserved.
 </footer>
 
+<script>
+(function() {
+  // 閲覧期限: 2026年5月13日の終わり（日本時間 JST 基準）
+  var EXPIRY = new Date('2026-05-14T00:00:00+09:00');
+  var now = new Date();
+  if (now >= EXPIRY) {
+    // 期限切れオーバーレイを表示
+    var overlay = document.getElementById('expired-overlay');
+    if (overlay) overlay.style.display = 'flex';
+    // 本文・ヘッダー・フッター・バナーを非表示
+    ['expiry-banner-top', 'expiry-banner-bottom'].forEach(function(id) {
+      var el = document.getElementById(id);
+      if (el) el.style.display = 'none';
+    });
+    var selectors = ['.hero', '.main', '.footer'];
+    selectors.forEach(function(sel) {
+      var el = document.querySelector(sel);
+      if (el) el.style.display = 'none';
+    });
+    document.body.style.overflow = 'hidden';
+  }
+})();
+</script>
 </body>
 </html>
