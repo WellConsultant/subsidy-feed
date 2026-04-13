@@ -34,6 +34,16 @@
 </div>
 <div class="section-title">オーディエンス</div>
 <div class="panel"><h2>地域別</h2><table><thead><tr><th>地域</th><th>ユーザー</th></tr></thead><tbody><tr><td>District of Columbia</td><td>16</td></tr><tr><td>Colorado</td><td>7</td></tr><tr><td>(not set)</td><td>4</td></tr><tr><td>Saitama</td><td>4</td></tr><tr><td>Illinois</td><td>1</td></tr><tr><td>Taipei City</td><td>1</td></tr><tr><td>Tokyo</td><td>1</td></tr><tr><td>Virginia</td><td>1</td></tr></tbody></table></div>
+<!-- ===== Search Console ===== -->
+<div class="section-title">検索流入（Search Console）</div>
+<div class="grid-2">
+<div class="panel"><h2>上位検索クエリ</h2>
+    {"<table><thead><tr><th>クエリ</th><th>クリック</th><th>表示回数</th><th>平均順位</th></tr></thead><tbody>" + "".join(f"<tr><td>{d['query']}</td><td>{d['clicks']}</td><td>{d['impressions']}</td><td>{d['position']}</td></tr>" for d in sc_query_data) + "</tbody></table>" if sc_query_data else '<div class="empty">データ蓄積中</div>'}
+</div>
+<div class="panel"><h2>上位ページ（検索流入）</h2>
+    {"<table><thead><tr><th>ページ</th><th>クリック</th><th>表示回数</th><th>平均順位</th></tr></thead><tbody>" + "".join(f"<tr><td>{d['page']}</td><td>{d['clicks']}</td><td>{d['impressions']}</td><td>{d['position']}</td></tr>" for d in sc_page_data) + "</tbody></table>" if sc_page_data else '<div class="empty">データ蓄積中</div>'}
+</div>
+</div>
 </div>
 <script>
 const dailyData=[{"date": "2026-03-19", "users": 1, "sessions": 1}, {"date": "2026-03-27", "users": 1, "sessions": 1}, {"date": "2026-03-30", "users": 1, "sessions": 1}, {"date": "2026-03-31", "users": 1, "sessions": 1}, {"date": "2026-04-01", "users": 3, "sessions": 3}, {"date": "2026-04-02", "users": 2, "sessions": 2}, {"date": "2026-04-03", "users": 22, "sessions": 26}, {"date": "2026-04-04", "users": 3, "sessions": 4}, {"date": "2026-04-07", "users": 1, "sessions": 1}, {"date": "2026-04-08", "users": 1, "sessions": 1}];const deviceData=[{"device": "desktop", "sessions": 39}, {"device": "mobile", "sessions": 2}];
