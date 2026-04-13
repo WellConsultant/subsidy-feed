@@ -1,0 +1,881 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>補助金・助成金 無料診断 結果報告書 | Well Consultant合同会社</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+  /* ===== Reset & Base ===== */
+  *, *::before, *::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+
+  :root {
+    --navy: #1a365d;
+    --navy-light: #234178;
+    --navy-pale: #ebf0f8;
+    --gold: #d69e2e;
+    --gold-light: #f6e8c3;
+    --white: #ffffff;
+    --gray-100: #f7fafc;
+    --gray-200: #edf2f7;
+    --gray-300: #e2e8f0;
+    --gray-500: #718096;
+    --gray-700: #4a5568;
+    --gray-900: #2d3748;
+    --radius: 10px;
+    --shadow: 0 2px 12px rgba(26, 54, 93, 0.10);
+    --shadow-lg: 0 4px 24px rgba(26, 54, 93, 0.14);
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    font-family: 'Noto Sans JP', 'Hiragino Kaku Gothic ProN', 'Meiryo', sans-serif;
+    font-size: 15px;
+    line-height: 1.85;
+    color: var(--gray-900);
+    background: var(--gray-100);
+  }
+
+  a {
+    color: var(--navy);
+    text-decoration: underline;
+    word-break: break-all;
+  }
+
+  a:hover {
+    color: var(--gold);
+  }
+
+  img { max-width: 100%; }
+
+  /* ===== Layout ===== */
+  .container {
+    max-width: 780px;
+    margin: 0 auto;
+    padding: 0 16px;
+  }
+
+  /* ===== Hero / Header ===== */
+  .hero {
+    background: linear-gradient(150deg, var(--navy) 0%, var(--navy-light) 100%);
+    color: var(--white);
+    padding: 56px 16px 48px;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .hero::before {
+    content: '';
+    position: absolute;
+    top: -80px; right: -80px;
+    width: 320px; height: 320px;
+    border-radius: 50%;
+    background: rgba(214, 158, 46, 0.07);
+    pointer-events: none;
+  }
+
+  .hero::after {
+    content: '';
+    position: absolute;
+    bottom: -100px; left: -80px;
+    width: 360px; height: 360px;
+    border-radius: 50%;
+    background: rgba(255,255,255,0.03);
+    pointer-events: none;
+  }
+
+  .hero-eyebrow {
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 4px;
+    color: var(--gold);
+    text-transform: uppercase;
+    margin-bottom: 16px;
+  }
+
+  .hero-divider {
+    width: 48px;
+    height: 2px;
+    background: var(--gold);
+    margin: 0 auto 24px;
+  }
+
+  .hero-title {
+    font-size: clamp(22px, 5vw, 32px);
+    font-weight: 700;
+    line-height: 1.45;
+    margin-bottom: 8px;
+  }
+
+  .hero-subtitle {
+    font-size: 14px;
+    color: rgba(255,255,255,0.75);
+    margin-bottom: 36px;
+  }
+
+  .hero-meta {
+    display: inline-flex;
+    flex-direction: column;
+    gap: 12px;
+    background: rgba(255,255,255,0.07);
+    border: 1px solid rgba(255,255,255,0.15);
+    border-radius: var(--radius);
+    padding: 20px 28px;
+    text-align: left;
+    font-size: 14px;
+  }
+
+  .hero-meta-row {
+    display: flex;
+    align-items: baseline;
+    gap: 10px;
+  }
+
+  .hero-meta-label {
+    font-size: 10px;
+    font-weight: 700;
+    color: var(--gold);
+    letter-spacing: 2px;
+    white-space: nowrap;
+    min-width: 48px;
+  }
+
+  .hero-meta-value {
+    font-weight: 500;
+    color: var(--white);
+    font-size: 15px;
+  }
+
+  /* ===== Main Content ===== */
+  .main {
+    padding: 40px 0 64px;
+  }
+
+  /* ===== Section ===== */
+  .section {
+    margin-bottom: 32px;
+  }
+
+  .section-card {
+    background: var(--white);
+    border-radius: var(--radius);
+    box-shadow: var(--shadow);
+    overflow: hidden;
+  }
+
+  .section-card-header {
+    background: var(--navy);
+    color: var(--white);
+    padding: 14px 22px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+
+  .section-card-header .icon {
+    font-size: 18px;
+  }
+
+  .section-card-header h2 {
+    font-size: 15px;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+  }
+
+  .section-card-body {
+    padding: 22px 22px 24px;
+  }
+
+  /* ===== Greeting ===== */
+  .greeting-text {
+    font-size: 15px;
+    line-height: 2;
+    color: var(--gray-900);
+  }
+
+  /* ===== Conclusion Box ===== */
+  .conclusion-box {
+    background: var(--navy-pale);
+    border-left: 4px solid var(--navy);
+    border-radius: 0 var(--radius) var(--radius) 0;
+    padding: 18px 20px;
+    margin: 20px 0;
+    font-size: 15px;
+    font-weight: 500;
+    color: var(--navy);
+    line-height: 1.9;
+  }
+
+  /* ===== Tag Groups ===== */
+  .tag-group {
+    margin: 20px 0;
+  }
+
+  .tag-group-label {
+    font-size: 12px;
+    font-weight: 700;
+    color: var(--gray-700);
+    margin-bottom: 10px;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+  }
+
+  .tag-group-label::before {
+    content: '';
+    display: inline-block;
+    width: 3px;
+    height: 14px;
+    background: var(--gold);
+    border-radius: 2px;
+  }
+
+  .tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+  }
+
+  .tag {
+    display: inline-block;
+    padding: 6px 14px;
+    border-radius: 20px;
+    font-size: 13px;
+    font-weight: 500;
+  }
+
+  .tag-navy {
+    background: var(--navy);
+    color: var(--white);
+  }
+
+  .tag-gold {
+    background: var(--gold);
+    color: var(--white);
+  }
+
+  /* ===== Subsidy Cards ===== */
+  .subsidy-list {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    margin-top: 4px;
+  }
+
+  .subsidy-item {
+    border: 1.5px solid var(--gray-300);
+    border-radius: var(--radius);
+    overflow: hidden;
+    transition: box-shadow 0.2s;
+  }
+
+  .subsidy-item:hover {
+    box-shadow: var(--shadow);
+  }
+
+  .subsidy-item-header {
+    background: var(--navy-pale);
+    padding: 12px 16px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+
+  .subsidy-item-header.gold-bg {
+    background: var(--gold-light);
+  }
+
+  .subsidy-badge {
+    display: inline-block;
+    background: var(--navy);
+    color: var(--white);
+    font-size: 10px;
+    font-weight: 700;
+    padding: 2px 8px;
+    border-radius: 4px;
+    white-space: nowrap;
+  }
+
+  .subsidy-badge.gold {
+    background: var(--gold);
+  }
+
+  .subsidy-name {
+    font-size: 14px;
+    font-weight: 700;
+    color: var(--navy);
+  }
+
+  .subsidy-desc {
+    padding: 12px 16px;
+    font-size: 14px;
+    color: var(--gray-700);
+    line-height: 1.8;
+  }
+
+  /* ===== Step Flow ===== */
+  .step-flow {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+    margin: 8px 0;
+  }
+
+  .step-item {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    padding: 14px 16px;
+    background: var(--white);
+    border: 1.5px solid var(--gray-300);
+    border-radius: var(--radius);
+    margin-bottom: 8px;
+    position: relative;
+  }
+
+  .step-item:last-child {
+    margin-bottom: 0;
+  }
+
+  .step-number {
+    flex-shrink: 0;
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    background: var(--navy);
+    color: var(--white);
+    font-size: 16px;
+    font-weight: 700;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .step-label {
+    font-size: 15px;
+    font-weight: 700;
+    color: var(--navy);
+  }
+
+  .step-arrow {
+    text-align: center;
+    color: var(--gold);
+    font-size: 20px;
+    line-height: 1;
+    margin: -4px 0 4px;
+  }
+
+  .step-future {
+    background: linear-gradient(135deg, var(--gold-light), #fff8e8);
+    border: 1.5px solid var(--gold);
+    border-radius: var(--radius);
+    padding: 14px 16px;
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    margin-top: 8px;
+  }
+
+  .step-future .step-icon {
+    font-size: 22px;
+  }
+
+  .step-future .step-future-text {
+    font-size: 14px;
+    font-weight: 500;
+    color: var(--gray-700);
+  }
+
+  .step-future .step-future-text strong {
+    color: var(--navy);
+  }
+
+  /* ===== Important Box ===== */
+  .important-box {
+    background: linear-gradient(135deg, var(--navy) 0%, var(--navy-light) 100%);
+    color: var(--white);
+    border-radius: var(--radius);
+    padding: 22px 22px;
+    margin: 24px 0;
+  }
+
+  .important-box .ib-title {
+    font-size: 14px;
+    font-weight: 700;
+    color: var(--gold);
+    margin-bottom: 10px;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+  }
+
+  .important-box p {
+    font-size: 14px;
+    line-height: 2;
+    color: rgba(255,255,255,0.92);
+  }
+
+  /* ===== CTA Section ===== */
+  .cta-section {
+    background: var(--white);
+    border-radius: var(--radius);
+    box-shadow: var(--shadow-lg);
+    overflow: hidden;
+    margin-bottom: 32px;
+  }
+
+  .cta-header {
+    background: var(--gold);
+    color: var(--white);
+    padding: 16px 22px;
+    text-align: center;
+  }
+
+  .cta-header h2 {
+    font-size: 16px;
+    font-weight: 700;
+  }
+
+  .cta-body {
+    padding: 24px 22px;
+  }
+
+  .cta-intro {
+    font-size: 15px;
+    line-height: 2;
+    color: var(--gray-900);
+    margin-bottom: 22px;
+  }
+
+  .cta-cards {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+    margin-bottom: 22px;
+  }
+
+  @media (min-width: 560px) {
+    .cta-cards {
+      flex-direction: row;
+    }
+  }
+
+  .cta-card {
+    flex: 1;
+    border: 2px solid var(--gold);
+    border-radius: var(--radius);
+    padding: 18px 16px;
+    text-align: center;
+  }
+
+  .cta-card-step {
+    font-size: 10px;
+    font-weight: 700;
+    color: var(--gold);
+    letter-spacing: 2px;
+    margin-bottom: 6px;
+  }
+
+  .cta-card-title {
+    font-size: 14px;
+    font-weight: 700;
+    color: var(--navy);
+    margin-bottom: 10px;
+  }
+
+  .cta-card-btn {
+    display: inline-block;
+    background: var(--navy);
+    color: var(--white) !important;
+    text-decoration: none;
+    font-size: 13px;
+    font-weight: 700;
+    padding: 10px 18px;
+    border-radius: 6px;
+    transition: background 0.2s;
+  }
+
+  .cta-card-btn:hover {
+    background: var(--gold);
+    color: var(--white) !important;
+  }
+
+  .cta-purpose {
+    text-align: center;
+    font-size: 14px;
+    font-weight: 500;
+    color: var(--navy);
+    line-height: 2;
+    padding: 18px 0 4px;
+    border-top: 1px solid var(--gray-300);
+  }
+
+  /* ===== Sender Card ===== */
+  .sender-card {
+    background: var(--white);
+    border-radius: var(--radius);
+    box-shadow: var(--shadow);
+    overflow: hidden;
+    margin-bottom: 32px;
+  }
+
+  .sender-card-header {
+    background: var(--navy);
+    color: var(--white);
+    padding: 12px 22px;
+    font-size: 13px;
+    font-weight: 700;
+    letter-spacing: 1px;
+  }
+
+  .sender-card-body {
+    padding: 20px 22px;
+    font-size: 14px;
+    line-height: 2.2;
+    color: var(--gray-700);
+  }
+
+  .sender-name {
+    font-size: 16px;
+    font-weight: 700;
+    color: var(--navy);
+    margin-bottom: 4px;
+  }
+
+  .sender-person {
+    font-size: 15px;
+    font-weight: 500;
+    color: var(--gray-900);
+  }
+
+  /* ===== Footer ===== */
+  .footer {
+    background: var(--navy);
+    color: rgba(255,255,255,0.6);
+    text-align: center;
+    padding: 24px 16px;
+    font-size: 12px;
+    line-height: 2;
+  }
+
+  .footer strong {
+    color: rgba(255,255,255,0.9);
+  }
+
+  /* ===== Responsive: Desktop ===== */
+  @media (min-width: 640px) {
+    .hero {
+      padding: 72px 24px 60px;
+    }
+
+    .hero-title {
+      font-size: 30px;
+    }
+
+    .section-card-body {
+      padding: 28px 30px 32px;
+    }
+
+    .subsidy-item-header {
+      padding: 14px 20px;
+    }
+
+    .subsidy-desc {
+      padding: 14px 20px;
+      font-size: 15px;
+    }
+
+    .step-item {
+      padding: 16px 20px;
+    }
+
+    .cta-body {
+      padding: 28px 30px;
+    }
+
+    .sender-card-body {
+      padding: 24px 30px;
+    }
+  }
+
+  /* ===== Utility ===== */
+  .mt-16 { margin-top: 16px; }
+  .mt-24 { margin-top: 24px; }
+  .text-center { text-align: center; }
+  .text-small { font-size: 13px; color: var(--gray-500); }
+</style>
+</head>
+<body>
+
+<!-- ===== Hero ===== -->
+<header class="hero">
+  <div class="hero-eyebrow">DIAGNOSTIC REPORT</div>
+  <div class="hero-divider"></div>
+  <h1 class="hero-title">補助金・助成金<br>無料診断 結果報告書</h1>
+  <p class="hero-subtitle">診断結果報告書</p>
+  <div class="hero-meta">
+    <div class="hero-meta-row">
+      <span class="hero-meta-label">宛先</span>
+      <span class="hero-meta-value">Narrative　日下 様</span>
+    </div>
+    <div class="hero-meta-row">
+      <span class="hero-meta-label">報告日</span>
+      <span class="hero-meta-value">2026年4月13日</span>
+    </div>
+    <div class="hero-meta-row">
+      <span class="hero-meta-label">差出人</span>
+      <span class="hero-meta-value">阿久津 和宏（Well Consultant合同会社）</span>
+    </div>
+  </div>
+</header>
+
+<!-- ===== Main ===== -->
+<main class="main">
+  <div class="container">
+
+    <!-- ご挨拶 -->
+    <section class="section">
+      <div class="section-card">
+        <div class="section-card-header">
+          <span class="icon">📋</span>
+          <h2>診断結果のご報告</h2>
+        </div>
+        <div class="section-card-body">
+          <p class="greeting-text">
+            お世話になります。阿久津です。<br>
+            この度は、『無料診断サービス』をお申込みいただきまして、誠にありがとうございます。<br><br>
+            さっそくですが、結論を申し上げます。
+          </p>
+
+          <div class="conclusion-box">
+            御社は現在、役員1名・業務委託1名で、雇用する従業員がいない状況のため、厚生労働省系の雇用助成金については、<strong>現時点ですぐに活用できる制度は限定的</strong>です。
+          </div>
+
+          <div class="tag-group">
+            <div class="tag-group-label">今すぐ検討優先度が高い分野（補助金）</div>
+            <div class="tags">
+              <span class="tag tag-navy">販路開拓</span>
+              <span class="tag tag-navy">AI・IT導入</span>
+              <span class="tag tag-navy">機械・設備導入</span>
+              <span class="tag tag-navy">省力化投資</span>
+              <span class="tag tag-navy">新規事業準備</span>
+            </div>
+          </div>
+
+          <div class="tag-group">
+            <div class="tag-group-label">雇用保険加入の従業員を1名以上採用した場合に候補となる分野（助成金）</div>
+            <div class="tags">
+              <span class="tag tag-gold">採用時</span>
+              <span class="tag tag-gold">試行雇用</span>
+              <span class="tag tag-gold">研修</span>
+              <span class="tag tag-gold">正社員化</span>
+              <span class="tag tag-gold">育児・両立支援</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 現時点で検討しやすい補助金 -->
+    <section class="section">
+      <div class="section-card">
+        <div class="section-card-header">
+          <span class="icon">✅</span>
+          <h2>現時点で検討しやすい補助金</h2>
+        </div>
+        <div class="section-card-body">
+          <div class="subsidy-list">
+            <div class="subsidy-item">
+              <div class="subsidy-item-header">
+                <span class="subsidy-badge">補助金</span>
+                <span class="subsidy-name">小規模事業者持続化補助金</span>
+              </div>
+              <div class="subsidy-desc">販路開拓、広告宣伝、Web活用、営業資料整備などに活用しやすい制度です。</div>
+            </div>
+            <div class="subsidy-item">
+              <div class="subsidy-item-header">
+                <span class="subsidy-badge">補助金</span>
+                <span class="subsidy-name">IT導入補助金</span>
+              </div>
+              <div class="subsidy-desc">AIツール、業務効率化システム、顧客管理、営業管理、予約管理、会計連携などの導入に活用しやすい制度です。</div>
+            </div>
+            <div class="subsidy-item">
+              <div class="subsidy-item-header">
+                <span class="subsidy-badge">補助金</span>
+                <span class="subsidy-name">中小企業省力化投資補助金</span>
+              </div>
+              <div class="subsidy-desc">人手不足対応のための機械・設備導入、省力化機器、業務自動化設備などに活用しやすい制度です。</div>
+            </div>
+            <div class="subsidy-item">
+              <div class="subsidy-item-header">
+                <span class="subsidy-badge">補助金</span>
+                <span class="subsidy-name">ものづくり補助金</span>
+              </div>
+              <div class="subsidy-desc">新サービスや新しい提供方法に必要な設備投資、開発投資に活用余地があります。</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 採用後に候補となる助成金 -->
+    <section class="section">
+      <div class="section-card">
+        <div class="section-card-header" style="background: #b7791f;">
+          <span class="icon">🔮</span>
+          <h2>雇用保険加入の従業員を1名以上採用すると検討できる助成金</h2>
+        </div>
+        <div class="section-card-body">
+          <div class="subsidy-list">
+            <div class="subsidy-item">
+              <div class="subsidy-item-header gold-bg">
+                <span class="subsidy-badge gold">助成金</span>
+                <span class="subsidy-name">トライアル雇用助成金</span>
+              </div>
+              <div class="subsidy-desc">雇用保険に加入する従業員を1名以上採用した場合に、採用前の試行雇用として適性を確認しながら活用できる制度です。</div>
+            </div>
+            <div class="subsidy-item">
+              <div class="subsidy-item-header gold-bg">
+                <span class="subsidy-badge gold">助成金</span>
+                <span class="subsidy-name">特定求職者雇用開発助成金</span>
+              </div>
+              <div class="subsidy-desc">雇用保険に加入する従業員を1名以上採用した場合に、就職困難者等を対象として候補となります。</div>
+            </div>
+            <div class="subsidy-item">
+              <div class="subsidy-item-header gold-bg">
+                <span class="subsidy-badge gold">助成金</span>
+                <span class="subsidy-name">人材開発支援助成金</span>
+              </div>
+              <div class="subsidy-desc">雇用保険に加入する従業員を1名以上採用した場合に、AI研修・DX研修・リスキリング研修を実施する際の候補となります。</div>
+            </div>
+            <div class="subsidy-item">
+              <div class="subsidy-item-header gold-bg">
+                <span class="subsidy-badge gold">助成金</span>
+                <span class="subsidy-name">キャリアアップ助成金</span>
+              </div>
+              <div class="subsidy-desc">雇用保険に加入する従業員を1名以上採用した場合に、有期雇用やパートから正社員化する段階で候補となります。</div>
+            </div>
+            <div class="subsidy-item">
+              <div class="subsidy-item-header gold-bg">
+                <span class="subsidy-badge gold">助成金</span>
+                <span class="subsidy-name">両立支援等助成金</span>
+              </div>
+              <div class="subsidy-desc">雇用保険に加入する従業員を1名以上採用した場合に、育休復帰支援・時短勤務・テレワーク等の制度整備と実利用が発生した段階で候補となります。</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 重要ポイント -->
+    <div class="important-box">
+      <div class="ib-title">📌 今回の診断のポイント</div>
+      <p>「今すぐ使う制度」と「雇用保険加入の従業員を採用した後に使う制度」を分けて考えることが重要です。<br>
+      現在の業務委託の方は雇用保険の対象外となるため、助成金の対象にはなりません。<br>
+      御社の場合、まずは補助金を活用し、雇用保険に加入する従業員を1名以上採用した段階で助成金を追加検討する流れが現実的です。</p>
+    </div>
+
+    <!-- 推奨検討順序 -->
+    <section class="section">
+      <div class="section-card">
+        <div class="section-card-header">
+          <span class="icon">🗺️</span>
+          <h2>推奨検討順序</h2>
+        </div>
+        <div class="section-card-body">
+          <div class="step-flow">
+            <div class="step-item">
+              <div class="step-number">1</div>
+              <div class="step-label">販路開拓</div>
+            </div>
+            <div class="step-arrow">▼</div>
+            <div class="step-item">
+              <div class="step-number">2</div>
+              <div class="step-label">AI導入・業務効率化</div>
+            </div>
+            <div class="step-arrow">▼</div>
+            <div class="step-item">
+              <div class="step-number">3</div>
+              <div class="step-label">省力化設備</div>
+            </div>
+            <div class="step-arrow">▼</div>
+            <div class="step-item">
+              <div class="step-number">4</div>
+              <div class="step-label">新事業準備</div>
+            </div>
+          </div>
+          <div class="step-future mt-16">
+            <span class="step-icon">💼</span>
+            <div class="step-future-text">
+              <strong>雇用保険加入の従業員を1名以上採用した段階で</strong>、上記に加えて助成金の追加検討へ（業務委託は対象外）
+            </div>
+          </div>
+          <p class="text-small mt-16">※ 各制度には公募期間・要件がございます。詳細は個別にご案内いたします。</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="cta-section">
+      <div class="cta-header">
+        <h2>無料相談のご案内</h2>
+      </div>
+      <div class="cta-body">
+        <p class="cta-intro">
+          もしあなたが「人手不足の解消」「設備の導入」「業務効率化」「販路開拓の取組」を実現したいと思うなら、ぜひ私どもにおまかせください。
+        </p>
+        <div class="cta-cards">
+          <div class="cta-card">
+            <div class="cta-card-step">STEP 1</div>
+            <div class="cta-card-title">無料ガイド・手動診断</div>
+            <a class="cta-card-btn" href="https://www.funnel-build.com/joseikinguide" target="_blank" rel="noopener">ガイドを見る →</a>
+          </div>
+          <div class="cta-card">
+            <div class="cta-card-step">STEP 2</div>
+            <div class="cta-card-title">個別相談のご予約</div>
+            <a class="cta-card-btn" href="https://hub.well-c.biz/meetings/info8865" target="_blank" rel="noopener">相談を予約する →</a>
+          </div>
+        </div>
+        <div class="cta-purpose">
+          私どもの目的は、有利に資金を調達して、<br>
+          <strong>あなたの手元に残るキャッシュを最大化する</strong>ことです。<br>
+          ぜひ補助金・助成金を有効利用して、その原資をより良き事業活動にお役立てください。
+        </div>
+      </div>
+    </section>
+
+    <!-- 差出人情報 -->
+    <section class="sender-card">
+      <div class="sender-card-header">差出人情報</div>
+      <div class="sender-card-body">
+        <div class="sender-name">Well Consultant合同会社 ／ あくつ行政書士事務所</div>
+        <div class="sender-person">阿久津 和宏</div>
+        <div>
+          Email: <a href="mailto:info@fp-1.info">info@fp-1.info</a><br>
+          Web: <a href="https://hub.well-c.biz" target="_blank" rel="noopener">hub.well-c.biz</a><br>
+          〒360-0816 埼玉県熊谷市石原641番地3
+        </div>
+      </div>
+    </section>
+
+  </div><!-- /container -->
+</main>
+
+<!-- ===== Footer ===== -->
+<footer class="footer">
+  <strong>Well Consultant合同会社 ／ あくつ行政書士事務所</strong><br>
+  &copy; 2026 Well Consultant LLC / Akutsu Administrative Scrivener Office. All rights reserved.
+</footer>
+
+</body>
+</html>
