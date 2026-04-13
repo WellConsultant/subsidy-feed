@@ -3,8 +3,8 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>無料相談・補助金診断｜補助金情報フィード</title>
-<meta name="description" content="補助金・助成金の申請について、無料でご相談いただけます。まずはお気軽にご連絡ください。">
+<title>無料相談・お問い合わせ｜補助金情報フィード</title>
+<meta name="description" content="補助金・助成金の申請について無料でご相談いただけます。申請できる補助金を一緒に探します。">
 <link rel="canonical" href="https://hojokin.well-c.biz/contact/">
 <style>
 * { box-sizing: border-box; }
@@ -22,19 +22,45 @@ nav.site-nav { background: #1a3a5c; padding: 14px 0; }
 .nav-links a:hover { color: white; }
 .nav-cta { background: #d35400; color: white !important; padding: 10px 18px !important; border-radius: 6px; font-weight: 600; }
 
-header.page-head { background: linear-gradient(135deg, #1a3a5c 0%, #2c5282 100%); color: white; padding: 48px 0 36px; text-align: center; }
-header.page-head h1 { margin: 0 0 10px; font-size: 26px; font-weight: 700; }
-header.page-head p { margin: 0; opacity: 0.9; font-size: 14px; }
+header.page-head { background: linear-gradient(135deg, #1a3a5c 0%, #2c5282 100%); color: white; padding: 52px 0 40px; text-align: center; }
+header.page-head h1 { margin: 0 0 10px; font-size: 28px; font-weight: 700; }
+header.page-head p { margin: 0; opacity: 0.9; font-size: 15px; }
 
-.form-section { max-width: 760px; margin: 40px auto 60px; background: white; border-radius: 10px; box-shadow: 0 2px 12px rgba(26,58,92,0.06); padding: 36px 40px; }
-.form-section .lead { font-size: 14px; color: #555; line-height: 1.85; margin: 0 0 28px; padding: 16px 20px; background: #f5f7fa; border-left: 4px solid #d35400; border-radius: 0 6px 6px 0; }
+.content-wrap { max-width: 760px; margin: 0 auto; padding: 40px 20px 60px; }
 
-footer.site { background: #1a3a5c; color: rgba(255,255,255,0.85); padding: 24px 0; text-align: center; font-size: 13px; margin-top: 60px; }
+/* こんな方へ */
+.consult-types { background: white; border-radius: 10px; box-shadow: 0 2px 10px rgba(26,58,92,0.06); padding: 32px 36px; margin: 0 0 28px; }
+.consult-types h2 { font-size: 18px; color: #1a3a5c; margin: 0 0 20px; font-weight: 700; padding-bottom: 12px; border-bottom: 2px solid #e4e9ef; }
+.type-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+.type-item { display: flex; align-items: flex-start; gap: 10px; padding: 14px 16px; background: #f5f7fa; border-radius: 8px; border-left: 3px solid #d35400; }
+.type-item .icon { font-size: 18px; flex-shrink: 0; margin-top: 1px; }
+.type-item p { margin: 0; font-size: 14px; line-height: 1.6; color: #333; }
+
+/* ステップ */
+.steps { background: white; border-radius: 10px; box-shadow: 0 2px 10px rgba(26,58,92,0.06); padding: 32px 36px; margin: 0 0 28px; }
+.steps h2 { font-size: 18px; color: #1a3a5c; margin: 0 0 24px; font-weight: 700; padding-bottom: 12px; border-bottom: 2px solid #e4e9ef; }
+.step-list { display: flex; flex-direction: column; gap: 0; }
+.step-item { display: flex; align-items: flex-start; gap: 16px; position: relative; padding-bottom: 28px; }
+.step-item:last-child { padding-bottom: 0; }
+.step-item::before { content: ''; position: absolute; left: 19px; top: 38px; bottom: 0; width: 2px; background: #e4e9ef; }
+.step-item:last-child::before { display: none; }
+.step-num { width: 40px; height: 40px; background: #1a3a5c; color: white; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 15px; font-weight: 700; flex-shrink: 0; }
+.step-body { padding-top: 8px; }
+.step-body h3 { margin: 0 0 4px; font-size: 15px; color: #1a3a5c; font-weight: 700; }
+.step-body p { margin: 0; font-size: 13px; color: #666; line-height: 1.7; }
+
+/* フォーム */
+.form-section { background: white; border-radius: 10px; box-shadow: 0 2px 10px rgba(26,58,92,0.06); padding: 32px 36px; }
+.form-section h2 { font-size: 18px; color: #1a3a5c; margin: 0 0 8px; font-weight: 700; }
+.form-section .form-note { font-size: 13px; color: #666; margin: 0 0 24px; }
+
+footer.site { background: #1a3a5c; color: rgba(255,255,255,0.85); padding: 24px 0; text-align: center; font-size: 13px; }
 footer.site p { margin: 4px 0; }
 
 @media (max-width: 600px) {
   header.page-head h1 { font-size: 22px; }
-  .form-section { padding: 24px 20px; margin: 24px 16px 40px; }
+  .consult-types, .steps, .form-section { padding: 24px 20px; }
+  .type-grid { grid-template-columns: 1fr; }
   .nav-links { gap: 12px; }
   .nav-links a { font-size: 12px; }
 }
@@ -57,14 +83,83 @@ footer.site p { margin: 4px 0; }
 </nav>
 
 <header class="page-head">
-  <h1>無料相談・補助金診断</h1>
-  <p>申請できる補助金を一緒に探します。まずはお気軽にご相談ください。</p>
+  <h1>無料相談・お問い合わせ</h1>
+  <p>申請できる補助金を一緒に探します。お気軽にご相談ください。</p>
 </header>
 
-<div class="form-section">
-  <p class="lead">ご相談内容や事業の状況をお聞かせください。折り返しご連絡いたします（通常1〜2営業日以内）。</p>
-  <div data-tf-live="01K3TA3ECCY7VG1Z9C6W6G5HJK"></div>
-  <script src="//embed.typeform.com/next/embed.js"></script>
+<div class="content-wrap">
+
+  <div class="consult-types">
+    <h2>こんなご相談をお受けしています</h2>
+    <div class="type-grid">
+      <div class="type-item">
+        <span class="icon">🔍</span>
+        <p>自社が使える補助金・助成金を知りたい</p>
+      </div>
+      <div class="type-item">
+        <span class="icon">📋</span>
+        <p>補助金の申請書類の書き方がわからない</p>
+      </div>
+      <div class="type-item">
+        <span class="icon">💻</span>
+        <p>IT導入補助金・デジタル化を検討している</p>
+      </div>
+      <div class="type-item">
+        <span class="icon">🏭</span>
+        <p>設備投資・事業拡大に使える補助金を探している</p>
+      </div>
+      <div class="type-item">
+        <span class="icon">📅</span>
+        <p>申請期限が迫っていて急いでいる</p>
+      </div>
+      <div class="type-item">
+        <span class="icon">💬</span>
+        <p>過去に不採択になった、リベンジしたい</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="steps">
+    <h2>ご相談の流れ</h2>
+    <div class="step-list">
+      <div class="step-item">
+        <div class="step-num">1</div>
+        <div class="step-body">
+          <h3>フォームで送信（2〜3分）</h3>
+          <p>下記フォームに事業の状況やご相談内容をご記入ください。</p>
+        </div>
+      </div>
+      <div class="step-item">
+        <div class="step-num">2</div>
+        <div class="step-body">
+          <h3>担当者よりご連絡（1〜2営業日以内）</h3>
+          <p>内容を確認のうえ、メールまたはお電話でご連絡いたします。</p>
+        </div>
+      </div>
+      <div class="step-item">
+        <div class="step-num">3</div>
+        <div class="step-body">
+          <h3>無料ヒアリング（30分程度）</h3>
+          <p>事業内容・投資計画などをお聞きし、申請できる補助金を整理します。</p>
+        </div>
+      </div>
+      <div class="step-item">
+        <div class="step-num">4</div>
+        <div class="step-body">
+          <h3>補助金の提案・申請サポート</h3>
+          <p>最適な補助金をご提案し、申請書類の作成から採択までサポートします。</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="form-section">
+    <h2>お問い合わせフォーム</h2>
+    <p class="form-note">いただいた情報は、ご相談対応のみに使用します。</p>
+    <div data-tf-live="01K3TA3ECCY7VG1Z9C6W6G5HJK"></div>
+    <script src="//embed.typeform.com/next/embed.js"></script>
+  </div>
+
 </div>
 
 <footer class="site">
