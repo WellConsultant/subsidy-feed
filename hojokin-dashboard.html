@@ -33,14 +33,12 @@ canvas { max-height: 300px; }
   .cards { grid-template-columns: repeat(2, 1fr); }
 }
 </style>
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-CKY4MXRRK0"></script>
-<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag('js',new Date());gtag('config','G-CKY4MXRRK0');</script>
 </head>
 <body>
 
 <div class="header">
   <h1>hojokin.well-c.biz アナリティクス</h1>
-  <p>期間: 2026-03-15 〜 2026-04-12（過去28日間）/ 更新: 2026-04-12</p>
+  <p>期間: 2026-03-16 〜 2026-04-13（過去28日間）/ 更新: 2026-04-13</p>
 </div>
 
 <div class="container">
@@ -50,31 +48,31 @@ canvas { max-height: 300px; }
 <div class="cards">
   <div class="card">
     <div class="label">ユーザー数</div>
-    <div class="value">0</div>
+    <div class="value">4</div>
     <div class="change"> vs 前期間</div>
   </div>
   <div class="card">
     <div class="label">セッション</div>
-    <div class="value">0</div>
+    <div class="value">5</div>
     <div class="change"> vs 前期間</div>
   </div>
   <div class="card">
     <div class="label">PV</div>
-    <div class="value">0</div>
+    <div class="value">25</div>
     <div class="change"> vs 前期間</div>
   </div>
   <div class="card">
     <div class="label">新規ユーザー</div>
-    <div class="value">0</div>
+    <div class="value">4</div>
     <div class="change"> vs 前期間</div>
   </div>
   <div class="card">
     <div class="label">エンゲージメント率</div>
-    <div class="value">---</div>
+    <div class="value">40.0%</div>
   </div>
   <div class="card">
     <div class="label">平均セッション時間</div>
-    <div class="value">---</div>
+    <div class="value">1131秒</div>
   </div>
 </div>
 
@@ -94,7 +92,7 @@ canvas { max-height: 300px; }
 <div class="section-title">流入元</div>
 <div class="panel" style="margin-bottom:24px;">
   <h2>チャネル別セッション</h2>
-  <div class="empty">データ蓄積中（24時間以内に表示されます）</div>
+  <table><thead><tr><th>チャネル</th><th>セッション</th><th>エンゲージメント率</th></tr></thead><tbody><tr><td>Direct</td><td>5</td><td>40.0%</td></tr><tr><td>Unassigned</td><td>3</td><td>0.0%</td></tr></tbody></table>
 </div>
 
 <!-- ===== コンテンツ分析 ===== -->
@@ -102,11 +100,11 @@ canvas { max-height: 300px; }
 <div class="grid-2">
   <div class="panel">
     <h2>ページ別PV（パス）</h2>
-    <div class="empty">データ蓄積中</div>
+    <table><thead><tr><th>パス</th><th>PV</th><th>ユーザー</th></tr></thead><tbody><tr><td>/blog/</td><td>5</td><td>2</td></tr><tr><td>/archive/</td><td>4</td><td>2</td></tr><tr><td>/archive/2026-04-11.html</td><td>3</td><td>2</td></tr><tr><td>/blog/2026-04-12-japan.html</td><td>2</td><td>2</td></tr><tr><td>/blog/main/kihon-date.html</td><td>1</td><td>1</td></tr><tr><td>/blog/s/jnet21_4520f9db1007.html</td><td>1</td><td>1</td></tr><tr><td>/blog/s/jnet21_5ef65a5990d3.html</td><td>1</td><td>1</td></tr><tr><td>/blog/s/jnet21_8627c0b57936.html</td><td>1</td><td>1</td></tr><tr><td>/blog/s/jnet21_883005dc8d7c.html</td><td>1</td><td>1</td></tr><tr><td>/blog/s/jnet21_94355a4f9215.html</td><td>1</td><td>1</td></tr><tr><td>/blog/s/mirasapo_2cc165fad226.html</td><td>1</td><td>1</td></tr><tr><td>/blog/s/mirasapo_542a76094da7.html</td><td>1</td><td>1</td></tr><tr><td>/blog/s/mirasapo_8dd46d74df7a.html</td><td>1</td><td>1</td></tr><tr><td>/blog/s/mirasapo_90fc815cd12b.html</td><td>1</td><td>1</td></tr><tr><td>/blog/s/mirasapo_ea6ecc6858a8.html</td><td>1</td><td>1</td></tr></tbody></table>
   </div>
   <div class="panel">
     <h2>ページ種別</h2>
-    <div class="empty">データ蓄積中</div>
+    <table><thead><tr><th>種別</th><th>イベント</th><th>ユーザー</th></tr></thead><tbody><tr><td>article</td><td>47</td><td>3</td></tr><tr><td>(not set)</td><td>37</td><td>2</td></tr><tr><td>archive</td><td>20</td><td>2</td></tr><tr><td>article_index</td><td>20</td><td>2</td></tr><tr><td></td><td>12</td><td>3</td></tr></tbody></table>
   </div>
 </div>
 
@@ -115,11 +113,11 @@ canvas { max-height: 300px; }
 <div class="grid-2">
   <div class="panel">
     <h2>スクロール深度</h2>
-    <div class="empty">データ蓄積中</div>
+    <canvas id='scrollChart'></canvas>
   </div>
   <div class="panel">
     <h2>イベント一覧</h2>
-    <div class="empty">データ蓄積中</div>
+    <table><thead><tr><th>イベント</th><th>回数</th></tr></thead><tbody><tr><td>page_exit</td><td>30</td></tr><tr><td>page_view</td><td>25</td></tr><tr><td>page_view_enhanced</td><td>24</td></tr><tr><td>user_engagement</td><td>15</td></tr><tr><td>time_on_page</td><td>9</td></tr><tr><td>internal_nav</td><td>5</td></tr><tr><td>outbound_click</td><td>5</td></tr><tr><td>session_start</td><td>5</td></tr><tr><td>first_visit</td><td>4</td></tr><tr><td>scroll_depth</td><td>4</td></tr><tr><td>article_read_complete</td><td>3</td></tr><tr><td>cta_click</td><td>1</td></tr></tbody></table>
   </div>
 </div>
 
@@ -128,7 +126,7 @@ canvas { max-height: 300px; }
 <div class="grid-2">
   <div class="panel">
     <h2>CTAクリック（ボタン別）</h2>
-    <div class="empty">データ蓄積中</div>
+    <table><thead><tr><th>ボタン</th><th>クリック数</th></tr></thead><tbody><tr><td>無料相談のお申し込み</td><td>1</td></tr></tbody></table>
   </div>
   <div class="panel">
     <h2>ダウンロード</h2>
@@ -139,20 +137,20 @@ canvas { max-height: 300px; }
 <div class="grid-2">
   <div class="panel">
     <h2>内部遷移（from → to）</h2>
-    <div class="empty">データ蓄積中</div>
+    <table><thead><tr><th>遷移元</th><th>遷移先</th><th>回数</th></tr></thead><tbody><tr><td>article_index</td><td>top</td><td>2</td></tr><tr><td>archive</td><td>top</td><td>1</td></tr><tr><td>article</td><td>top</td><td>1</td></tr><tr><td>article_index</td><td>article</td><td>1</td></tr></tbody></table>
   </div>
   <div class="panel">
     <h2>地域別ユーザー</h2>
-    <div class="empty">データ蓄積中</div>
+    <table><thead><tr><th>地域</th><th>ユーザー</th></tr></thead><tbody><tr><td>Saitama</td><td>2</td></tr><tr><td>Osaka</td><td>1</td></tr><tr><td>Tokyo</td><td>1</td></tr></tbody></table>
   </div>
 </div>
 
 </div>
 
 <script>
-const dailyData = [];
-const deviceData = [];
-const scrollData = [];
+const dailyData = [{"date": "2026-04-12", "users": 2, "sessions": 2}, {"date": "2026-04-13", "users": 3, "sessions": 3}];
+const deviceData = [{"device": "mobile", "sessions": 3}, {"device": "desktop", "sessions": 2}];
+const scrollData = [{"percent": "25", "count": 1}, {"percent": "50", "count": 1}, {"percent": "75", "count": 1}, {"percent": "100", "count": 1}];
 
 // Daily chart
 if (dailyData.length > 0) {
@@ -194,6 +192,5 @@ if (scrollData.length > 0) {
 }
 </script>
 
-<script src="/assets/analytics.js" defer></script>
 </body>
 </html>
