@@ -3,49 +3,125 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>2026-04-14 の新着情報 | 補助金情報フィード</title>
-<link rel="canonical" href="https://hojokin.well-c.biz/archive/2026-04-14.html">
+<title>補助金情報 19件 新着 - 2026年04月14日</title>
 <style>
 * { box-sizing: border-box; }
-body { font-family: -apple-system, "Hiragino Sans", sans-serif; margin: 0; background: #f5f7fa; color: #1a1a1a; line-height: 1.7; }
-.container { max-width: 800px; margin: 0 auto; padding: 0 20px; }
+body { font-family: -apple-system, BlinkMacSystemFont, "Hiragino Sans", "Yu Gothic UI", sans-serif; margin: 0; background: #f5f7fa; color: #1a1a1a; line-height: 1.7; }
+a { color: #1a3a5c; }
+.container { max-width: 1100px; margin: 0 auto; padding: 0 20px; }
 .site-nav { background: #122a44; padding: 14px 0; position: sticky; top: 0; z-index: 100; box-shadow: 0 2px 4px rgba(0,0,0,0.1); }
 .nav-inner { display: flex; justify-content: space-between; align-items: center; gap: 20px; }
-.nav-logo { color: white; font-weight: 700; text-decoration: none; font-size: 16px; }
-.nav-links { list-style: none; display: flex; gap: 24px; padding: 0; margin: 0; align-items: center; }
+.nav-logo { color: white; font-weight: 700; text-decoration: none; font-size: 16px; letter-spacing: 0.02em; }
+.nav-logo:hover { opacity: 0.85; }
+.nav-links { list-style: none; display: flex; gap: 24px; padding: 0; margin: 0; align-items: center; text-align: left; }
 .nav-links li { margin: 0; }
-.nav-links a { color: rgba(255,255,255,0.85); text-decoration: none; font-size: 14px; padding: 8px 0; }
+.nav-links a { color: rgba(255,255,255,0.85); text-decoration: none; font-size: 14px; padding: 8px 0; transition: color 0.2s; }
 .nav-links a:hover { color: white; }
-.nav-cta { background: #d35400; color: white !important; padding: 10px 18px !important; border-radius: 6px; font-weight: 600; }
-main { padding: 40px 0 80px; }
-h1 { color: #1a3a5c; border-bottom: 2px solid #1a3a5c; padding-bottom: 10px; margin-top: 0; }
-.no-new { background: white; border-radius: 8px; padding: 32px 24px; box-shadow: 0 1px 3px rgba(0,0,0,0.06); text-align: center; color: #666; }
-.back-link { display: inline-block; margin-top: 24px; color: #1a3a5c; text-decoration: none; font-size: 14px; }
-.back-link:hover { text-decoration: underline; }
+.nav-cta { background: #d35400; color: white !important; padding: 10px 18px !important; border-radius: 6px; font-weight: 600; transition: background 0.2s; }
+.nav-cta:hover { background: #b34700; }
+header.page-head { background: linear-gradient(135deg, #1a3a5c 0%, #2c5282 100%); color: white; padding: 40px 0 32px; }
+header.page-head h1 { margin: 0 0 8px; font-size: 26px; font-weight: 700; border: none; padding: 0; }
+header.page-head .date { margin: 0; font-size: 13px; opacity: 0.85; color: #e2e8f0; }
+main.page { padding: 32px 0 48px; }
+.source { background: white; border-radius: 8px; padding: 16px 20px; margin: 12px 0; box-shadow: 0 1px 3px rgba(0,0,0,0.08); display: flex; justify-content: space-between; align-items: center; }
+.source h2 { margin: 0; font-size: 18px; color: #1a3a5c; border: none; padding: 0; }
+.count { color: #d35400; font-weight: bold; font-size: 24px; }
+.section { color: #1a3a5c; margin-top: 32px; border-left: 4px solid #1a3a5c; padding: 4px 0 4px 12px; font-size: 18px; }
+table { width: 100%; border-collapse: collapse; background: white; border-radius: 8px; overflow: hidden; box-shadow: 0 1px 3px rgba(0,0,0,0.08); margin-top: 12px; }
+thead { background: #1a3a5c; color: white; }
+th { padding: 10px 14px; text-align: left; font-size: 14px; }
+td { padding: 10px 14px; border-bottom: 1px solid #eee; font-size: 14px; }
+tr:last-child td { border-bottom: none; }
+tr:hover { background: #f8f9fa; }
+.col-pref { width: 90px; white-space: nowrap; }
+.col-name { width: auto; }
+.col-date { width: 120px; white-space: nowrap; }
+.td-pref { text-align: center; color: #555; font-size: 13px; }
+.td-date { text-align: center; color: #333; }
+td a { color: #2563eb; text-decoration: none; }
+td a:hover { text-decoration: underline; }
+.report-link { background: #1a3a5c; border-radius: 8px; padding: 16px 20px; margin: 16px 0; }
+.report-link a { color: white; text-decoration: none; font-weight: bold; font-size: 16px; }
+.report-link a:hover { text-decoration: underline; }
+footer.site { background: #1a1a1a; color: #999; padding: 36px 0; margin-top: 60px; font-size: 13px; text-align: center; }
+footer.site a { color: #ccc; }
+footer.site p { margin: 6px 0; }
+footer.site .footer-legal { margin-top: 18px; font-size: 12px; }
+footer.site .footer-legal a { color: #7bb3ff; margin: 0 8px; }
+@media (max-width: 720px) {
+  .nav-inner { flex-wrap: wrap; gap: 10px; justify-content: center; }
+  .nav-logo { font-size: 14px; flex-basis: 100%; text-align: center; }
+  .nav-links { gap: 14px; flex-wrap: wrap; justify-content: center; }
+  .nav-links a { font-size: 13px; padding: 6px 0; }
+  .nav-cta { padding: 8px 14px !important; font-size: 13px; }
+  header.page-head h1 { font-size: 20px; }
+}
 </style>
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-CKY4MXRRK0"></script>
-<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag('js',new Date());gtag('config','G-CKY4MXRRK0');</script>
 </head>
 <body>
+
 <nav class="site-nav">
   <div class="container nav-inner">
-    <a class="nav-logo" href="/">補助金情報フィード</a>
+    <a class="nav-logo" href="https://hojokin.well-c.biz/">補助金情報フィード</a>
     <ul class="nav-links">
-      <li><a href="/">トップ</a></li>
-      <li><a href="/archive/">アーカイブ</a></li>
-      <li><a href="https://www.funnel-build.com/" target="_blank" rel="noopener">運営会社</a></li>
-      <li><a class="nav-cta" href="https://www.funnel-build.com/hojokin-contact-legacy2" target="_blank" rel="noopener">お問い合わせ</a></li>
+      <li><a href="https://hojokin.well-c.biz/">トップ</a></li>
+      <li><a href="https://hojokin.well-c.biz/blog/">解説記事</a></li>
+      <li><a href="https://hojokin.well-c.biz/#download">無料ダウンロード</a></li>
+      <li><a href="https://hojokin.well-c.biz/#shindan">無料診断</a></li>
+      <li><a href="https://hojokin.well-c.biz/archive/">新着補助金</a></li>
+      <li><a class="nav-cta" href="https://hojokin.well-c.biz/#soudan">無料相談</a></li>
     </ul>
   </div>
 </nav>
-<main class="container">
-<h1>2026-04-14 の新着情報</h1>
-<div class="no-new">
-  <p>この日の新着補助金はありませんでした。</p>
-  <p style="font-size:13px;">既存の公募中補助金情報は<a href="/">トップページ</a>でご確認いただけます。</p>
-  <a class="back-link" href="/archive/">← アーカイブ一覧に戻る</a>
-</div>
+
+<header class="page-head">
+  <div class="container">
+    <p class="date">2026年04月14日</p>
+    <h1>補助金情報 19件 新着</h1>
+  </div>
+</header>
+
+<main class="page">
+  <div class="container">
+    
+    <div class="source"><h2>unknown</h2><span class="count">19件</span></div>
+
+    <h2 class="section">unknown</h2>
+<table>
+<thead><tr><th class="col-pref">都道府県</th><th class="col-name">補助金名</th><th class="col-date">公募開始</th><th class="col-date">公募終了</th></tr></thead>
+<tbody>
+<tr><td class="td-pref">島根県</td><td>専門人材確保推進事業費補助金、専門人材（副業・兼業）確保推進事業費補助金</td><td class="td-date">-</td><td class="td-date">2027-02-15</td></tr>
+<tr><td class="td-pref">-</td><td>令和７年度補正予算 経営再建支援事業（小規模事業者申請分）</td><td class="td-date">2026-03-31</td><td class="td-date">2026-09-30</td></tr>
+<tr><td class="td-pref">-</td><td>令和７年度補正予算 ＳＳネットワーク維持・強化支援事業 自動車保守・整備関連設備導入等事業</td><td class="td-date">2026-03-31</td><td class="td-date">2026-05-15</td></tr>
+<tr><td class="td-pref">京都府</td><td>令和8年度チャレンジ支援事業KYOTO海外展開</td><td class="td-date">-</td><td class="td-date">2026-05-20</td></tr>
+<tr><td class="td-pref">-</td><td>中小企業等知的財産支援地域連携促進事業費補助金（中小企業等知的財産支援事業）</td><td class="td-date">2026-04-10</td><td class="td-date">2026-05-08</td></tr>
+<tr><td class="td-pref">富山県</td><td>令和８年度 ものづくり企業のバイオ・医薬分野参入推進事業費補助金</td><td class="td-date">2026-04-10</td><td class="td-date">2026-05-15</td></tr>
+<tr><td class="td-pref">-</td><td>令和８年度工業団地構造変化等対応支援事業（工業団地組合向け調査費等助成）</td><td class="td-date">2026-04-24</td><td class="td-date">2026-06-24</td></tr>
+<tr><td class="td-pref">宮城県</td><td>宮城県医療分野参入促進事業費補助金（試作開発型・販路開拓型）</td><td class="td-date">2026-04-10</td><td class="td-date">2026-05-29</td></tr>
+<tr><td class="td-pref">和歌山県</td><td>わかやま地域課題解決型起業支援補助金</td><td class="td-date">2026-04-01</td><td class="td-date">2026-05-08</td></tr>
+<tr><td class="td-pref">秋田県</td><td>外国人材定着支援事業費補助金</td><td class="td-date">-</td><td class="td-date">2026-06-30</td></tr>
+<tr><td class="td-pref">福島県</td><td>令和８年度福島県農産物等海外販路開拓支援事業</td><td class="td-date">2026-04-10</td><td class="td-date">2026-05-11</td></tr>
+<tr><td class="td-pref">山形県</td><td>令和８年度山形県中小企業特別高圧電力負担軽減事業費補助金</td><td class="td-date">2026-05-01</td><td class="td-date">2026-05-29</td></tr>
+<tr><td class="td-pref">宮城県</td><td>ユニバーサルデザインタクシー普及促進事業費補助金</td><td class="td-date">2026-04-10</td><td class="td-date">2027-01-29</td></tr>
+<tr><td class="td-pref">山形県</td><td>令和8年度山形県再生可能エネルギー（小水力発電）事業可能性調査事業費補助金</td><td class="td-date">-</td><td class="td-date">2026-12-25</td></tr>
+<tr><td class="td-pref">香川県</td><td>起業等スタートアップ支援補助金（地域課題解決型）</td><td class="td-date">2026-04-10</td><td class="td-date">2026-06-03</td></tr>
+<tr><td class="td-pref">愛知県</td><td>愛知県中小企業特別高圧電力価格高騰対策支援金（第7期）</td><td class="td-date">2026-04-24</td><td class="td-date">2026-06-15</td></tr>
+<tr><td class="td-pref">岡山県</td><td>令和８年度エコプロダクツ製品化支援事業費補助金</td><td class="td-date">2026-04-10</td><td class="td-date">2026-05-29</td></tr>
+<tr><td class="td-pref">徳島県</td><td>プロフェッショナル人材確保支援費補助金</td><td class="td-date">2026-04-01</td><td class="td-date">2027-02-26</td></tr>
+<tr><td class="td-pref">新潟県</td><td>令和８年度 トップランナー挑戦支援事業</td><td class="td-date">2026-04-02</td><td class="td-date">2026-05-15</td></tr>
+</tbody></table>
+
+  </div>
 </main>
-<script src="/assets/analytics.js" defer></script>
+
+<footer class="site">
+  <div class="container">
+    <p>本サイトは公的機関が公開している補助金情報を自動収集しています。</p>
+    <p>最新・正確な情報は必ず各補助金の公式ページでご確認ください。</p>
+    <p>&copy; Well Consultant</p>
+    <p class="footer-legal"><a href="https://www.funnel-build.com/privacy-poricy" target="_blank" rel="noopener">プライバシーポリシー</a>　<a href="https://www.funnel-build.com/tokushouhou-hyouki" target="_blank" rel="noopener">特定商取引法に基づく表記</a></p>
+  </div>
+</footer>
+
 </body>
 </html>
