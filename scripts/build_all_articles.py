@@ -111,17 +111,60 @@ PREFECTURES = [
 
 
 def detect_region(item):
-    """regions フィールド → description → name から都道府県を抽出"""
-    regions = item.get('regions') or []
-    for r in regions:
+    """（互換維持）最初の都道府県を1件だけ返す。新コードは detect_regions を使う。"""
+    regions = detect_regions(item)
+    return regions[0] if regions else '全国'
+
+
+def detect_regions(item):
+    """補助金が対象とする都道府県をすべてリストで返す。
+    regions フィールド → description 内の '（○○県,○○県,...）' パターン → name/description/implementing_org の順で走査。
+    該当なしは [] を返す（呼び出し側で '全国' として扱う）。
+    """
+    found = []
+    seen = set()
+
+    def add(p):
+        if p and p in PREFECTURES and p not in seen:
+            seen.add(p)
+            found.append(p)
+
+    # 1. regions フィールド（パース済み）
+    for r in (item.get('regions') or []):
         if r in PREFECTURES:
-            return r
-    # description / name からの抽出
-    for haystack in (item.get('description') or '', item.get('name') or '', item.get('implementing_org') or ''):
+            add(r)
+        else:
+            for pref in PREFECTURES:
+                if pref in r:
+                    add(pref)
+
+    # 2. description 内の「（茨城県,栃木県,...）」パターン（複数県の列挙）を優先抽出
+    description = item.get('description') or ''
+    if description:
+        # 全角/半角括弧両対応、区切りはカンマ・読点・中黒・スラッシュ・スペースを許容
+        for m in re.finditer(r'[（(]([^）)]{0,200})[）)]', description[:400]):
+            inside = m.group(1)
+            hits_in_group = [p for p in PREFECTURES if p in inside]
+            if len(hits_in_group) >= 2:
+                # 複数県列挙のカッコを見つけた場合、ここに書かれている順でまとめて採用
+                ordered = []
+                for p in PREFECTURES:
+                    idx = inside.find(p)
+                    if idx >= 0:
+                        ordered.append((idx, p))
+                ordered.sort()
+                for _, p in ordered:
+                    add(p)
+                if found:
+                    return found
+
+    # 3. name / description / implementing_org 全体から単一県を拾う
+    for haystack in (item.get('name') or '', description, item.get('implementing_org') or ''):
         for pref in PREFECTURES:
             if pref in haystack:
-                return pref
-    return '全国'
+                add(pref)
+
+    return found
 
 
 # ---------- CSS ----------
@@ -220,20 +263,31 @@ def clean_name(name):
     return s.strip() or name
 
 
-def build_lead(item, region):
-    """記事冒頭のリード文を組み立てる"""
+def format_regions_phrase(regions):
+    """複数都道府県の表示用フレーズを作る。
+    0件→'全国を対象に'、1件→'茨城県で'、2件→'茨城県・栃木県で'、
+    3件以上→'茨城県・栃木県・群馬県…（全N都道府県）で'。
+    """
+    if not regions:
+        return '全国を対象に'
+    if len(regions) == 1:
+        return f'{regions[0]}で'
+    if len(regions) == 2:
+        return f'{regions[0]}・{regions[1]}で'
+    head = '・'.join(regions[:3])
+    return f'{head}ほか（全{len(regions)}都道府県）で'
+
+
+def build_lead(item, regions):
+    """記事冒頭のリード文を組み立てる。regions は都道府県のリスト。"""
     summary = item.get('summary') or ''
     description = item.get('description') or ''
     name = clean_name(item.get('name') or '')
     parts = []
-    if region != '全国':
-        parts.append(f'{region}で公募されている「{name}」についてご紹介します。')
-    else:
-        parts.append(f'全国を対象に公募されている「{name}」についてご紹介します。')
+    parts.append(f'{format_regions_phrase(regions)}公募されている「{name}」についてご紹介します。')
     if summary:
         parts.append(summary)
     elif description:
-        # description の冒頭を抜粋（改行を半角スペースに）
         snippet = re.sub(r'\s+', ' ', description).strip()
         if len(snippet) > 240:
             snippet = snippet[:240] + '…'
@@ -242,7 +296,8 @@ def build_lead(item, region):
     return ''.join(parts)
 
 
-def render_article(item, region):
+def render_article(item, regions):
+    """regions は都道府県のリスト。空なら全国扱い。"""
     name_raw = item.get('name') or '（補助金名不明）'
     name = clean_name(name_raw)
     detail_url = item.get('detail_url') or ''
@@ -268,8 +323,12 @@ def render_article(item, region):
     info_items = []
     if org:
         info_items.append(('実施機関', escape(org)))
-    if region and region != '全国':
-        info_items.append(('対象地域', escape(region)))
+    if regions:
+        if len(regions) <= 3:
+            region_label = '・'.join(regions)
+        else:
+            region_label = '・'.join(regions) + f'（全{len(regions)}都道府県）'
+        info_items.append(('対象地域', escape(region_label)))
     sched = ''
     if application_start and application_end:
         sched = f'{escape(application_start)}〜{escape(application_end)}'
@@ -291,12 +350,16 @@ def render_article(item, region):
         f'<dt>{k}</dt><dd>{v}</dd>' for k, v in info_items
     )
 
-    # tag row
+    # tag row（対象都道府県は最大5件までタグ表示、以降は省略表記）
     head_tags = []
-    if region and region != '全国':
-        head_tags.append(region)
+    region_set = set(regions or [])
+    if regions:
+        for p in regions[:5]:
+            head_tags.append(p)
+        if len(regions) > 5:
+            head_tags.append(f'ほか{len(regions)-5}県')
     for t in tags[:4]:
-        if t and t != region:
+        if t and t not in region_set and t not in head_tags:
             head_tags.append(t)
     tag_row_html = ''.join(
         f'<span class="tag">{escape(t)}</span>' for t in head_tags
@@ -417,7 +480,7 @@ def render_article(item, region):
   </div>'''
 
     # リード
-    lead_text = build_lead(item, region)
+    lead_text = build_lead(item, regions)
 
     # メタ
     meta_desc_parts = [name]
@@ -504,8 +567,8 @@ def main():
         if not sid:
             continue
         merged = merge_parse_cache(item, cache_map)
-        region = detect_region(merged)
-        html = render_article(merged, region)
+        regions = detect_regions(merged)
+        html = render_article(merged, regions)
         out_path = os.path.join(OUT_DIR, f'{sid}.html')
         with open(out_path, 'w', encoding='utf-8') as f:
             f.write(html)
