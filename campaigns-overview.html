@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>全キャンペーン横断ダッシュボード</title>
+<script src="https://cdn.jsdelivr.net/npm/chart.js@4"></script>
+<style>
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body { font-family: -apple-system, "Hiragino Sans", sans-serif; background: #f5f7fa; color: #1a1a1a; line-height: 1.6; }
+.header { background: linear-gradient(135deg, #0f2d52 0%, #1a3a5c 100%); color: white; padding: 24px 32px; }
+.header h1 { font-size: 24px; font-weight: 700; }
+.header p { font-size: 13px; color: rgba(255,255,255,0.8); margin-top: 6px; }
+.container { max-width: 1280px; margin: 0 auto; padding: 24px 16px; }
+
+.section-title { font-size: 18px; font-weight: 700; color: #0f2d52; margin: 32px 0 16px; padding-left: 12px; border-left: 4px solid #d35400; }
+
+/* Top stats */
+.stats { display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 14px; margin-bottom: 24px; }
+.stat { background: white; border-radius: 10px; padding: 20px; box-shadow: 0 1px 3px rgba(0,0,0,0.06); }
+.stat .label { font-size: 11px; color: #666; text-transform: uppercase; letter-spacing: 0.5px; font-weight: 600; }
+.stat .value { font-size: 30px; font-weight: 700; color: #0f2d52; margin: 6px 0; }
+.stat .sub { font-size: 12px; color: #888; }
+.stat.hero { background: linear-gradient(135deg, #fff6e0 0%, #fff 100%); border: 2px solid #d35400; }
+.stat.hero .value { color: #d35400; }
+
+/* Campaign cards */
+.campaigns-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(320px, 1fr)); gap: 16px; margin-bottom: 32px; }
+.cp-card { background: white; border-radius: 10px; padding: 20px; box-shadow: 0 1px 3px rgba(0,0,0,0.06); transition: transform .15s, box-shadow .15s; }
+.cp-card:hover { transform: translateY(-2px); box-shadow: 0 4px 12px rgba(0,0,0,0.1); }
+.cp-card .cp-badge { display: inline-block; background: #0f2d52; color: white; font-size: 10px; font-weight: 700; padding: 3px 8px; border-radius: 3px; letter-spacing: 0.05em; margin-bottom: 10px; }
+.cp-card h3 { font-size: 16px; color: #0f2d52; margin-bottom: 4px; line-height: 1.4; }
+.cp-card .period { font-size: 12px; color: #888; margin-bottom: 16px; }
+.cp-card .metrics { display: grid; grid-template-columns: 1fr 1fr; gap: 12px 16px; margin-top: 12px; }
+.cp-card .m-row { }
+.cp-card .m-label { font-size: 11px; color: #888; }
+.cp-card .m-value { font-size: 18px; font-weight: 700; color: #0f2d52; }
+.cp-card .m-value.revenue { color: #d35400; }
+.cp-card .link { display: inline-block; margin-top: 16px; padding: 8px 16px; background: #0f2d52; color: white; text-decoration: none; border-radius: 5px; font-size: 13px; font-weight: 600; }
+.cp-card .link:hover { background: #1a4680; }
+
+.panel { background: white; border-radius: 10px; padding: 20px; box-shadow: 0 1px 3px rgba(0,0,0,0.06); margin-bottom: 24px; }
+.panel h2 { font-size: 15px; color: #0f2d52; margin-bottom: 14px; border-bottom: 2px solid #e8ecf1; padding-bottom: 8px; }
+canvas { max-height: 320px; }
+
+table { width: 100%; border-collapse: collapse; font-size: 13px; }
+th { text-align: left; padding: 10px 12px; background: #f0f3f7; color: #555; font-weight: 600; }
+td { padding: 10px 12px; border-bottom: 1px solid #eef0f3; }
+tr:hover { background: #f8f9fb; }
+td.num { text-align: right; font-variant-numeric: tabular-nums; }
+td a { color: #0f2d52; text-decoration: none; font-weight: 600; }
+
+.empty { color: #999; font-size: 13px; padding: 30px; text-align: center; }
+
+@media (max-width: 768px) {
+  .campaigns-grid { grid-template-columns: 1fr; }
+  .stats { grid-template-columns: repeat(2, 1fr); }
+}
+</style>
+</head>
+<body>
+
+<div class="header">
+  <h1>全キャンペーン横断ダッシュボード</h1>
+  <p>Well Consultant マーケティング｜最終更新: <span id="lastUpdate">—</span>｜キャンペーン数: <span id="cpCount">—</span></p>
+</div>
+
+<div class="container">
+
+<!-- ===== 累計 ===== -->
+<div class="section-title">累計（全キャンペーン合算）</div>
+<div class="stats">
+  <div class="stat">
+    <div class="label">累計 PV</div>
+    <div class="value" id="total-pv">—</div>
+  </div>
+  <div class="stat">
+    <div class="label">累計 CTA クリック</div>
+    <div class="value" id="total-cta">—</div>
+  </div>
+  <div class="stat">
+    <div class="label">累計 申込ページ閲覧</div>
+    <div class="value" id="total-ov">—</div>
+  </div>
+  <div class="stat hero">
+    <div class="label">累計 決済数</div>
+    <div class="value" id="total-purchase">—</div>
+  </div>
+  <div class="stat hero">
+    <div class="label">累計 売上</div>
+    <div class="value" id="total-revenue">—</div>
+    <div class="sub">JPY</div>
+  </div>
+</div>
+
+<!-- ===== キャンペーン一覧 ===== -->
+<div class="section-title">キャンペーン一覧</div>
+<div class="campaigns-grid" id="cpGrid"></div>
+
+<!-- ===== 「何日目に売れやすいか」パターン ===== -->
+<div class="section-title">「何日目に売れやすいか」（全CP集約）</div>
+<div class="panel">
+  <canvas id="chartDayPattern"></canvas>
+</div>
+
+<!-- ===== CP別売上比較 ===== -->
+<div class="section-title">CP別 売上・決済比較</div>
+<div class="panel">
+  <canvas id="chartCpCompare"></canvas>
+</div>
+
+<!-- ===== 詳細テーブル ===== -->
+<div class="section-title">キャンペーン別 詳細</div>
+<div class="panel">
+  <table>
+    <thead>
+      <tr>
+        <th>キャンペーン</th>
+        <th>期間</th>
+        <th class="num">PV</th>
+        <th class="num">CTA</th>
+        <th class="num">申込ページ</th>
+        <th class="num">決済</th>
+        <th class="num">CTR</th>
+        <th class="num">CVR</th>
+        <th class="num">売上</th>
+      </tr>
+    </thead>
+    <tbody id="cpTable"></tbody>
+  </table>
+</div>
+
+</div>
+
+<script>
+let DATA = {
+  lastUpdate: '—',
+  campaignCount: 0,
+  totals: { pv: 0, cta: 0, orderView: 0, purchase: 0, revenue: 0 },
+  campaigns: [],
+  dayPattern: []
+};
+
+async function loadData(){
+  try {
+    const res = await fetch('campaigns-overview.json', { cache: 'no-store' });
+    if (res.ok){ DATA = await res.json(); }
+  } catch(e){}
+  render();
+}
+
+function fmt(n){ return (n == null) ? '—' : n.toLocaleString('ja-JP'); }
+function yen(n){ return (n == null) ? '—' : '¥' + n.toLocaleString('ja-JP'); }
+
+function render(){
+  document.getElementById('lastUpdate').textContent = DATA.lastUpdate;
+  document.getElementById('cpCount').textContent = DATA.campaignCount;
+  document.getElementById('total-pv').textContent = fmt(DATA.totals.pv);
+  document.getElementById('total-cta').textContent = fmt(DATA.totals.cta);
+  document.getElementById('total-ov').textContent = fmt(DATA.totals.orderView);
+  document.getElementById('total-purchase').textContent = fmt(DATA.totals.purchase);
+  document.getElementById('total-revenue').textContent = yen(DATA.totals.revenue);
+
+  // Campaign cards
+  const grid = document.getElementById('cpGrid');
+  if (DATA.campaigns.length === 0){
+    grid.innerHTML = '<div class="empty">キャンペーンデータなし</div>';
+  } else {
+    DATA.campaigns.forEach(cp => {
+      const el = document.createElement('div');
+      el.className = 'cp-card';
+      el.innerHTML = `
+        <span class="cp-badge">${cp.id.toUpperCase()}</span>
+        <h3>${cp.name}</h3>
+        <div class="period">${cp.start} 〜 ${(cp.end||'').substring(0,10)}</div>
+        <div class="metrics">
+          <div class="m-row"><div class="m-label">PV</div><div class="m-value">${fmt(cp.totals.pv)}</div></div>
+          <div class="m-row"><div class="m-label">決済数</div><div class="m-value">${fmt(cp.totals.purchase)}</div></div>
+          <div class="m-row"><div class="m-label">CTR</div><div class="m-value">${cp.ctr}%</div></div>
+          <div class="m-row"><div class="m-label">CVR</div><div class="m-value">${cp.cvr}%</div></div>
+          <div class="m-row" style="grid-column:1 / -1"><div class="m-label">売上</div><div class="m-value revenue">${yen(cp.totals.revenue)}</div></div>
+        </div>
+        <a href="${cp.dashboard}" class="link">詳細ダッシュボードへ →</a>
+      `;
+      grid.appendChild(el);
+    });
+  }
+
+  // Day pattern chart
+  const dp = DATA.dayPattern || [];
+  if (dp.length){
+    new Chart(document.getElementById('chartDayPattern'), {
+      type: 'bar',
+      data: {
+        labels: dp.map(d => 'Day ' + d.day),
+        datasets: [
+          { label: '決済数', data: dp.map(d => d.purchase), backgroundColor: '#d35400', yAxisID: 'y' },
+          { label: '売上', data: dp.map(d => d.revenue), type: 'line', borderColor: '#0f2d52', backgroundColor: 'rgba(15,45,82,.1)', yAxisID: 'y2', tension: 0.3 }
+        ]
+      },
+      options: {
+        responsive: true,
+        scales: {
+          y: { position: 'left', title: {display:true, text:'決済数'} },
+          y2: { position: 'right', title: {display:true, text:'売上'}, grid:{drawOnChartArea:false}, ticks: { callback: v => '¥'+v.toLocaleString() } }
+        }
+      }
+    });
+  } else {
+    document.getElementById('chartDayPattern').parentNode.innerHTML = '<div class="empty">データ収集中</div>';
+  }
+
+  // CP比較
+  if (DATA.campaigns.length){
+    new Chart(document.getElementById('chartCpCompare'), {
+      type: 'bar',
+      data: {
+        labels: DATA.campaigns.map(c => c.id),
+        datasets: [
+          { label: '売上', data: DATA.campaigns.map(c => c.totals.revenue), backgroundColor: '#d35400', yAxisID: 'y' },
+          { label: '決済数', data: DATA.campaigns.map(c => c.totals.purchase), backgroundColor: '#1a3a5c', yAxisID: 'y2' }
+        ]
+      },
+      options: {
+        responsive: true,
+        scales: {
+          y: { position:'left', title:{display:true, text:'売上'}, ticks:{ callback: v => '¥'+v.toLocaleString() } },
+          y2: { position:'right', title:{display:true, text:'決済数'}, grid:{drawOnChartArea:false} }
+        }
+      }
+    });
+  } else {
+    document.getElementById('chartCpCompare').parentNode.innerHTML = '<div class="empty">データ収集中</div>';
+  }
+
+  // 詳細テーブル
+  const tbody = document.getElementById('cpTable');
+  if (DATA.campaigns.length === 0){
+    tbody.innerHTML = '<tr><td colspan="9" style="text-align:center;color:#999;padding:20px">データなし</td></tr>';
+  } else {
+    DATA.campaigns.forEach(c => {
+      tbody.innerHTML += `
+        <tr>
+          <td><a href="${c.dashboard}">${c.name}</a></td>
+          <td>${c.start} 〜 ${(c.end||'').substring(0,10)}</td>
+          <td class="num">${fmt(c.totals.pv)}</td>
+          <td class="num">${fmt(c.totals.cta)}</td>
+          <td class="num">${fmt(c.totals.orderView)}</td>
+          <td class="num">${fmt(c.totals.purchase)}</td>
+          <td class="num">${c.ctr}%</td>
+          <td class="num">${c.cvr}%</td>
+          <td class="num">${yen(c.totals.revenue)}</td>
+        </tr>
+      `;
+    });
+  }
+}
+
+loadData();
+</script>
+
+</body>
+</html>

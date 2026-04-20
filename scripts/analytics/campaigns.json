@@ -1,0 +1,33 @@
+{
+  "ga4_property_id": "533735595",
+  "campaigns": [
+    {
+      "id": "cc-1day",
+      "name": "Claude Code 実装1DAYワークショップ",
+      "price": 9800,
+      "start": "2026-04-18",
+      "end": "2026-04-21T23:59:59+09:00",
+      "lp_path": "/cc-1day/",
+      "order_path": "/cc-1day1",
+      "thanks_path": "/thanks-cc-1day",
+      "cf_product_id": 997030,
+      "cf_product_name_contains": "Claude Code",
+      "dashboard": "cc-1day-dashboard.html",
+      "enabled": true
+    }
+  ],
+  "_next_campaign_template": {
+    "id": "商品スラグ（半角英数字ハイフン）",
+    "name": "商品名（表示用）",
+    "price": 9800,
+    "start": "2026-MM-DD",
+    "end": "2026-MM-DDT23:59:59+09:00",
+    "lp_path": "/商品スラグ/",
+    "order_path": "/商品スラグ決済URL末尾",
+    "thanks_path": "/thanks-商品スラグ",
+    "cf_product_id": "ClickFunnels製品ID（数字）",
+    "cf_product_name_contains": "商品名に含まれる一部文字列",
+    "dashboard": "商品スラグ-dashboard.html",
+    "enabled": true
+  }
+}

@@ -1,0 +1,75 @@
+{
+  "lastUpdate": "2026-04-20 13:54 JST",
+  "campaignCount": 1,
+  "totals": {
+    "pv": 0,
+    "cta": 0,
+    "orderView": 0,
+    "purchase": 2,
+    "revenue": 19600
+  },
+  "campaigns": [
+    {
+      "id": "cc-1day",
+      "name": "Claude Code 実装1DAYワークショップ",
+      "start": "2026-04-18",
+      "end": "2026-04-21T23:59:59+09:00",
+      "dashboard": "cc-1day-dashboard.html",
+      "totals": {
+        "pv": 0,
+        "cta": 0,
+        "orderView": 0,
+        "purchase": 2,
+        "revenue": 19600
+      },
+      "cvr": 0,
+      "ctr": 0,
+      "daily": [
+        {
+          "date": "2026-04-18",
+          "day": 1,
+          "pv": 0,
+          "cta": 0,
+          "orderView": 0,
+          "purchase": 0,
+          "revenue": 0
+        },
+        {
+          "date": "2026-04-19",
+          "day": 2,
+          "pv": 0,
+          "cta": 0,
+          "orderView": 0,
+          "purchase": 1,
+          "revenue": 9800
+        },
+        {
+          "date": "2026-04-20",
+          "day": 3,
+          "pv": 0,
+          "cta": 0,
+          "orderView": 0,
+          "purchase": 1,
+          "revenue": 9800
+        }
+      ]
+    }
+  ],
+  "dayPattern": [
+    {
+      "day": 1,
+      "purchase": 0,
+      "revenue": 0
+    },
+    {
+      "day": 2,
+      "purchase": 1,
+      "revenue": 9800
+    },
+    {
+      "day": 3,
+      "purchase": 1,
+      "revenue": 9800
+    }
+  ]
+}
