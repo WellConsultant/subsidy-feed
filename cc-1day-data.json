@@ -1,6 +1,6 @@
 {
-  "lastUpdate": "2026-04-20 13:54 JST",
-  "campaignStart": "2026-04-18",
+  "lastUpdate": "2026-04-20 14:30 JST",
+  "campaignStart": "2026-04-17",
   "campaignEnd": "2026-04-21T23:59:59+09:00",
   "product": {
     "name": "Claude Code 実装1DAYワークショップ",
@@ -10,13 +10,22 @@
     "pv": 0,
     "cta": 0,
     "orderView": 0,
-    "purchase": 2,
-    "revenue": 19600
+    "purchase": 4,
+    "revenue": 39200
   },
   "daily": [
     {
-      "date": "2026-04-18",
+      "date": "2026-04-17",
       "day": 1,
+      "pv": 0,
+      "cta": 0,
+      "orderView": 0,
+      "purchase": 2,
+      "revenue": 19600
+    },
+    {
+      "date": "2026-04-18",
+      "day": 2,
       "pv": 0,
       "cta": 0,
       "orderView": 0,
@@ -25,7 +34,7 @@
     },
     {
       "date": "2026-04-19",
-      "day": 2,
+      "day": 3,
       "pv": 0,
       "cta": 0,
       "orderView": 0,
@@ -34,7 +43,7 @@
     },
     {
       "date": "2026-04-20",
-      "day": 3,
+      "day": 4,
       "pv": 0,
       "cta": 0,
       "orderView": 0,
