@@ -221,6 +221,10 @@ function renderAll(){
 function fmt(n){ return n == null ? '—' : n.toLocaleString('ja-JP'); }
 function pct(num, den){ if (!den) return '—'; return (num/den*100).toFixed(2) + '%'; }
 function yen(n){ return n == null ? '—' : '¥' + n.toLocaleString('ja-JP'); }
+const WD = ['日','月','火','水','木','金','土'];
+function mmdd(dateStr){ if(!dateStr) return ''; const d = new Date(dateStr+'T00:00:00+09:00'); return (d.getMonth()+1)+'/'+d.getDate(); }
+function wday(dateStr){ if(!dateStr) return ''; const d = new Date(dateStr+'T00:00:00+09:00'); return WD[d.getDay()]; }
+function dayLabel(d){ return 'Day '+d.day+' ('+mmdd(d.date)+' '+wday(d.date)+')'; }
 
 document.getElementById('lastUpdate').textContent = DATA.lastUpdate;
 document.getElementById('kpi-pv').textContent = fmt(DATA.totals.pv);
@@ -256,7 +260,7 @@ updateCountdown();
 setInterval(updateCountdown, 60000);
 
 // ========== チャート初期化 ==========
-const labels = DATA.daily.map(d => d.date);
+const labels = DATA.daily.map(d => mmdd(d.date) + ' ' + wday(d.date));
 const emptyMsg = (id, txt) => {
   const ctx = document.getElementById(id);
   ctx.parentNode.innerHTML = '<div class="empty">' + txt + '</div>';
@@ -312,7 +316,7 @@ if (DATA.daily.length === 0){
   new Chart(document.getElementById('chartDay'), {
     type: 'bar',
     data: {
-      labels: DATA.daily.map(d => 'Day ' + d.day),
+      labels: DATA.daily.map(dayLabel),
       datasets: [{ label: '決済数', data: DATA.daily.map(d=>d.purchase), backgroundColor: '#d35400' }]
     },
     options: {
