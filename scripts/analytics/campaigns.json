@@ -14,6 +14,20 @@
       "cf_product_name_contains": "Claude Code",
       "dashboard": "cc-1day-dashboard.html",
       "enabled": true
+    },
+    {
+      "id": "hojokin-kougeki",
+      "name": "補助金攻略コース",
+      "price": 29800,
+      "start": "2026-04-20",
+      "end": "2026-12-31T23:59:59+09:00",
+      "lp_path": "/hojokin-kougeki/",
+      "order_path": "/kougeki",
+      "thanks_path": "/thanks-kougeki",
+      "cf_product_id": 992927,
+      "cf_product_name_contains": "補助金攻略",
+      "dashboard": "hojokin-kougeki-dashboard.html",
+      "enabled": true
     }
   ],
   "_next_campaign_template": {

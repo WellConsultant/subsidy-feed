@@ -1,0 +1,370 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>補助金攻略コース ダッシュボード</title>
+<script src="https://cdn.jsdelivr.net/npm/chart.js@4"></script>
+<style>
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body { font-family: -apple-system, "Hiragino Sans", sans-serif; background: #f5f7fa; color: #1a1a1a; line-height: 1.6; }
+.header { background: linear-gradient(135deg, #1a3a5c 0%, #0f2d52 100%); color: white; padding: 24px 32px; }
+.header h1 { font-size: 22px; font-weight: 700; }
+.header p { font-size: 13px; color: rgba(255,255,255,0.8); margin-top: 6px; }
+.header .badge { display: inline-block; background: #d35400; padding: 3px 10px; border-radius: 4px; font-size: 11px; font-weight: 700; letter-spacing: 0.05em; margin-right: 8px; }
+.container { max-width: 1200px; margin: 0 auto; padding: 24px 16px; }
+
+.cards { display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 14px; margin-bottom: 24px; }
+.card { background: white; border-radius: 10px; padding: 18px; box-shadow: 0 1px 3px rgba(0,0,0,0.06); }
+.card .label { font-size: 11px; color: #666; text-transform: uppercase; letter-spacing: 0.5px; font-weight: 600; }
+.card .value { font-size: 28px; font-weight: 700; color: #0f2d52; margin: 4px 0; }
+.card .sub { font-size: 12px; color: #888; }
+.card.highlight { background: linear-gradient(135deg, #fff6e0 0%, #fff 100%); border: 2px solid #d35400; }
+.card.highlight .value { color: #d35400; }
+
+.funnel { background: white; border-radius: 10px; padding: 24px; box-shadow: 0 1px 3px rgba(0,0,0,0.06); margin-bottom: 24px; }
+.funnel h2 { font-size: 16px; color: #0f2d52; margin-bottom: 16px; }
+.funnel-steps { display: grid; grid-template-columns: repeat(4, 1fr); gap: 2px; }
+.funnel-step { padding: 16px; text-align: center; color: white; position: relative; }
+.funnel-step:nth-child(1) { background: #1a3a5c; }
+.funnel-step:nth-child(2) { background: #2d5880; }
+.funnel-step:nth-child(3) { background: #4275a3; }
+.funnel-step:nth-child(4) { background: #d35400; }
+.funnel-step .step-label { font-size: 11px; opacity: 0.9; }
+.funnel-step .step-value { font-size: 26px; font-weight: 700; margin-top: 4px; }
+.funnel-step .step-rate { font-size: 11px; opacity: 0.85; margin-top: 4px; }
+.funnel-step::after { content: ""; position: absolute; right: -10px; top: 50%; transform: translateY(-50%); border-left: 10px solid; border-top: 18px solid transparent; border-bottom: 18px solid transparent; z-index: 1; }
+.funnel-step:nth-child(1)::after { border-left-color: #1a3a5c; }
+.funnel-step:nth-child(2)::after { border-left-color: #2d5880; }
+.funnel-step:nth-child(3)::after { border-left-color: #4275a3; }
+.funnel-step:last-child::after { display: none; }
+
+.grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin-bottom: 24px; }
+.panel { background: white; border-radius: 10px; padding: 20px; box-shadow: 0 1px 3px rgba(0,0,0,0.06); }
+.panel h2 { font-size: 15px; color: #0f2d52; margin-bottom: 14px; border-bottom: 2px solid #e8ecf1; padding-bottom: 8px; }
+table { width: 100%; border-collapse: collapse; font-size: 13px; }
+th { text-align: left; padding: 8px 10px; background: #f0f3f7; color: #555; font-weight: 600; }
+td { padding: 8px 10px; border-bottom: 1px solid #eef0f3; }
+tr:hover { background: #f8f9fb; }
+td.num { text-align: right; font-variant-numeric: tabular-nums; }
+canvas { max-height: 300px; }
+.section-title { font-size: 18px; font-weight: 700; color: #0f2d52; margin: 32px 0 16px; padding-left: 12px; border-left: 4px solid #d35400; }
+
+.countdown { background: #fff6e0; border: 2px solid #d35400; border-radius: 10px; padding: 20px; text-align: center; margin-bottom: 24px; }
+.countdown .cd-label { font-size: 13px; color: #8b4a00; font-weight: 700; letter-spacing: 0.1em; }
+.countdown .cd-value { font-size: 36px; font-weight: 700; color: #d35400; margin: 8px 0; }
+.countdown .cd-sub { font-size: 13px; color: #666; }
+
+.empty { color: #999; font-size: 13px; padding: 30px; text-align: center; background: white; border-radius: 10px; }
+
+@media (max-width: 768px) {
+  .grid-2 { grid-template-columns: 1fr; }
+  .cards { grid-template-columns: repeat(2, 1fr); }
+  .funnel-steps { grid-template-columns: 1fr; gap: 8px; }
+  .funnel-step::after { display: none; }
+}
+</style>
+</head>
+<body>
+
+<div class="header">
+  <h1><span class="badge">コース</span>補助金攻略コース ダッシュボード</h1>
+  <p>持続化補助金の事業計画書をAIで自力作成｜期間: 2026-04-20（日）〜 2026-12-31（日）23:59</p>
+  <p>データソース: ClickFunnels｜最終更新: <span id="lastUpdate">—</span></p>
+</div>
+
+<div class="container">
+
+<!-- ===== キャンペーン進行状況 ===== -->
+<div class="countdown">
+  <div class="cd-label">キャンペーン残り時間</div>
+  <div class="cd-value" id="countdown">—</div>
+  <div class="cd-sub">締切: 2026-12-31（日）23:59 JST</div>
+</div>
+
+<!-- ===== トップKPI ===== -->
+<div class="section-title">サマリー</div>
+<div class="cards">
+  <div class="card">
+    <div class="label">LP 閲覧（PV）</div>
+    <div class="value" id="kpi-pv">—</div>
+    <div class="sub">Step 1</div>
+  </div>
+  <div class="card">
+    <div class="label">CTA クリック</div>
+    <div class="value" id="kpi-cta">—</div>
+    <div class="sub">Step 2（<span id="kpi-ctr">—</span>）</div>
+  </div>
+  <div class="card">
+    <div class="label">申込ページ閲覧</div>
+    <div class="value" id="kpi-order-view">—</div>
+    <div class="sub">Step 3</div>
+  </div>
+  <div class="card highlight">
+    <div class="label">申込（決済完了）</div>
+    <div class="value" id="kpi-purchase">—</div>
+    <div class="sub">Step 4（CVR <span id="kpi-cvr">—</span>）</div>
+  </div>
+  <div class="card highlight">
+    <div class="label">売上合計</div>
+    <div class="value" id="kpi-revenue">—</div>
+    <div class="sub">JPY</div>
+  </div>
+</div>
+
+<!-- ===== ファネル ===== -->
+<div class="funnel">
+  <h2>ファネル（ユーザーの流れ）</h2>
+  <div class="funnel-steps">
+    <div class="funnel-step">
+      <div class="step-label">Step 1｜LP閲覧</div>
+      <div class="step-value" id="fnl-1">—</div>
+      <div class="step-rate">100%</div>
+    </div>
+    <div class="funnel-step">
+      <div class="step-label">Step 2｜CTAクリック</div>
+      <div class="step-value" id="fnl-2">—</div>
+      <div class="step-rate" id="fnl-2-rate">—</div>
+    </div>
+    <div class="funnel-step">
+      <div class="step-label">Step 3｜申込ページ</div>
+      <div class="step-value" id="fnl-3">—</div>
+      <div class="step-rate" id="fnl-3-rate">—</div>
+    </div>
+    <div class="funnel-step">
+      <div class="step-label">Step 4｜決済完了</div>
+      <div class="step-value" id="fnl-4">—</div>
+      <div class="step-rate" id="fnl-4-rate">—</div>
+    </div>
+  </div>
+</div>
+
+<!-- ===== 日別推移 ===== -->
+<div class="section-title">日別推移</div>
+<div class="grid-2">
+  <div class="panel">
+    <h2>PV / CTA / 決済（日別）</h2>
+    <canvas id="chartDaily"></canvas>
+  </div>
+  <div class="panel">
+    <h2>売上推移（日別・累計）</h2>
+    <canvas id="chartRevenue"></canvas>
+  </div>
+</div>
+
+<!-- ===== 何日目に売れたか ===== -->
+<div class="section-title">何日目に売れたか</div>
+<div class="panel" style="margin-bottom: 24px;">
+  <canvas id="chartDay"></canvas>
+</div>
+
+<!-- ===== 時間帯別 ===== -->
+<div class="section-title">時間帯別アクセス（直近）</div>
+<div class="panel" style="margin-bottom: 24px;">
+  <canvas id="chartHour"></canvas>
+</div>
+
+<!-- ===== 詳細テーブル ===== -->
+<div class="section-title">日別詳細</div>
+<div class="panel">
+  <table>
+    <thead>
+      <tr>
+        <th>日付</th>
+        <th>Day</th>
+        <th class="num">PV</th>
+        <th class="num">CTA</th>
+        <th class="num">申込ページ</th>
+        <th class="num">決済</th>
+        <th class="num">売上</th>
+        <th class="num">CVR</th>
+      </tr>
+    </thead>
+    <tbody id="detailTable"></tbody>
+  </table>
+</div>
+
+</div>
+
+<script>
+// ============================================
+// データソース：cc-1day-data.json を読み込み
+// （存在しない／未取得時はダミーの空データで表示確認）
+// ============================================
+let DATA = {
+  lastUpdate: '—（データ未取得）',
+  campaignStart: '2026-04-20',
+  campaignEnd: '2026-12-31T23:59:59+09:00',
+  product: { name: '補助金攻略コース', price: 29800 },
+  totals: { pv: 0, cta: 0, orderView: 0, purchase: 0, revenue: 0 },
+  daily: [],
+  hourly: new Array(24).fill(0)
+};
+
+async function loadData(){
+  try {
+    const res = await fetch('hojokin-kougeki-data.json', { cache: 'no-store' });
+    if (res.ok){
+      const json = await res.json();
+      DATA = json;
+    }
+  } catch(e){
+    console.log('data.json 未取得・ダミー表示');
+  }
+  renderAll();
+}
+
+function renderAll(){
+
+// ========== KPI 表示 ==========
+function fmt(n){ return n == null ? '—' : n.toLocaleString('ja-JP'); }
+function pct(num, den){ if (!den) return '—'; return (num/den*100).toFixed(2) + '%'; }
+function yen(n){ return n == null ? '—' : '¥' + n.toLocaleString('ja-JP'); }
+const WD = ['日','月','火','水','木','金','土'];
+function mmdd(dateStr){ if(!dateStr) return ''; const d = new Date(dateStr+'T00:00:00+09:00'); return (d.getMonth()+1)+'/'+d.getDate(); }
+function wday(dateStr){ if(!dateStr) return ''; const d = new Date(dateStr+'T00:00:00+09:00'); return WD[d.getDay()]; }
+function dayLabel(d){ return 'Day '+d.day+' ('+mmdd(d.date)+' '+wday(d.date)+')'; }
+
+document.getElementById('lastUpdate').textContent = DATA.lastUpdate;
+document.getElementById('kpi-pv').textContent = fmt(DATA.totals.pv);
+document.getElementById('kpi-cta').textContent = fmt(DATA.totals.cta);
+document.getElementById('kpi-ctr').textContent = 'CTR ' + pct(DATA.totals.cta, DATA.totals.pv);
+document.getElementById('kpi-order-view').textContent = fmt(DATA.totals.orderView);
+document.getElementById('kpi-purchase').textContent = fmt(DATA.totals.purchase);
+document.getElementById('kpi-cvr').textContent = pct(DATA.totals.purchase, DATA.totals.pv);
+document.getElementById('kpi-revenue').textContent = yen(DATA.totals.revenue);
+
+// ファネル
+document.getElementById('fnl-1').textContent = fmt(DATA.totals.pv);
+document.getElementById('fnl-2').textContent = fmt(DATA.totals.cta);
+document.getElementById('fnl-3').textContent = fmt(DATA.totals.orderView);
+document.getElementById('fnl-4').textContent = fmt(DATA.totals.purchase);
+document.getElementById('fnl-2-rate').textContent = pct(DATA.totals.cta, DATA.totals.pv);
+document.getElementById('fnl-3-rate').textContent = pct(DATA.totals.orderView, DATA.totals.pv);
+document.getElementById('fnl-4-rate').textContent = pct(DATA.totals.purchase, DATA.totals.pv);
+
+// ========== カウントダウン ==========
+function updateCountdown(){
+  const end = new Date(DATA.campaignEnd).getTime();
+  const now = Date.now();
+  const diff = end - now;
+  const el = document.getElementById('countdown');
+  if (diff <= 0){ el.textContent = '終了'; return; }
+  const d = Math.floor(diff / 86400000);
+  const h = Math.floor((diff % 86400000) / 3600000);
+  const m = Math.floor((diff % 3600000) / 60000);
+  el.textContent = `${d}日 ${h}時間 ${m}分`;
+}
+updateCountdown();
+setInterval(updateCountdown, 60000);
+
+// ========== チャート初期化 ==========
+const labels = DATA.daily.map(d => mmdd(d.date) + ' ' + wday(d.date));
+const emptyMsg = (id, txt) => {
+  const ctx = document.getElementById(id);
+  ctx.parentNode.innerHTML = '<div class="empty">' + txt + '</div>';
+};
+
+if (DATA.daily.length === 0){
+  emptyMsg('chartDaily', 'データ収集中（GA4/CF連携後に表示されます）');
+  emptyMsg('chartRevenue', 'データ収集中');
+  emptyMsg('chartDay', 'データ収集中');
+} else {
+  // 日別 PV / CTA / 決済
+  new Chart(document.getElementById('chartDaily'), {
+    type: 'line',
+    data: {
+      labels: labels,
+      datasets: [
+        { label: 'PV', data: DATA.daily.map(d=>d.pv), borderColor:'#1a3a5c', backgroundColor:'rgba(26,58,92,.1)', yAxisID: 'y' },
+        { label: 'CTA', data: DATA.daily.map(d=>d.cta), borderColor:'#4275a3', backgroundColor:'rgba(66,117,163,.1)', yAxisID: 'y' },
+        { label: '決済', data: DATA.daily.map(d=>d.purchase), borderColor:'#d35400', backgroundColor:'rgba(211,84,0,.1)', yAxisID: 'y2' }
+      ]
+    },
+    options: {
+      responsive: true,
+      scales: {
+        y: { position: 'left', title: { display: true, text: 'PV/CTA' } },
+        y2: { position: 'right', title: { display: true, text: '決済' }, grid: { drawOnChartArea: false } }
+      }
+    }
+  });
+
+  // 売上推移
+  let cum = 0;
+  const cumRevenue = DATA.daily.map(d => { cum += d.revenue; return cum; });
+  new Chart(document.getElementById('chartRevenue'), {
+    type: 'bar',
+    data: {
+      labels: labels,
+      datasets: [
+        { type:'bar', label:'日別売上', data: DATA.daily.map(d=>d.revenue), backgroundColor:'rgba(211,84,0,0.7)', yAxisID:'y' },
+        { type:'line', label:'累計売上', data: cumRevenue, borderColor:'#0f2d52', backgroundColor:'rgba(15,45,82,0.1)', yAxisID:'y2', tension:0.3 }
+      ]
+    },
+    options: {
+      responsive: true,
+      scales: {
+        y: { position:'left', title:{display:true, text:'日別'}, ticks: { callback: v=> '¥'+v.toLocaleString() } },
+        y2: { position:'right', title:{display:true, text:'累計'}, grid:{drawOnChartArea:false}, ticks: { callback: v=> '¥'+v.toLocaleString() } }
+      }
+    }
+  });
+
+  // 何日目に売れたか
+  new Chart(document.getElementById('chartDay'), {
+    type: 'bar',
+    data: {
+      labels: DATA.daily.map(dayLabel),
+      datasets: [{ label: '決済数', data: DATA.daily.map(d=>d.purchase), backgroundColor: '#d35400' }]
+    },
+    options: {
+      responsive: true,
+      plugins: { legend: { display: false } }
+    }
+  });
+}
+
+// 時間帯別
+if (DATA.hourly.every(v => v === 0)){
+  emptyMsg('chartHour', 'データ収集中');
+} else {
+  new Chart(document.getElementById('chartHour'), {
+    type: 'bar',
+    data: {
+      labels: Array.from({length:24}, (_,i) => i + '時'),
+      datasets: [{ label: 'アクセス数', data: DATA.hourly, backgroundColor: '#4275a3' }]
+    },
+    options: { responsive: true, plugins: { legend: { display: false } } }
+  });
+}
+
+// ========== 詳細テーブル ==========
+const tbody = document.getElementById('detailTable');
+if (DATA.daily.length === 0){
+  tbody.innerHTML = '<tr><td colspan="8" style="text-align:center;color:#999;padding:20px">データ収集中（GA4/CF連携完了後に集計開始）</td></tr>';
+} else {
+  DATA.daily.forEach(d => {
+    const cvr = d.pv ? (d.purchase/d.pv*100).toFixed(2) + '%' : '—';
+    tbody.innerHTML += `
+      <tr>
+        <td>${d.date}</td>
+        <td>Day ${d.day}</td>
+        <td class="num">${fmt(d.pv)}</td>
+        <td class="num">${fmt(d.cta)}</td>
+        <td class="num">${fmt(d.orderView)}</td>
+        <td class="num">${fmt(d.purchase)}</td>
+        <td class="num">${yen(d.revenue)}</td>
+        <td class="num">${cvr}</td>
+      </tr>
+    `;
+  });
+}
+} // renderAll
+
+loadData();
+</script>
+
+</body>
+</html>
