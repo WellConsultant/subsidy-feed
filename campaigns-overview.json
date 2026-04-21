@@ -1,6 +1,6 @@
 {
-  "lastUpdate": "2026-04-20 14:34 JST",
-  "campaignCount": 1,
+  "lastUpdate": "2026-04-21 00:00 JST",
+  "campaignCount": 2,
   "totals": {
     "pv": 0,
     "cta": 0,
@@ -60,6 +60,51 @@
           "orderView": 0,
           "purchase": 1,
           "revenue": 9800
+        },
+        {
+          "date": "2026-04-21",
+          "day": 5,
+          "pv": 0,
+          "cta": 0,
+          "orderView": 0,
+          "purchase": 0,
+          "revenue": 0
+        }
+      ]
+    },
+    {
+      "id": "hojokin-kougeki",
+      "name": "補助金攻略コース",
+      "start": "2026-04-20",
+      "end": "2026-12-31T23:59:59+09:00",
+      "dashboard": "hojokin-kougeki-dashboard.html",
+      "totals": {
+        "pv": 0,
+        "cta": 0,
+        "orderView": 0,
+        "purchase": 0,
+        "revenue": 0
+      },
+      "cvr": 0,
+      "ctr": 0,
+      "daily": [
+        {
+          "date": "2026-04-20",
+          "day": 1,
+          "pv": 0,
+          "cta": 0,
+          "orderView": 0,
+          "purchase": 0,
+          "revenue": 0
+        },
+        {
+          "date": "2026-04-21",
+          "day": 2,
+          "pv": 0,
+          "cta": 0,
+          "orderView": 0,
+          "purchase": 0,
+          "revenue": 0
         }
       ]
     }
@@ -84,6 +129,11 @@
       "day": 4,
       "purchase": 1,
       "revenue": 9800
+    },
+    {
+      "day": 5,
+      "purchase": 0,
+      "revenue": 0
     }
   ]
 }
