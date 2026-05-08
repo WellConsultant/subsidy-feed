@@ -20,8 +20,8 @@ from html import escape
 SCRIPT_DIR = os.path.dirname(os.path.abspath(__file__))
 REPO_ROOT = os.path.dirname(SCRIPT_DIR)
 BLOG_DIR = os.path.join(REPO_ROOT, 'blog')
-PARSE_CACHE_DIR = '/Users/kazuhiroakutsu/dev/subsidy-collector/data/parse_cache'
-SUBSIDIES_JSON = '/Users/kazuhiroakutsu/dev/subsidy-collector/data/subsidies.json'
+PARSE_CACHE_DIR = '/Users/kazuhiroakutsu/Desktop/claude-skills/02_プロジェクト/subsidy-collector/data/parse_cache'
+SUBSIDIES_JSON = '/Users/kazuhiroakutsu/Desktop/claude-skills/02_プロジェクト/subsidy-collector/data/subsidies.json'
 TOP_INDEX_HTML = os.path.join(REPO_ROOT, 'index.html')
 BLOG_INDEX_HTML = os.path.join(BLOG_DIR, 'index.html')
 TODAY = datetime.today().strftime('%Y-%m-%d')

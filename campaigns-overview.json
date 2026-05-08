@@ -1,9 +1,9 @@
 {
-  "lastUpdate": "2026-05-02 00:00 JST",
+  "lastUpdate": "2026-05-08 12:17 JST",
   "campaignCount": 2,
   "totals": {
     "pv": 0,
-    "cta": 0,
+    "cta": 2,
     "orderView": 0,
     "purchase": 5,
     "revenue": 51980
@@ -80,7 +80,7 @@
       "dashboard": "hojokin-kougeki-dashboard.html",
       "totals": {
         "pv": 0,
-        "cta": 0,
+        "cta": 2,
         "orderView": 0,
         "purchase": 0,
         "revenue": 0
@@ -204,6 +204,60 @@
           "orderView": 0,
           "purchase": 0,
           "revenue": 0
+        },
+        {
+          "date": "2026-05-03",
+          "day": 14,
+          "pv": 0,
+          "cta": 0,
+          "orderView": 0,
+          "purchase": 0,
+          "revenue": 0
+        },
+        {
+          "date": "2026-05-04",
+          "day": 15,
+          "pv": 0,
+          "cta": 0,
+          "orderView": 0,
+          "purchase": 0,
+          "revenue": 0
+        },
+        {
+          "date": "2026-05-05",
+          "day": 16,
+          "pv": 0,
+          "cta": 0,
+          "orderView": 0,
+          "purchase": 0,
+          "revenue": 0
+        },
+        {
+          "date": "2026-05-06",
+          "day": 17,
+          "pv": 0,
+          "cta": 0,
+          "orderView": 0,
+          "purchase": 0,
+          "revenue": 0
+        },
+        {
+          "date": "2026-05-07",
+          "day": 18,
+          "pv": 0,
+          "cta": 2,
+          "orderView": 0,
+          "purchase": 0,
+          "revenue": 0
+        },
+        {
+          "date": "2026-05-08",
+          "day": 19,
+          "pv": 0,
+          "cta": 0,
+          "orderView": 0,
+          "purchase": 0,
+          "revenue": 0
         }
       ]
     }
@@ -271,6 +325,36 @@
     },
     {
       "day": 13,
+      "purchase": 0,
+      "revenue": 0
+    },
+    {
+      "day": 14,
+      "purchase": 0,
+      "revenue": 0
+    },
+    {
+      "day": 15,
+      "purchase": 0,
+      "revenue": 0
+    },
+    {
+      "day": 16,
+      "purchase": 0,
+      "revenue": 0
+    },
+    {
+      "day": 17,
+      "purchase": 0,
+      "revenue": 0
+    },
+    {
+      "day": 18,
+      "purchase": 0,
+      "revenue": 0
+    },
+    {
+      "day": 19,
       "purchase": 0,
       "revenue": 0
     }

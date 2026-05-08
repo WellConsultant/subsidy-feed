@@ -17,7 +17,7 @@ import re
 SCRIPT_DIR = os.path.dirname(os.path.abspath(__file__))
 REPO_ROOT = os.path.dirname(SCRIPT_DIR)
 INDEX_HTML = os.path.join(REPO_ROOT, 'index.html')
-SUBSIDIES_JSON = '/Users/kazuhiroakutsu/dev/subsidy-collector/data/subsidies.json'
+SUBSIDIES_JSON = '/Users/kazuhiroakutsu/Desktop/claude-skills/02_プロジェクト/subsidy-collector/data/subsidies.json'
 
 SECTION_START_MARK = '<h2 class="section-title">当サイトに収録している公募中の補助金'
 SECTION_END_MARK = '</details>\n</section>'  # 都道府県別一覧の終わり

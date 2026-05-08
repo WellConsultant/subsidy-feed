@@ -27,7 +27,7 @@ from google.analytics.data_v1beta.types import (
 # ============== 設定 ==============
 SCRIPT_DIR = os.path.dirname(os.path.abspath(__file__))
 CONFIG_PATH = os.path.join(SCRIPT_DIR, "campaigns.json")
-SUBSIDY_FEED = "/Users/kazuhiroakutsu/Desktop/claude-skills/subsidy-feed"
+SUBSIDY_FEED = "/Users/kazuhiroakutsu/dev/subsidy-feed"
 TOKEN_PATH = "/Users/kazuhiroakutsu/.gdoc-uploader/token.json"
 SCOPES = [
     "https://www.googleapis.com/auth/drive.file",

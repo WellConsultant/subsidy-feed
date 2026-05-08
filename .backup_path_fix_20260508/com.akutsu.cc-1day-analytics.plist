@@ -7,8 +7,8 @@
 
     <key>ProgramArguments</key>
     <array>
-        <string>/Users/kazuhiroakutsu/dev/subsidy-collector/venv/bin/python</string>
-        <string>/Users/kazuhiroakutsu/dev/subsidy-feed/scripts/analytics/fetch_all.py</string>
+        <string>/Users/kazuhiroakutsu/Desktop/claude-skills/02_プロジェクト/sns-strategy/venv/bin/python</string>
+        <string>/Users/kazuhiroakutsu/Desktop/claude-skills/subsidy-feed/scripts/analytics/fetch_all.py</string>
     </array>
 
     <key>StartCalendarInterval</key>

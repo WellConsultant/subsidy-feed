@@ -47,7 +47,7 @@ CAMPAIGN = {
     "cf_product_id": 992927,  # ClickFunnels 製品ID（仮・要確認）
 }
 
-OUTPUT_PATH = "/Users/kazuhiroakutsu/dev/subsidy-feed/cc-1day-data.json"
+OUTPUT_PATH = "/Users/kazuhiroakutsu/Desktop/claude-skills/subsidy-feed/cc-1day-data.json"
 
 
 def get_creds():
@@ -137,7 +137,7 @@ def fetch_cf_orders():
     # TODO: CF MCP統合
     # MCP のモデル内呼び出しが想定されるので、このスクリプトからは
     # 別ファイル cc-1day-orders.json を読むか、空リストを返す
-    orders_file = "/Users/kazuhiroakutsu/dev/subsidy-feed/cc-1day-orders.json"
+    orders_file = "/Users/kazuhiroakutsu/Desktop/claude-skills/subsidy-feed/cc-1day-orders.json"
     if os.path.exists(orders_file):
         with open(orders_file, "r", encoding="utf-8") as f:
             return json.load(f)

@@ -13,7 +13,7 @@ import os
 from collections import defaultdict
 from datetime import datetime, timezone, timedelta
 
-SUBSIDY_FEED = "/Users/kazuhiroakutsu/dev/subsidy-feed"
+SUBSIDY_FEED = "/Users/kazuhiroakutsu/Desktop/claude-skills/subsidy-feed"
 OUTPUT_PATH = os.path.join(SUBSIDY_FEED, "campaigns-overview.json")
 
 # キャンペーン設定は campaigns.json から読み込む
