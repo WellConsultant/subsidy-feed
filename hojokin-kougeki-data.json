@@ -1,5 +1,5 @@
 {
-  "lastUpdate": "2026-05-08 12:17 JST",
+  "lastUpdate": "2026-05-09 00:00 JST",
   "campaignStart": "2026-04-20",
   "campaignEnd": "2026-12-31T23:59:59+09:00",
   "product": {
@@ -8,7 +8,7 @@
   },
   "totals": {
     "pv": 0,
-    "cta": 2,
+    "cta": 4,
     "orderView": 0,
     "purchase": 0,
     "revenue": 0
@@ -180,6 +180,15 @@
       "date": "2026-05-08",
       "day": 19,
       "pv": 0,
+      "cta": 2,
+      "orderView": 0,
+      "purchase": 0,
+      "revenue": 0
+    },
+    {
+      "date": "2026-05-09",
+      "day": 20,
+      "pv": 0,
       "cta": 0,
       "orderView": 0,
       "purchase": 0,
@@ -200,15 +209,15 @@
     0,
     0,
     0,
-    0,
-    0,
-    0,
-    0,
     1,
-    2,
+    0,
+    0,
+    0,
+    7,
     3,
-    1,
-    2,
+    8,
+    3,
+    3,
     1,
     1
   ]
