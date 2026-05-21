@@ -1,4 +1,4 @@
-/* hojokin.well-c.biz GA4 カスタムイベントトラッキング */
+/* fp-1.info/hojokin-feed GA4 カスタムイベントトラッキング */
 (function () {
   'use strict';
   if (typeof gtag !== 'function') return;

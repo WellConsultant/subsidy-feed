@@ -3,7 +3,7 @@
 
 全国の中小企業向け補助金・助成金情報を毎日自動収集して公開しているサイトです。
 
-公開URL: https://hojokin.well-c.biz
+公開URL: https://fp-1.info/hojokin-feed
 
 更新頻度: 毎日13:00（自動）
 

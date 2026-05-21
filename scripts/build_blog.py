@@ -706,7 +706,7 @@ def build_blog_index_html(cards, total):
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>補助金解説記事一覧｜補助金情報フィード</title>
 <meta name="description" content="全国の補助金・助成金を公募要領ベースでわかりやすく解説した記事一覧。{total}件の解説記事を公開中。">
-<link rel="canonical" href="https://hojokin.well-c.biz/blog/">
+<link rel="canonical" href="https://fp-1.info/hojokin-feed/blog/">
 <style>
 * {{ box-sizing: border-box; }}
 html {{ scroll-behavior: smooth; }}
