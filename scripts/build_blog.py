@@ -676,22 +676,51 @@ def main():
         f.write(blog_index_html)
     print(f'blog/index.html regenerated: {len(cards_list)} cards')
 
-    # 保護記事を先頭に、残りから TOP_LATEST_N 件をトップに載せる
-    top_articles = []
-    # 保護記事を先頭に
-    for fn, d in articles:
-        if fn in PROTECTED:
-            top_articles.append((fn, d))
-    for fn, d in articles:
-        if fn in PROTECTED:
-            continue
-        if len(top_articles) >= TOP_LATEST_N:
-            break
-        top_articles.append((fn, d))
+    # 「本日の新着」は Chatwork 通知と同一データ源（当日の収集）で揃える。
+    # 旧実装（parse_cache の TOP_LATEST_N 件）はサイトと Chatwork が
+    # 別系統データで毎日食い違う原因だったため廃止（2026-05-22）。
+    import sys as _sys
+    _sys.path.insert(0, '/Users/kazuhiroakutsu/dev/subsidy-collector/python')
+    import chatwork_feed_notifier as _cw
+    today_items = _cw.load_items(TODAY)
 
-    top_cards = [render_card_for_top(d, fn) for fn, d in top_articles]
-    update_top_page(top_cards, len(articles))
-    print(f'top index.html updated: {len(top_cards)} cards')
+    def _region_from_name(nm):
+        m = re.match(r'\s*【([^】]+)】', nm or '')
+        return m.group(1) if m else '全国・その他'
+
+    def _clean_name(nm):
+        m = re.search(r'「([^」]+)」', nm or '')
+        return m.group(1) if m else (nm or '')
+
+    top_cards = []
+    for it in today_items:
+        sid = it.get('id', '')
+        raw = it.get('name', '')
+        end = it.get('application_end', '')
+        region = _region_from_name(raw)
+        name = _clean_name(raw)
+        summary = f'締切：{end}' if end else '公募中（締切は記事参照）'
+        filename = f's/{sid}.html'
+        top_cards.append(f'''    <article class="blog-top-card">
+      <a href="/blog/{escape(filename)}">
+        <div class="blog-top-card-head">
+          <span class="blog-top-card-region">{escape(region)}</span>
+          <p class="blog-top-card-amount">公募要領参照</p>
+        </div>
+        <div class="blog-top-card-body">
+          <h3>{escape(name)}</h3>
+          <p>{escape(summary)}</p>
+          <p class="blog-top-card-read">続きを読む →</p>
+        </div>
+      </a>
+    </article>''')
+
+    # 当日収集ゼロの日は TOP を空にせず前回分を残す（空セクションは壊れて見えるため）
+    if top_cards:
+        update_top_page(top_cards, len(articles))
+        print(f'top index.html updated: {len(top_cards)} cards (当日収集＝Chatwork一致)')
+    else:
+        print('top index.html: 当日収集ゼロのため「本日の新着」は前回分を維持（更新スキップ）')
 
     print('Blog build done.')
 

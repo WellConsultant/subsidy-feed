@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>内航フェリー・RORO船ターミナルにおけるシャーシ・コンテナ位置管理等の高度化｜補助金情報フィード</title>
+<meta name="description" content="内航フェリー・RORO船ターミナルにおけるシャーシ・コンテナ位置管理等の高度化 / 補助率1/3以内">
+<style>
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body { font-family: -apple-system, BlinkMacSystemFont, "Hiragino Sans", "Yu Gothic UI", sans-serif; margin: 0; background: #f5f7fa; color: #1a1a1a; line-height: 1.9; font-size: 16px; }
+a { color: #1a3a5c; }
+.container { max-width: 760px; margin: 0 auto; padding: 0 20px; }
+
+nav.site-nav { background: #1a3a5c; padding: 14px 0; }
+nav.site-nav .container { display: flex; align-items: center; justify-content: space-between; max-width: 1100px; }
+.nav-logo { color: white; text-decoration: none; font-weight: 700; font-size: 15px; }
+.nav-links { display: flex; gap: 20px; list-style: none; margin: 0; padding: 0; }
+.nav-links a { color: rgba(255,255,255,0.9); text-decoration: none; font-size: 13px; }
+.nav-links a:hover { color: white; }
+.nav-cta { background: #d35400; color: white !important; padding: 8px 14px !important; border-radius: 6px; font-weight: 600; }
+
+header.article-head { background: linear-gradient(135deg, #1a3a5c 0%, #2c5282 100%); color: white; padding: 48px 0 36px; }
+header.article-head .container { max-width: 760px; }
+header.article-head .meta { font-size: 12px; opacity: 0.85; margin: 0 0 12px; letter-spacing: 0.05em; }
+header.article-head h1 { margin: 0 0 10px; font-size: 26px; font-weight: 700; line-height: 1.55; }
+header.article-head .subtitle { margin: 0 0 14px; font-size: 18px; font-weight: 700; color: #ffd49a; }
+header.article-head .tag-row { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 16px; }
+header.article-head .tag { background: rgba(255,255,255,0.15); color: white; font-size: 11px; padding: 4px 12px; border-radius: 999px; }
+
+main.article { background: white; padding: 44px 48px; margin: -20px auto 40px; border-radius: 10px; box-shadow: 0 2px 12px rgba(26,58,92,0.06); max-width: 760px; }
+main.article .lead { font-size: 15px; line-height: 2.0; margin: 0 0 32px; padding: 18px 22px; background: #f5f7fa; border-left: 4px solid #d35400; color: #333; }
+main.article h2 { font-size: 21px; color: #1a3a5c; margin: 40px 0 18px; padding: 0 0 10px; border-bottom: 2px solid #e4e9ef; line-height: 1.5; }
+main.article h3 { font-size: 16px; color: #1a3a5c; margin: 28px 0 12px; line-height: 1.5; }
+main.article p { margin: 0 0 18px; text-align: left; }
+main.article ul { padding-left: 1.2em; margin: 0 0 22px; }
+main.article li { margin-bottom: 8px; text-align: left; }
+main.article .info-box { background: #fafbfc; border: 1px solid #e4e9ef; border-radius: 8px; padding: 18px 24px; margin: 20px 0 24px; }
+main.article .info-box dl { margin: 0; display: grid; grid-template-columns: 130px 1fr; gap: 10px 18px; }
+main.article .info-box dt { font-size: 13px; color: #1a3a5c; font-weight: 700; }
+main.article .info-box dd { font-size: 13px; margin: 0; color: #333; }
+main.article .disclaimer { margin-top: 36px; padding: 18px 22px; background: #fff8f0; border: 1px solid #f0d5a0; border-radius: 6px; font-size: 13px; line-height: 1.85; color: #7a5020; }
+main.article .source-link { margin-top: 24px; padding: 16px 20px; background: #f0f4f8; border-radius: 6px; font-size: 13px; }
+main.article .source-link a { color: #1a3a5c; font-weight: 700; word-break: break-all; }
+main.article .article-cta { margin: 40px 0 0; padding: 32px 30px; background: linear-gradient(135deg, #1a3a5c 0%, #2c5282 100%); border-radius: 10px; text-align: center; color: white; }
+main.article .article-cta h3 { color: white; margin: 0 0 12px; font-size: 19px; line-height: 1.5; }
+main.article .article-cta p { color: rgba(255,255,255,0.9); font-size: 14px; line-height: 1.85; margin: 0 0 20px; text-align: center; }
+main.article .article-cta .cta-btn { display: inline-block; background: #d35400; color: white; padding: 14px 32px; border-radius: 6px; text-decoration: none; font-size: 15px; font-weight: 700; transition: background 0.2s, transform 0.2s; }
+main.article .article-cta .cta-btn:hover { background: #b34700; transform: translateY(-2px); }
+main.article .article-cta .cta-note { font-size: 12px; opacity: 0.75; margin-top: 14px; }
+.back-link { display: inline-block; margin: 24px 0 0; color: #1a3a5c; text-decoration: none; font-size: 14px; font-weight: 600; }
+.back-link:hover { text-decoration: underline; }
+
+footer.site { background: #1a3a5c; color: rgba(255,255,255,0.85); padding: 28px 0; text-align: center; font-size: 13px; margin-top: 40px; }
+footer.site p { margin: 6px 0; }
+
+@media (max-width: 600px) {
+  body { font-size: 15px; }
+  header.article-head { padding: 36px 0 28px; }
+  header.article-head h1 { font-size: 20px; }
+  main.article { padding: 28px 22px; margin-top: -12px; }
+  main.article h2 { font-size: 18px; }
+  main.article h3 { font-size: 15px; }
+  main.article .info-box dl { grid-template-columns: 1fr; gap: 4px 0; }
+  main.article .info-box dt { margin-top: 8px; }
+}
+</style>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-CKY4MXRRK0"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag('js',new Date());gtag('config','G-CKY4MXRRK0');</script>
+</head>
+<body>
+
+<nav class="site-nav">
+  <div class="container">
+    <a class="nav-logo" href="/">補助金情報フィード</a>
+    <ul class="nav-links">
+      <li><a href="/">トップ</a></li>
+      <li><a href="/blog/">解説記事</a></li>
+      <li><a href="/#download">無料ダウンロード</a></li>
+      <li><a class="nav-cta" href="/contact/">お問い合わせ</a></li>
+    </ul>
+  </div>
+</nav>
+
+<header class="article-head">
+  <div class="container">
+    <p class="meta">2026-05-22 公開 / カテゴリ：補助金解説</p>
+    <h1>内航フェリー・RORO船ターミナルにおけるシャーシ・コンテナ位置管理等の高度化</h1>
+    <div class="tag-row">
+<span class="tag">設備投資</span><span class="tag">物流効率化</span><span class="tag">モーダルシフト</span><span class="tag">DX推進</span>
+    </div>
+  </div>
+</header>
+
+<main class="article">
+
+  <p class="lead">内航フェリー・RORO船ターミナルにおいて、シャーシ・コンテナの入退場管理、損傷確認、位置管理の高度化に必要となる施設整備を支援する補助金です。対象は船舶運航事業者、港湾運送事業者、ターミナル運営者等で、補助率は1/3以内です。令和8年度から令和12年度までの5年間限定で実施され、片道航続距離300km以上または国際戦略港湾を含む100km以上の航路で週6回以上の寄港がある港湾が対象となります。本記事では、制度の概要・補助率・対象経費・申請スケジュール・注意点までを公募要領ベースで整理してお届けします。</p>
+
+  <div class="info-box">
+    <dl>
+      <dt>実施機関</dt><dd>国土交通省</dd>
+      <dt>対象地域</dt><dd>全国</dd>
+      <dt>事業実施期間</dt><dd>令和8年度から令和12年度までの5年間に限り実施する</dd>
+      <dt>補助上限額</dt><dd>（公募要領参照）</dd>
+      <dt>補助率</dt><dd>1/3以内</dd>
+    </dl>
+  </div>
+
+  <h2>制度の目的と背景</h2>
+  <p>モーダルシフト等に対応するための内航フェリー・RORO船ターミナルの機能強化として、ターミナルにおける作業環境や生産性の向上を図るためのシャーシ・コンテナ位置管理等の高度化を支援する。</p>
+
+  <h2>補助率と上限額</h2>
+  <p>本補助金の補助率と上限額は以下のとおりです。</p>
+  <p>◼︎ 補助率<br>1/3以内</p>
+  <p>◼︎ 内訳・支援枠<br>単一枠: 補助率1/3以内</p>
+
+  <h2>対象となる事業者</h2>
+  <p>本補助金の対象となる事業者は以下のとおりです。申請前に自社が要件を満たしているかご確認ください。</p>
+  <ul>
+    <li>対象港湾のふ頭を利用する内航フェリー・RORO船の船舶運航事業者</li>
+    <li>応募内容に関して船舶運航事業者の同意を得た港湾運送事業者（港湾運送事業法（昭和26年法律第161号）第3条第1号の一般港湾運送事業の許可を受けたもの）</li>
+    <li>内航フェリー・RORO船ターミナル運営を行う者</li>
+    <li>上記のいずれかと同等であると国土交通省が認める者</li>
+  </ul>
+
+  <h2>対象経費</h2>
+  <p>補助対象となる経費は以下のとおりです。公募要領で定める範囲を超える経費は対象外となるため、申請時には個別に確認してください。</p>
+  <ul>
+    <li>シャーシ・コンテナの入退場管理の高度化に必要となる施設（入退場口に設置されたカメラあるいは端末等により車両情報を読み取り入退場情報を記録するシステム）</li>
+    <li>シャーシ・コンテナの損傷確認の高度化に必要となる施設（入退場口等にて、シャーシ・コンテナの損傷状況を自動撮影するなどし記録するシステム）</li>
+    <li>シャーシ・コンテナの位置管理の高度化に必要となる施設（ターミナル内に設置したカメラ、駐車マスやシャーシ等に設置した位置情報端末により、蔵置されたシャーシ等の位置を追跡・記録するシステム）</li>
+  </ul>
+
+  <h2>申請スケジュール</h2>
+  <p>事業実施期間は令和8年度から令和12年度までの5年間に限り実施するとなっています。スケジュールがタイトなため、検討中の事業者は早めに準備を始めることをおすすめします。</p>
+
+  <h2>活用にあたっての注意点</h2>
+  <p>本補助金を活用するにあたり、特に留意しておきたいポイントは以下のとおりです。</p>
+  <ul>
+    <li>対象港湾は片道の航続距離が300km以上又は国際戦略港湾を寄港地に含む片道の航続距離が100km以上の内航フェリー・RORO船航路の寄港が合わせて週6回以上見込まれる港湾に限定される</li>
+    <li>港湾運送事業者が申請する場合は、応募内容に関して船舶運航事業者の同意を得ることが必要</li>
+    <li>補助事業の実施期間は令和8年度から令和12年度までの5年間に限定されている</li>
+  </ul>
+
+  <div class="disclaimer">
+    ※本記事は、公開情報をもとに自動生成しています。補助金制度は予告なく内容が変更されることがあります。申請にあたっては、必ず実施機関が公表している最新の公募要領・様式をご確認ください。
+  </div>
+
+
+
+  <div class="article-cta">
+    <h3>補助金の申請・活用についてご相談はこちらから</h3>
+    <p>「この補助金を自社で活用できるか知りたい」「申請書作成を任せたい」「他にどんな補助金が使えるか相談したい」など、お気軽にお問い合わせください。初回のご相談は無料です。</p>
+    <a class="cta-btn" href="/contact/">無料相談のお申し込み</a>
+    <p class="cta-note">※本記事の内容についてのご質問もお受けしています</p>
+  </div>
+
+  <a class="back-link" href="/">← 補助金情報フィード トップへ戻る</a>
+
+</main>
+
+<footer class="site">
+  <div class="container">
+    <p>本サイトは公的機関が公開している補助金情報を自動収集しています。</p>
+    <p>最新・正確な情報は必ず各補助金の公式ページでご確認ください。</p>
+    <p>&copy; Well Consultant</p>
+  </div>
+</footer>
+
+<script src="/assets/analytics.js" defer></script>
+</body>
+</html>

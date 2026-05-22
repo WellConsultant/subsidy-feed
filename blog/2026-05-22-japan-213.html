@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>未来につなぐふるさと応援事業｜補助金情報フィード</title>
+<meta name="description" content="未来につなぐふるさと応援事業">
+<style>
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body { font-family: -apple-system, BlinkMacSystemFont, "Hiragino Sans", "Yu Gothic UI", sans-serif; margin: 0; background: #f5f7fa; color: #1a1a1a; line-height: 1.9; font-size: 16px; }
+a { color: #1a3a5c; }
+.container { max-width: 760px; margin: 0 auto; padding: 0 20px; }
+
+nav.site-nav { background: #1a3a5c; padding: 14px 0; }
+nav.site-nav .container { display: flex; align-items: center; justify-content: space-between; max-width: 1100px; }
+.nav-logo { color: white; text-decoration: none; font-weight: 700; font-size: 15px; }
+.nav-links { display: flex; gap: 20px; list-style: none; margin: 0; padding: 0; }
+.nav-links a { color: rgba(255,255,255,0.9); text-decoration: none; font-size: 13px; }
+.nav-links a:hover { color: white; }
+.nav-cta { background: #d35400; color: white !important; padding: 8px 14px !important; border-radius: 6px; font-weight: 600; }
+
+header.article-head { background: linear-gradient(135deg, #1a3a5c 0%, #2c5282 100%); color: white; padding: 48px 0 36px; }
+header.article-head .container { max-width: 760px; }
+header.article-head .meta { font-size: 12px; opacity: 0.85; margin: 0 0 12px; letter-spacing: 0.05em; }
+header.article-head h1 { margin: 0 0 10px; font-size: 26px; font-weight: 700; line-height: 1.55; }
+header.article-head .subtitle { margin: 0 0 14px; font-size: 18px; font-weight: 700; color: #ffd49a; }
+header.article-head .tag-row { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 16px; }
+header.article-head .tag { background: rgba(255,255,255,0.15); color: white; font-size: 11px; padding: 4px 12px; border-radius: 999px; }
+
+main.article { background: white; padding: 44px 48px; margin: -20px auto 40px; border-radius: 10px; box-shadow: 0 2px 12px rgba(26,58,92,0.06); max-width: 760px; }
+main.article .lead { font-size: 15px; line-height: 2.0; margin: 0 0 32px; padding: 18px 22px; background: #f5f7fa; border-left: 4px solid #d35400; color: #333; }
+main.article h2 { font-size: 21px; color: #1a3a5c; margin: 40px 0 18px; padding: 0 0 10px; border-bottom: 2px solid #e4e9ef; line-height: 1.5; }
+main.article h3 { font-size: 16px; color: #1a3a5c; margin: 28px 0 12px; line-height: 1.5; }
+main.article p { margin: 0 0 18px; text-align: left; }
+main.article ul { padding-left: 1.2em; margin: 0 0 22px; }
+main.article li { margin-bottom: 8px; text-align: left; }
+main.article .info-box { background: #fafbfc; border: 1px solid #e4e9ef; border-radius: 8px; padding: 18px 24px; margin: 20px 0 24px; }
+main.article .info-box dl { margin: 0; display: grid; grid-template-columns: 130px 1fr; gap: 10px 18px; }
+main.article .info-box dt { font-size: 13px; color: #1a3a5c; font-weight: 700; }
+main.article .info-box dd { font-size: 13px; margin: 0; color: #333; }
+main.article .disclaimer { margin-top: 36px; padding: 18px 22px; background: #fff8f0; border: 1px solid #f0d5a0; border-radius: 6px; font-size: 13px; line-height: 1.85; color: #7a5020; }
+main.article .source-link { margin-top: 24px; padding: 16px 20px; background: #f0f4f8; border-radius: 6px; font-size: 13px; }
+main.article .source-link a { color: #1a3a5c; font-weight: 700; word-break: break-all; }
+main.article .article-cta { margin: 40px 0 0; padding: 32px 30px; background: linear-gradient(135deg, #1a3a5c 0%, #2c5282 100%); border-radius: 10px; text-align: center; color: white; }
+main.article .article-cta h3 { color: white; margin: 0 0 12px; font-size: 19px; line-height: 1.5; }
+main.article .article-cta p { color: rgba(255,255,255,0.9); font-size: 14px; line-height: 1.85; margin: 0 0 20px; text-align: center; }
+main.article .article-cta .cta-btn { display: inline-block; background: #d35400; color: white; padding: 14px 32px; border-radius: 6px; text-decoration: none; font-size: 15px; font-weight: 700; transition: background 0.2s, transform 0.2s; }
+main.article .article-cta .cta-btn:hover { background: #b34700; transform: translateY(-2px); }
+main.article .article-cta .cta-note { font-size: 12px; opacity: 0.75; margin-top: 14px; }
+.back-link { display: inline-block; margin: 24px 0 0; color: #1a3a5c; text-decoration: none; font-size: 14px; font-weight: 600; }
+.back-link:hover { text-decoration: underline; }
+
+footer.site { background: #1a3a5c; color: rgba(255,255,255,0.85); padding: 28px 0; text-align: center; font-size: 13px; margin-top: 40px; }
+footer.site p { margin: 6px 0; }
+
+@media (max-width: 600px) {
+  body { font-size: 15px; }
+  header.article-head { padding: 36px 0 28px; }
+  header.article-head h1 { font-size: 20px; }
+  main.article { padding: 28px 22px; margin-top: -12px; }
+  main.article h2 { font-size: 18px; }
+  main.article h3 { font-size: 15px; }
+  main.article .info-box dl { grid-template-columns: 1fr; gap: 4px 0; }
+  main.article .info-box dt { margin-top: 8px; }
+}
+</style>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-CKY4MXRRK0"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag('js',new Date());gtag('config','G-CKY4MXRRK0');</script>
+</head>
+<body>
+
+<nav class="site-nav">
+  <div class="container">
+    <a class="nav-logo" href="/">補助金情報フィード</a>
+    <ul class="nav-links">
+      <li><a href="/">トップ</a></li>
+      <li><a href="/blog/">解説記事</a></li>
+      <li><a href="/#download">無料ダウンロード</a></li>
+      <li><a class="nav-cta" href="/contact/">お問い合わせ</a></li>
+    </ul>
+  </div>
+</nav>
+
+<header class="article-head">
+  <div class="container">
+    <p class="meta">2026-05-22 公開 / カテゴリ：補助金解説</p>
+    <h1>未来につなぐふるさと応援事業</h1>
+    <div class="tag-row">
+<span class="tag">人材育成</span><span class="tag">普及啓発</span><span class="tag">イベント開催</span>
+    </div>
+  </div>
+</header>
+
+<main class="article">
+
+  <p class="lead">農業や地域振興に関するイベントや講演会等の実施を支援する補助事業。講師謝金、旅費、消耗品費、会場借上料等が対象で、講演会での講師謝金は大学教授1万円以下、先進農家5千円以下、県外講師2万円以下を原則とする。本記事では、制度の概要・補助率・対象経費・申請スケジュール・注意点までを公募要領ベースで整理してお届けします。</p>
+
+  <div class="info-box">
+    <dl>
+      <dt>対象地域</dt><dd>全国</dd>
+      <dt>補助上限額</dt><dd>（公募要領参照）</dd>
+    </dl>
+  </div>
+
+  <h2>対象経費</h2>
+  <p>補助対象となる経費は以下のとおりです。公募要領で定める範囲を超える経費は対象外となるため、申請時には個別に確認してください。</p>
+  <ul>
+    <li>報償費：講師等への謝金（県規程に準じる。講演会等での講演は、講演時間1時間当たり、大学教授：1万円以下、先進農家：5千円以下、県外の講師は、2万円以下を原則とし、これによりがたい場合は、知事が適当と認める額を上限とする）</li>
+    <li>旅費：県、市町村、大学等の規程に準じる</li>
+    <li>需用費：消耗品、資材費、材料費、燃料費等、1品3万円未満の物品等</li>
+    <li>役務費：イベント開催通知やアンケート調査に関するハガキ、切手、広告料及び保険料等</li>
+    <li>委託料：旅行業法に係る部分の委託、専門性を要する部分の委託、実績書作成に係る編集等。ただし、事業の主要な部分を他に委託するものは補助対象外</li>
+    <li>使用料及び賃借料：トイレ、照明、音声機器、農機具のレンタル料、ほ場借上げや会場会議室の借上料等</li>
+    <li>食糧費（飲料に限る）：熱中症や脱水症状を防止するための水分補給に要する経費。ペットボトルの水・お茶等（酒類を除く）</li>
+  </ul>
+
+  <h3>◼︎ 対象外となる経費・事項</h3>
+  <ul>
+    <li>備品購入費：単価3万円以上の物品等</li>
+    <li>食糧費：弁当、食事代、茶菓子等</li>
+    <li>賃金：事業主体の労務費</li>
+    <li>お土産、景品：報償（謝礼）としてのお土産も補助対象外</li>
+    <li>管理費：水道、光熱費等、イベント以外の事業主体の組織や施設の維持管理に要する経費</li>
+    <li>社会通念上、著しく高額だと思われる講師等への謝金</li>
+    <li>事業実施主体や関係者（事業実施主体と生計を一にする親族等）に対する報償費</li>
+    <li>社会通念上、著しく高額だと思われる講師等への旅費</li>
+    <li>補助事業に直接関係がない旅費（補助事業以外に使用する物品を購入する際の旅費等）</li>
+    <li>補助事業以外にも利用するプリンターのインクやトナー代（補助事業と事業外で使用する用量等を明確に区分できる場合を除く）</li>
+    <li>補助事業以外にも利用する自家用車や草刈り機等の燃料代（補助事業と事業外で使用する用量等を明確に区分できる場合を除く）</li>
+    <li>景品（本事業の趣旨に沿う活動を普及啓発するための品を除く）の購入代</li>
+    <li>電話料金（補助事業と事業外で使用する用量等を明確に区分できる場合を除く）</li>
+    <li>インターネット回線料（補助事業と事業外で使用する用量等を明確に区分できる場合を除く）</li>
+    <li>事業実施主体が所有する施設等の維持管理に要する経費</li>
+    <li>費目にかかわらず事業費のうち大部分を1者に対して支払うなど、主要な部分に係る委託とみなされるもの</li>
+    <li>事業実施主体や関係者（事業実施主体と生計を一にする親族等）が所有するほ場や機械等の借上げ（レンタル）料</li>
+    <li>食事代（仕出し弁当代含む）、茶菓子、報償（謝礼）としてのお土産代、酒類等</li>
+    <li>市場単価等に比して大きく妥当性を欠くもの</li>
+    <li>特定の個人等の利益に強く帰結するもの</li>
+    <li>知事が不適当と認める経費</li>
+  </ul>
+
+  <h2>活用にあたっての注意点</h2>
+  <p>本補助金を活用するにあたり、特に留意しておきたいポイントは以下のとおりです。</p>
+  <ul>
+    <li>事業の主要な部分を他に委託するものは補助対象外となる</li>
+    <li>講師謝金は県規程に準じ、講演時間1時間当たりの上限が設定されている（大学教授：1万円以下、先進農家：5千円以下、県外講師：2万円以下）</li>
+    <li>食糧費は原則として屋内外で作業する際の熱中症・脱水症防止用の水分補給に要する経費以外は対象外</li>
+    <li>補助事業と事業外で使用する用量等を明確に区分できない場合、電話料金やインターネット回線料、燃料費等は対象外となる</li>
+    <li>事業実施主体や生計を一にする親族等に対する報償費や、その所有する施設・機械等の借上料は対象外</li>
+  </ul>
+
+  <div class="disclaimer">
+    ※本記事は、公開情報をもとに自動生成しています。補助金制度は予告なく内容が変更されることがあります。申請にあたっては、必ず実施機関が公表している最新の公募要領・様式をご確認ください。
+  </div>
+
+
+
+  <div class="article-cta">
+    <h3>補助金の申請・活用についてご相談はこちらから</h3>
+    <p>「この補助金を自社で活用できるか知りたい」「申請書作成を任せたい」「他にどんな補助金が使えるか相談したい」など、お気軽にお問い合わせください。初回のご相談は無料です。</p>
+    <a class="cta-btn" href="/contact/">無料相談のお申し込み</a>
+    <p class="cta-note">※本記事の内容についてのご質問もお受けしています</p>
+  </div>
+
+  <a class="back-link" href="/">← 補助金情報フィード トップへ戻る</a>
+
+</main>
+
+<footer class="site">
+  <div class="container">
+    <p>本サイトは公的機関が公開している補助金情報を自動収集しています。</p>
+    <p>最新・正確な情報は必ず各補助金の公式ページでご確認ください。</p>
+    <p>&copy; Well Consultant</p>
+  </div>
+</footer>
+
+<script src="/assets/analytics.js" defer></script>
+</body>
+</html>
