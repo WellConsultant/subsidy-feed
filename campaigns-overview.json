@@ -1,9 +1,9 @@
 {
-  "lastUpdate": "2026-05-23 00:00 JST",
+  "lastUpdate": "2026-05-24 00:00 JST",
   "campaignCount": 2,
   "totals": {
     "pv": 0,
-    "cta": 8,
+    "cta": 9,
     "orderView": 0,
     "purchase": 5,
     "revenue": 51980
@@ -80,7 +80,7 @@
       "dashboard": "hojokin-kougeki-dashboard.html",
       "totals": {
         "pv": 0,
-        "cta": 8,
+        "cta": 9,
         "orderView": 0,
         "purchase": 0,
         "revenue": 0
@@ -389,6 +389,15 @@
           "date": "2026-05-23",
           "day": 34,
           "pv": 0,
+          "cta": 1,
+          "orderView": 0,
+          "purchase": 0,
+          "revenue": 0
+        },
+        {
+          "date": "2026-05-24",
+          "day": 35,
+          "pv": 0,
           "cta": 0,
           "orderView": 0,
           "purchase": 0,
@@ -565,6 +574,11 @@
     },
     {
       "day": 34,
+      "purchase": 0,
+      "revenue": 0
+    },
+    {
+      "day": 35,
       "purchase": 0,
       "revenue": 0
     }
