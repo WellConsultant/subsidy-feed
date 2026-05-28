@@ -391,7 +391,25 @@ def render_article(item, regions):
         if max_amount_str:
             rate_parts.append(f'  <p>◼︎ 補助上限額<br>{escape(max_amount_str)}</p>')
         if subsidy_types:
-            rate_parts.append(f'  <p>◼︎ 内訳・支援枠<br>{escape(subsidy_types)}</p>')
+            if isinstance(subsidy_types, list):
+                type_lines = []
+                for t in subsidy_types:
+                    if isinstance(t, dict):
+                        label = t.get('type') or t.get('name') or ''
+                        rate = t.get('rate') or ''
+                        amt = t.get('max_amount')
+                        amt_str = f'・上限{format_amount(amt)}' if amt else ''
+                        cond = t.get('conditions') or ''
+                        line = escape(f'{label}：{rate}{amt_str}')
+                        if cond:
+                            line += f'<br><small>{escape(cond)}</small>'
+                        type_lines.append(f'    <li>{line}</li>')
+                    else:
+                        type_lines.append(f'    <li>{escape(str(t))}</li>')
+                if type_lines:
+                    rate_parts.append('  <p>◼︎ 内訳・支援枠</p>\n  <ul>\n' + '\n'.join(type_lines) + '\n  </ul>')
+            else:
+                rate_parts.append(f'  <p>◼︎ 内訳・支援枠<br>{escape(str(subsidy_types))}</p>')
         sections.append('\n'.join(rate_parts))
 
     if eligible_businesses:
