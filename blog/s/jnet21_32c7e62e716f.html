@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>みのおゼロイチ応援プロジェクト｜補助金情報フィード</title>
+<meta name="description" content="みのおゼロイチ応援プロジェクト / 上限30万円 / 補助率対象経費総額の3分の2以内 / 締切2026-07-15">
+<style>
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body { font-family: -apple-system, BlinkMacSystemFont, "Hiragino Sans", "Yu Gothic UI", sans-serif; margin: 0; background: #f5f7fa; color: #1a1a1a; line-height: 1.9; font-size: 16px; }
+a { color: #1a3a5c; }
+.container { max-width: 780px; margin: 0 auto; padding: 0 20px; }
+
+nav.site-nav { background: #122a44; padding: 14px 0; }
+nav.site-nav .container { display: flex; align-items: center; justify-content: space-between; max-width: 1100px; }
+.nav-logo { color: white; text-decoration: none; font-weight: 700; font-size: 15px; }
+.nav-links { display: flex; gap: 20px; list-style: none; margin: 0; padding: 0; }
+.nav-links a { color: rgba(255,255,255,0.9); text-decoration: none; font-size: 13px; }
+.nav-links a:hover { color: white; }
+.nav-cta { background: #d35400; color: white !important; padding: 8px 14px !important; border-radius: 6px; font-weight: 600; }
+
+header.article-head { background: linear-gradient(135deg, #1a3a5c 0%, #2c5282 100%); color: white; padding: 48px 0 36px; }
+header.article-head .container { max-width: 780px; }
+header.article-head .meta { font-size: 12px; opacity: 0.85; margin: 0 0 12px; letter-spacing: 0.05em; }
+header.article-head h1 { margin: 0 0 10px; font-size: 24px; font-weight: 700; line-height: 1.55; }
+header.article-head .subtitle { margin: 0 0 14px; font-size: 16px; font-weight: 700; color: #ffd49a; }
+header.article-head .tag-row { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 16px; }
+header.article-head .tag { background: rgba(255,255,255,0.15); color: white; font-size: 11px; padding: 4px 12px; border-radius: 999px; }
+
+main.article { background: white; padding: 40px 44px; margin: -20px auto 40px; border-radius: 10px; box-shadow: 0 2px 12px rgba(26,58,92,0.06); max-width: 780px; }
+main.article .lead { font-size: 15px; line-height: 2.0; margin: 0 0 28px; padding: 18px 22px; background: #f5f7fa; border-left: 4px solid #d35400; color: #333; text-align: left; }
+main.article h2 { font-size: 20px; color: #1a3a5c; margin: 36px 0 16px; padding: 0 0 10px; border-bottom: 2px solid #e4e9ef; line-height: 1.5; }
+main.article h3 { font-size: 15px; color: #1a3a5c; margin: 24px 0 10px; line-height: 1.5; }
+main.article p { margin: 0 0 16px; text-align: left; }
+main.article ul { padding-left: 1.2em; margin: 0 0 20px; }
+main.article li { margin-bottom: 8px; text-align: left; }
+main.article .info-box { background: #fafbfc; border: 1px solid #e4e9ef; border-radius: 8px; padding: 18px 22px; margin: 16px 0 24px; }
+main.article .info-box dl { margin: 0; display: grid; grid-template-columns: 130px 1fr; gap: 10px 16px; }
+main.article .info-box dt { font-size: 13px; color: #1a3a5c; font-weight: 700; }
+main.article .info-box dd { font-size: 13px; margin: 0; color: #333; }
+main.article .disclaimer { margin-top: 32px; padding: 16px 20px; background: #fff8f0; border: 1px solid #f0d5a0; border-radius: 6px; font-size: 13px; line-height: 1.85; color: #7a5020; }
+main.article .source-link { margin-top: 22px; padding: 14px 18px; background: #f0f4f8; border-radius: 6px; font-size: 13px; }
+main.article .source-link a { color: #1a3a5c; font-weight: 700; word-break: break-all; }
+main.article .article-cta { margin: 40px 0 0; padding: 30px 28px; background: linear-gradient(135deg, #1a3a5c 0%, #2c5282 100%); border-radius: 10px; text-align: center; color: white; }
+main.article .article-cta h3 { color: white; margin: 0 0 12px; font-size: 18px; line-height: 1.5; border: none; padding: 0; }
+main.article .article-cta p { color: rgba(255,255,255,0.9); font-size: 14px; line-height: 1.85; margin: 0 0 18px; text-align: center; }
+main.article .article-cta .cta-btn { display: inline-block; background: #d35400; color: white; padding: 14px 30px; border-radius: 6px; text-decoration: none; font-size: 15px; font-weight: 700; transition: background 0.2s, transform 0.2s; }
+main.article .article-cta .cta-btn:hover { background: #b34700; transform: translateY(-2px); }
+main.article .article-cta .cta-note { font-size: 12px; opacity: 0.78; margin-top: 12px; }
+.back-link { display: inline-block; margin: 24px 0 0; color: #1a3a5c; text-decoration: none; font-size: 14px; font-weight: 600; }
+.back-link:hover { text-decoration: underline; }
+
+footer.site { background: #1a1a1a; color: rgba(255,255,255,0.85); padding: 28px 0; text-align: center; font-size: 13px; margin-top: 40px; }
+footer.site p { margin: 6px 0; }
+
+@media (max-width: 600px) {
+  body { font-size: 15px; }
+  header.article-head { padding: 36px 0 28px; }
+  header.article-head h1 { font-size: 19px; }
+  main.article { padding: 26px 20px; margin-top: -12px; }
+  main.article h2 { font-size: 17px; }
+  main.article h3 { font-size: 14px; }
+  main.article .info-box dl { grid-template-columns: 1fr; gap: 4px 0; }
+  main.article .info-box dt { margin-top: 8px; }
+}
+</style>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-CKY4MXRRK0"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag('js',new Date());gtag('config','G-CKY4MXRRK0');</script>
+</head>
+<body>
+
+<nav class="site-nav">
+  <div class="container">
+    <a class="nav-logo" href="/">補助金情報フィード</a>
+    <ul class="nav-links">
+      <li><a href="/">トップ</a></li>
+      <li><a href="/blog/">解説記事</a></li>
+      <li><a class="nav-cta" href="/contact/">お問い合わせ</a></li>
+    </ul>
+  </div>
+</nav>
+
+<header class="article-head">
+  <div class="container">
+    <p class="meta">2026-05-29 掲載 / カテゴリ：補助金解説</p>
+    <h1>みのおゼロイチ応援プロジェクト</h1>
+    <p class="subtitle">最大30万円</p>
+    <div class="tag-row">
+<span class="tag">大阪府</span><span class="tag">創業支援</span><span class="tag">小規模事業者</span><span class="tag">設備投資</span><span class="tag">販路拡大</span>
+    </div>
+  </div>
+</header>
+
+<main class="article">
+
+  <p class="lead">大阪府で公募されている「みのおゼロイチ応援プロジェクト」についてご紹介します。箕面市内で創業をめざす方、創業後間もない小規模事業者に対して、箕面市と箕面商工会議所が連携し「経営の支援」と「補助金の交付」を組み合わせて実施する支援プロジェクト。機械装置等費、PC・タブレット費、広報費、知的財産権取得費、外注・委託費を対象に最大30万円を補助。補助率は対象経費総額の3分の2以内。採択者数は20者程度。経営指導員や専門相談員によるビジネスプラン作成から実績報告まで継続的なサポートを受けながら事業を実施できる。本記事では、制度の概要・申請スケジュール・情報源を整理してお届けします。詳細は必ず公式ページでご確認ください。</p>
+
+  <div class="info-box">
+    <dl>
+      <dt>実施機関</dt><dd>箕面商工会議所（箕面市連携）</dd>
+      <dt>対象地域</dt><dd>大阪府</dd>
+      <dt>受付期間</dt><dd>2026-06-16〜2026-07-15</dd>
+      <dt>事業実施期間</dt><dd>交付決定後～12月31日まで（実績報告は事業完了後30日以内、もしくは令和8年1月8日まで）</dd>
+      <dt>補助上限額</dt><dd>30万円</dd>
+      <dt>補助率</dt><dd>対象経費総額の3分の2以内</dd>
+    </dl>
+  </div>
+
+  <h2>制度の概要</h2>
+  <p>【箕面市】（大阪府）箕面市内で創業をめざすかた、創業後間もない小規模事業者のかたへ
+箕面市と箕面商工会議所が連携し、「経営の支援」と「補助金の交付」を組み合わせて実施します。</p>
+  <p>採択者数：20者程度</p>
+  <p>申請期間：令和8年6月16日（火曜日）～7月15日（水曜日）17時（必着）
+※申し込みをされるかたは、必ず7月8日（水曜日）までにエントリーしてください。</p>
+  <p>【説明会】
+開催日時 / 会場：
+令和8年6月12日（金曜日）18時30分～20時30分場所 / 船場生涯学習センター
+令和8年6月17日（水曜日）14時00分～16時00分場所 / 箕面商工会議所</p>
+
+  <h2>補助率と上限額</h2>
+  <p>本補助金の補助率・上限額は以下のとおりです。詳細は公募要領をご確認ください。</p>
+  <p>◼︎ 補助率<br>対象経費総額の3分の2以内</p>
+  <p>◼︎ 補助上限額<br>30万円</p>
+  <p>◼︎ 内訳・支援枠<br>単一枠のみ：上限額30万円、補助率3分の2以内</p>
+
+  <h2>対象となる事業者</h2>
+  <p>本補助金の対象となる事業者は以下のとおりです。</p>
+  <ul>
+    <li>令和8年12月末日までに創業する予定の創業者</li>
+    <li>創業後5年未満の小規模事業者等</li>
+    <li>箕面市内で取り組む事業が対象</li>
+  </ul>
+
+  <h2>対象経費</h2>
+  <p>補助対象となる経費は以下のとおりです。</p>
+  <ul>
+    <li>機械装置等費</li>
+    <li>PC・タブレット費</li>
+    <li>広報費</li>
+    <li>知的財産権取得費</li>
+    <li>外注・委託費</li>
+  </ul>
+
+  <h2>申請スケジュール</h2>
+  <p>受付期間は2026-06-16から2026-07-15までです。事業実施期間は交付決定後～12月31日まで（実績報告は事業完了後30日以内、もしくは令和8年1月8日まで）です。スケジュールは変更される場合があるため、必ず公式ページの最新情報をご確認ください。</p>
+
+  <h2>審査のポイント</h2>
+  <p>審査では以下の観点から事業計画が評価されます。</p>
+  <ul>
+    <li>◼︎ 書類選考：専門家による書類審査を行う。箕面商工会議所の経営指導員や専門相談員のサポートを受けて作成したビジネスプランシートを含む申請書類一式を基に審査される。</li>
+  </ul>
+
+  <h2>活用にあたっての注意点</h2>
+  <ul>
+    <li>必ず7月8日（水曜日）までにエントリーが必要</li>
+    <li>エントリーシートの提出は本人が箕面商工会議所へ持参する必要があり、代理による提出はできない</li>
+    <li>実績報告後の2年間、フォローアップ支援を継続する</li>
+    <li>売り上げや収益等の効果を報告する必要がある</li>
+    <li>採択案件については、ビジネスプランシートに記載したプロジェクト名等を箕面商工会議所ホームページで公表される</li>
+  </ul>
+
+  <div class="source-link">
+    <strong>◼︎ 情報源（公式ページ）</strong><br>
+    <a href="https://www.city.minoh.lg.jp/syoukou/zeroichoouen.html" target="_blank" rel="noopener">https://www.city.minoh.lg.jp/syoukou/zeroichoouen.html</a>
+  </div>
+
+  <div class="disclaimer">
+    ※本記事は公的機関が公開している情報を自動収集し、記事化したものです。最新の公募要件・スケジュール・様式等は必ず公式ページでご確認ください。
+  </div>
+
+  <div class="article-cta">
+    <h3>補助金の申請・活用についてご相談はこちらから</h3>
+    <p>「この補助金を自社で活用できるか知りたい」「申請書作成を任せたい」「他にどんな補助金が使えるか相談したい」など、お気軽にお問い合わせください。初回のご相談は無料です。</p>
+    <a class="cta-btn" href="/contact/">無料相談のお申し込み</a>
+    <p class="cta-note">※本記事の内容についてのご質問もお受けしています</p>
+  </div>
+
+  <a class="back-link" href="/">← 補助金一覧に戻る</a>
+
+</main>
+
+<footer class="site">
+  <div class="container">
+    <p>本サイトは公的機関が公開している補助金情報を自動収集しています。</p>
+    <p>最新・正確な情報は必ず各補助金の公式ページでご確認ください。</p>
+    <p><a href="https://lp.well-c.biz/gkc/" target="_blank" rel="noopener" style="color:#7bb3ff;">行政書士開業キット 公式ミニサイト</a></p>
+    <p>&copy; Well Consultant</p>
+  </div>
+</footer>
+
+<script src="/assets/analytics.js" defer></script>
+</body>
+</html>
