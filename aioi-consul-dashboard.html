@@ -9,14 +9,14 @@
 </style>
 </head>
 <body>
-<div class="header"><h1>ace.aioi-kj.com アナリティクス</h1><p>期間: 2026-05-04 〜 2026-06-01（過去28日間）/ 更新: 2026-06-01</p></div>
+<div class="header"><h1>ace.aioi-kj.com アナリティクス</h1><p>期間: 2026-05-05 〜 2026-06-02（過去28日間）/ 更新: 2026-06-02</p></div>
 <div class="container">
 <div class="section-title">概要</div>
 <div class="cards">
-<div class="card"><div class="label">ユーザー数</div><div class="value">22</div><div class="change"><span style="color:#27ae60;font-size:13px;">↑83%</span> vs 前期間</div></div>
-<div class="card"><div class="label">セッション</div><div class="value">24</div><div class="change"><span style="color:#27ae60;font-size:13px;">↑100%</span> vs 前期間</div></div>
-<div class="card"><div class="label">PV</div><div class="value">26</div><div class="change"><span style="color:#27ae60;font-size:13px;">↑86%</span> vs 前期間</div></div>
-<div class="card"><div class="label">新規ユーザー</div><div class="value">21</div><div class="change"><span style="color:#27ae60;font-size:13px;">↑91%</span> vs 前期間</div></div>
+<div class="card"><div class="label">ユーザー数</div><div class="value">22</div><div class="change"><span style="color:#27ae60;font-size:13px;">↑69%</span> vs 前期間</div></div>
+<div class="card"><div class="label">セッション</div><div class="value">24</div><div class="change"><span style="color:#27ae60;font-size:13px;">↑85%</span> vs 前期間</div></div>
+<div class="card"><div class="label">PV</div><div class="value">26</div><div class="change"><span style="color:#27ae60;font-size:13px;">↑73%</span> vs 前期間</div></div>
+<div class="card"><div class="label">新規ユーザー</div><div class="value">21</div><div class="change"><span style="color:#27ae60;font-size:13px;">↑75%</span> vs 前期間</div></div>
 <div class="card"><div class="label">エンゲージメント率</div><div class="value">8.3%</div></div>
 <div class="card"><div class="label">平均セッション時間</div><div class="value">22秒</div></div>
 </div>
@@ -46,7 +46,7 @@
 </div>
 </div>
 <script>
-const dailyData=[{"date": "2026-05-04", "users": 1, "sessions": 1}, {"date": "2026-05-08", "users": 17, "sessions": 17}, {"date": "2026-05-10", "users": 1, "sessions": 1}, {"date": "2026-05-16", "users": 1, "sessions": 1}, {"date": "2026-05-22", "users": 1, "sessions": 2}, {"date": "2026-05-29", "users": 1, "sessions": 1}, {"date": "2026-05-31", "users": 1, "sessions": 1}];const deviceData=[{"device": "desktop", "sessions": 24}];
+const dailyData=[{"date": "2026-05-08", "users": 17, "sessions": 17}, {"date": "2026-05-10", "users": 1, "sessions": 1}, {"date": "2026-05-16", "users": 1, "sessions": 1}, {"date": "2026-05-22", "users": 1, "sessions": 2}, {"date": "2026-05-29", "users": 1, "sessions": 1}, {"date": "2026-05-31", "users": 1, "sessions": 1}, {"date": "2026-06-01", "users": 1, "sessions": 1}];const deviceData=[{"device": "desktop", "sessions": 24}];
 if(dailyData.length>0){new Chart(document.getElementById('dailyChart'),{type:'line',data:{labels:dailyData.map(d=>d.date.slice(5)),datasets:[{label:'ユーザー',data:dailyData.map(d=>d.users),borderColor:'#c0392b',backgroundColor:'rgba(192,57,43,0.1)',fill:true,tension:0.3},{label:'セッション',data:dailyData.map(d=>d.sessions),borderColor:'#e67e22',backgroundColor:'transparent',borderDash:[5,3],tension:0.3}]},options:{responsive:true,plugins:{legend:{position:'bottom'}}}})}
 if(deviceData.length>0){new Chart(document.getElementById('deviceChart'),{type:'doughnut',data:{labels:deviceData.map(d=>d.device),datasets:[{data:deviceData.map(d=>d.sessions),backgroundColor:['#c0392b','#e67e22','#27ae60','#2c3e50']}]},options:{responsive:true,plugins:{legend:{position:'bottom'}}}})}
 </script>
