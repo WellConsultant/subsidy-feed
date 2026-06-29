@@ -9,7 +9,7 @@
 </style>
 </head>
 <body>
-<div class="header"><h1>ace.aioi-kj.com アナリティクス</h1><p>期間: 2026-05-31 〜 2026-06-28（過去28日間）/ 更新: 2026-06-28</p></div>
+<div class="header"><h1>ace.aioi-kj.com アナリティクス</h1><p>期間: 2026-06-01 〜 2026-06-29（過去28日間）/ 更新: 2026-06-29</p></div>
 <div class="container">
 <div class="section-title">概要</div>
 <div class="cards">
@@ -46,7 +46,7 @@
 </div>
 </div>
 <script>
-const dailyData=[{"date": "2026-05-31", "users": 1, "sessions": 1}, {"date": "2026-06-01", "users": 1, "sessions": 1}, {"date": "2026-06-02", "users": 1, "sessions": 1}, {"date": "2026-06-03", "users": 1, "sessions": 1}, {"date": "2026-06-04", "users": 1, "sessions": 1}, {"date": "2026-06-05", "users": 2, "sessions": 2}, {"date": "2026-06-10", "users": 1, "sessions": 1}, {"date": "2026-06-13", "users": 1, "sessions": 1}, {"date": "2026-06-14", "users": 1, "sessions": 1}, {"date": "2026-06-15", "users": 2, "sessions": 2}, {"date": "2026-06-19", "users": 2, "sessions": 2}, {"date": "2026-06-28", "users": 1, "sessions": 1}];const deviceData=[{"device": "desktop", "sessions": 10}, {"device": "mobile", "sessions": 5}];
+const dailyData=[{"date": "2026-06-01", "users": 1, "sessions": 1}, {"date": "2026-06-02", "users": 1, "sessions": 1}, {"date": "2026-06-03", "users": 1, "sessions": 1}, {"date": "2026-06-04", "users": 1, "sessions": 1}, {"date": "2026-06-05", "users": 2, "sessions": 2}, {"date": "2026-06-10", "users": 1, "sessions": 1}, {"date": "2026-06-13", "users": 1, "sessions": 1}, {"date": "2026-06-14", "users": 1, "sessions": 1}, {"date": "2026-06-15", "users": 2, "sessions": 2}, {"date": "2026-06-19", "users": 2, "sessions": 2}, {"date": "2026-06-28", "users": 2, "sessions": 2}];const deviceData=[{"device": "desktop", "sessions": 10}, {"device": "mobile", "sessions": 5}];
 if(dailyData.length>0){new Chart(document.getElementById('dailyChart'),{type:'line',data:{labels:dailyData.map(d=>d.date.slice(5)),datasets:[{label:'ユーザー',data:dailyData.map(d=>d.users),borderColor:'#c0392b',backgroundColor:'rgba(192,57,43,0.1)',fill:true,tension:0.3},{label:'セッション',data:dailyData.map(d=>d.sessions),borderColor:'#e67e22',backgroundColor:'transparent',borderDash:[5,3],tension:0.3}]},options:{responsive:true,plugins:{legend:{position:'bottom'}}}})}
 if(deviceData.length>0){new Chart(document.getElementById('deviceChart'),{type:'doughnut',data:{labels:deviceData.map(d=>d.device),datasets:[{data:deviceData.map(d=>d.sessions),backgroundColor:['#c0392b','#e67e22','#27ae60','#2c3e50']}]},options:{responsive:true,plugins:{legend:{position:'bottom'}}}})}
 </script>
