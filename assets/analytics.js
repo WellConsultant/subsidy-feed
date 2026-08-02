@@ -1,6 +1,20 @@
 /* fp-1.info/hojokin-feed GA4 カスタムイベントトラッキング */
 (function () {
   'use strict';
+  if (!document.getElementById('traingo-embed')) {
+    var contact = document.createElement('section');
+    contact.id = 'site-contact-form';
+    contact.style.cssText = 'max-width:600px;margin:56px auto 0;padding:28px;background:#fff;border:1px solid #ddd;border-radius:6px;';
+    contact.innerHTML = '<h2 style="margin:0 0 8px;font-size:22px;">お問い合わせ</h2><p style="margin:0 0 18px;color:#666;">補助金についてのご相談はこちらからお問い合わせください。</p><iframe id="traingo-embed" src="https://lp2.well-c.biz/f/form-jq8c?embed=1" title="お問い合わせフォーム" width="100%" frameborder="0" scrolling="no" style="border:0;background:transparent;max-width:560px;display:block;margin:0 auto;height:600px;min-height:600px"></iframe>';
+    document.body.appendChild(contact);
+    window.addEventListener('message', function (e) {
+      if (e.origin !== 'https://lp2.well-c.biz') return;
+      if (e.data && e.data.type === 'traingo:resize' && e.data.height) {
+        var iframe = document.getElementById('traingo-embed');
+        if (iframe) { iframe.style.height = e.data.height + 'px'; iframe.style.minHeight = '0'; }
+      }
+    });
+  }
   if (typeof gtag !== 'function') return;
 
   /* ---- ページ種別の自動判定 ---- */
