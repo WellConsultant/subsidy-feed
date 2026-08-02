@@ -3895,7 +3895,12 @@ footer.site .footer-legal a { color: #7bb3ff; margin: 0 8px; }
     </div>
 
   </div>
-  <p class="section-note" style="margin-top:24px;">※ご興味のある方は、まず各サイトで詳細をご確認ください。<a href="/contact/">補助金申請に関するお問い合わせはこちら</a>からお気軽にどうぞ。</p>
+  <p class="section-note" style="margin-top:24px;">※ご興味のある方は、まず各サイトで詳細をご確認ください。</p>
+</section>
+<section id="soudan" style="max-width:600px;margin:56px auto 0;padding:28px;background:#fff;border:1px solid #ddd;border-radius:6px;">
+  <h2 style="margin:0 0 8px;font-size:22px;">お問い合わせ</h2>
+  <p style="margin:0 0 18px;color:#666;">補助金についてのご相談はこちらからお問い合わせください。</p>
+  <iframe id="traingo-embed" src="https://lp2.well-c.biz/f/form-jq8c?embed=1" title="お問い合わせフォーム" width="100%" frameborder="0" scrolling="no" style="border:0;background:transparent;max-width:560px;display:block;margin:0 auto;height:600px;min-height:600px"></iframe>
 </section>
 </main>
 
@@ -3911,7 +3916,7 @@ footer.site .footer-legal a { color: #7bb3ff; margin: 0 8px; }
         <dt>事業内容</dt><dd>補助金申請支援・経営コンサルティング</dd>
         <dt>コーポレートサイト</dt><dd><a href="https://www.funnel-build.com/" target="_blank" rel="noopener">https://www.funnel-build.com/</a></dd>
         <dt>関連サイト</dt><dd><a href="https://lp.well-c.biz/gkc/" target="_blank" rel="noopener">行政書士開業キット 公式ミニサイト</a></dd>
-        <dt>お問い合わせ</dt><dd><a href="/contact/">補助金申請に関するお問い合わせはこちら</a></dd>
+        <dt>お問い合わせ</dt><dd>ページ内のお問い合わせフォームをご利用ください</dd>
       </dl>
     </div>
     <p>&copy; Well Consultant</p>
@@ -3993,6 +3998,15 @@ footer.site .footer-legal a { color: #7bb3ff; margin: 0 8px; }
 })();
 </script>
 
+<script>
+window.addEventListener("message", function (e) {
+  if (e.origin !== "https://lp2.well-c.biz") return;
+  if (e.data && e.data.type === "traingo:resize" && e.data.height) {
+    var el = document.getElementById("traingo-embed");
+    if (el) { el.style.height = e.data.height + "px"; el.style.minHeight = "0"; }
+  }
+});
+</script>
 <script src="/assets/analytics.js" defer></script>
 </body>
 </html>
