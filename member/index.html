@@ -79,7 +79,7 @@
     const isSlidePack=p=>p.includes('jizokuka-jisseki-report-pptx-6parts.zip');
     const title=p=>isSlidePack(p)?'実績報告マニュアル（スライド6枚）':cleanLabel(p.split('/').pop().replace(/\.webloc$|\.html$|\.xlsx$|\.xlsx$|\.mp4$|\.pdf$|\.docx$|\.pptx$|\.zip$|\.txt$/i,''));
     const displayPath=p=>isSlidePack(p)?'持続化補助金実績報告マニュアル':p.split('/').slice(-2).map(cleanLabel).join(' / ');
-      const API_BASE='https://nor-contemporary-animation-non.trycloudflare.com';
+      const API_BASE='https://called-firewire-pleased-compressed.trycloudflare.com';
       const apiPath=p=>API_BASE+p;
       const resourceHref=p=>apiPath('/resource?path='+encodeURIComponent(p));
     const section=p=>labels[p.split('/')[0]]||p.split('/')[0];
