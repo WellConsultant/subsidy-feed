@@ -1,5 +1,5 @@
 {
-  "lastUpdate": "2026-08-02 00:00 JST",
+  "lastUpdate": "2026-08-07 00:00 JST",
   "campaignStart": "2026-04-20",
   "campaignEnd": "2026-12-31T23:59:59+09:00",
   "product": {
@@ -958,6 +958,51 @@
       "orderView": 0,
       "purchase": 0,
       "revenue": 0
+    },
+    {
+      "date": "2026-08-03",
+      "day": 106,
+      "pv": 0,
+      "cta": 0,
+      "orderView": 0,
+      "purchase": 0,
+      "revenue": 0
+    },
+    {
+      "date": "2026-08-04",
+      "day": 107,
+      "pv": 0,
+      "cta": 0,
+      "orderView": 0,
+      "purchase": 0,
+      "revenue": 0
+    },
+    {
+      "date": "2026-08-05",
+      "day": 108,
+      "pv": 0,
+      "cta": 0,
+      "orderView": 0,
+      "purchase": 0,
+      "revenue": 0
+    },
+    {
+      "date": "2026-08-06",
+      "day": 109,
+      "pv": 0,
+      "cta": 0,
+      "orderView": 0,
+      "purchase": 0,
+      "revenue": 0
+    },
+    {
+      "date": "2026-08-07",
+      "day": 110,
+      "pv": 0,
+      "cta": 0,
+      "orderView": 0,
+      "purchase": 0,
+      "revenue": 0
     }
   ],
   "hourly": [
@@ -981,7 +1026,7 @@
     31,
     9,
     18,
-    12,
+    13,
     8,
     4,
     2

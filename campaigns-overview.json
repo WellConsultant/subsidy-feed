@@ -1,5 +1,5 @@
 {
-  "lastUpdate": "2026-08-02 00:00 JST",
+  "lastUpdate": "2026-08-07 00:00 JST",
   "campaignCount": 2,
   "totals": {
     "pv": 0,
@@ -1032,6 +1032,51 @@
           "orderView": 0,
           "purchase": 0,
           "revenue": 0
+        },
+        {
+          "date": "2026-08-03",
+          "day": 106,
+          "pv": 0,
+          "cta": 0,
+          "orderView": 0,
+          "purchase": 0,
+          "revenue": 0
+        },
+        {
+          "date": "2026-08-04",
+          "day": 107,
+          "pv": 0,
+          "cta": 0,
+          "orderView": 0,
+          "purchase": 0,
+          "revenue": 0
+        },
+        {
+          "date": "2026-08-05",
+          "day": 108,
+          "pv": 0,
+          "cta": 0,
+          "orderView": 0,
+          "purchase": 0,
+          "revenue": 0
+        },
+        {
+          "date": "2026-08-06",
+          "day": 109,
+          "pv": 0,
+          "cta": 0,
+          "orderView": 0,
+          "purchase": 0,
+          "revenue": 0
+        },
+        {
+          "date": "2026-08-07",
+          "day": 110,
+          "pv": 0,
+          "cta": 0,
+          "orderView": 0,
+          "purchase": 0,
+          "revenue": 0
         }
       ]
     }
@@ -1559,6 +1604,31 @@
     },
     {
       "day": 105,
+      "purchase": 0,
+      "revenue": 0
+    },
+    {
+      "day": 106,
+      "purchase": 0,
+      "revenue": 0
+    },
+    {
+      "day": 107,
+      "purchase": 0,
+      "revenue": 0
+    },
+    {
+      "day": 108,
+      "purchase": 0,
+      "revenue": 0
+    },
+    {
+      "day": 109,
+      "purchase": 0,
+      "revenue": 0
+    },
+    {
+      "day": 110,
       "purchase": 0,
       "revenue": 0
     }
