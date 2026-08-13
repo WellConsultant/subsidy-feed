@@ -32,4 +32,4 @@ Allow: /
 User-agent: anthropic-ai
 Allow: /
 
-Sitemap: https://fp-1.info/hojokin-feed/sitemap.xml
+Sitemap: https://hojokin.well-c.biz/sitemap.xml
