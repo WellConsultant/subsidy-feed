@@ -296,7 +296,7 @@ def build_lead(item, regions):
     return ''.join(parts)
 
 
-def render_article(item, regions):
+def render_article(item, regions, canonical_url):
     """regions は都道府県のリスト。空なら全国扱い。"""
     name_raw = item.get('name') or '（補助金名不明）'
     name = clean_name(name_raw)
@@ -517,6 +517,7 @@ def render_article(item, regions):
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>{escape(name)}｜補助金情報フィード</title>
 <meta name="description" content="{escape(meta_desc)}">
+<link rel="canonical" href="{escape(canonical_url)}">
 <style>
 {PAGE_CSS}
 </style>
@@ -586,7 +587,8 @@ def main():
             continue
         merged = merge_parse_cache(item, cache_map)
         regions = detect_regions(merged)
-        html = render_article(merged, regions)
+        canonical_url = f'https://hojokin.well-c.biz/blog/s/{sid}.html'
+        html = render_article(merged, regions, canonical_url)
         out_path = os.path.join(OUT_DIR, f'{sid}.html')
         with open(out_path, 'w', encoding='utf-8') as f:
             f.write(html)

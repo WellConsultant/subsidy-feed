@@ -255,7 +255,7 @@ FOOTER_HTML = '''<footer class="site">
 </footer>'''
 
 
-def render_article(data, url_map):
+def render_article(data, url_map, canonical_url):
     """parse_cache JSONから記事HTMLを生成"""
     name = data.get('name') or '（補助金名不明）'
     org = data.get('implementing_org') or ''
@@ -470,6 +470,7 @@ def render_article(data, url_map):
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>{escape(name)}｜補助金情報フィード</title>
 <meta name="description" content="{escape(meta_desc)}">
+<link rel="canonical" href="{escape(canonical_url)}">
 <style>
 {PAGE_CSS}
 </style>
@@ -661,7 +662,8 @@ def main():
         if filename in PROTECTED:
             skipped += 1
             continue
-        html = render_article(data, url_map)
+        canonical_url = f'https://hojokin.well-c.biz/blog/{filename}'
+        html = render_article(data, url_map, canonical_url)
         out_path = os.path.join(BLOG_DIR, filename)
         with open(out_path, 'w') as f:
             f.write(html)
@@ -735,7 +737,7 @@ def build_blog_index_html(cards, total):
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>補助金解説記事一覧｜補助金情報フィード</title>
 <meta name="description" content="全国の補助金・助成金を公募要領ベースでわかりやすく解説した記事一覧。{total}件の解説記事を公開中。">
-<link rel="canonical" href="https://fp-1.info/hojokin-feed/blog/">
+<link rel="canonical" href="https://hojokin.well-c.biz/blog/">
 <style>
 * {{ box-sizing: border-box; }}
 html {{ scroll-behavior: smooth; }}
