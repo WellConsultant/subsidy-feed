@@ -1,5 +1,5 @@
 {
-  "lastUpdate": "2026-08-20 00:00 JST",
+  "lastUpdate": "2026-08-21 00:00 JST",
   "campaignStart": "2026-04-20",
   "campaignEnd": "2026-12-31T23:59:59+09:00",
   "product": {
@@ -1115,6 +1115,15 @@
     {
       "date": "2026-08-20",
       "day": 123,
+      "pv": 0,
+      "cta": 0,
+      "orderView": 0,
+      "purchase": 0,
+      "revenue": 0
+    },
+    {
+      "date": "2026-08-21",
+      "day": 124,
       "pv": 0,
       "cta": 0,
       "orderView": 0,
