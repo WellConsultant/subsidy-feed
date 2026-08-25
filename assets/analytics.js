@@ -19,6 +19,22 @@
   }
   if (typeof gtag !== 'function') return;
 
+  /* ---- Traingo事業内容問い合わせフォーム送信（CV） ----
+     iframe内のAPI送信成功後だけ子フォームが通知する。表示・クリックでは数えない。 */
+  window.addEventListener('message', function (e) {
+    if (e.origin !== 'https://lp2.well-c.biz') return;
+    if (!e.data || e.data.type !== 'traingo:form_submit') return;
+    if (e.data.form_slug !== 'form-jq8c' || e.data.conversion_type !== 'business_inquiry') return;
+    var formFrame = document.getElementById('traingo-embed');
+    if (formFrame && e.source !== formFrame.contentWindow) return;
+    gtag('event', 'generate_lead', {
+      form_type: 'traingo_business_inquiry',
+      form_slug: e.data.form_slug,
+      conversion_type: e.data.conversion_type,
+      value: 1,
+    });
+  });
+
   /* ---- ページ種別の自動判定 ---- */
   var path = location.pathname;
   var pageType = 'other';
