@@ -12,11 +12,11 @@ base = importlib.util.module_from_spec(SPEC)
 SPEC.loader.exec_module(base)
 
 SITES = [
-    {"host": "well-c.biz", "property": "363826438", "measurement": "G-79C13F9DP5", "file": "well-c-dashboard.html"},
-    {"host": "hojokin.well-c.biz", "property": "532590163", "measurement": "G-CKY4MXRRK0", "file": "hojokin-site-dashboard.html"},
-    {"host": "chat.well-c.biz", "property": "363826438", "measurement": "G-79C13F9DP5", "file": "chat-dashboard.html"},
-    {"host": "takuken.fp-1.info", "property": "480292502", "measurement": "G-TH1P40Q03X", "file": "takuken-dashboard.html"},
-    {"host": "hjp2026.fp-1.info", "property": "480292502", "measurement": "G-TH1P40Q03X", "file": "hjp2026-dashboard.html"},
+    {"host": "well-c.biz", "property": "363826438", "measurement": "G-79C13F9DP5", "file": "well-c-dashboard.html", "tracking": "GA4送信確認済み（2026-08-26）"},
+    {"host": "hojokin.well-c.biz", "property": "532590163", "measurement": "G-CKY4MXRRK0", "file": "hojokin-site-dashboard.html", "tracking": "GA4送信確認済み"},
+    {"host": "chat.well-c.biz", "property": "363826438", "measurement": "G-79C13F9DP5", "file": "chat-dashboard.html", "tracking": "GA4計測を確認中"},
+    {"host": "takuken.fp-1.info", "property": "480292502", "measurement": "G-TH1P40Q03X", "file": "takuken-dashboard.html", "tracking": "GA4送信確認済み"},
+    {"host": "hjp2026.fp-1.info", "property": "480292502", "measurement": "G-TH1P40Q03X", "file": "hjp2026-dashboard.html", "tracking": "GA4計測を確認中"},
 ]
 
 
@@ -51,6 +51,7 @@ def main():
         base.HOSTNAME = site["host"]
         base.PROPERTY_ID = site["property"]
         base.MEASUREMENT_ID = site["measurement"]
+        base.TRACKING_STATUS = site["tracking"]
         data = collect(client)
         out = BASE / site["file"]
         out.write_text(base.build(data), encoding="utf-8")
