@@ -15,6 +15,7 @@ SITES = [
     {"host": "well-c.biz", "property": "363826438", "measurement": "G-79C13F9DP5", "file": "well-c-dashboard.html", "tracking": "GA4送信確認済み（2026-08-26）"},
     {"host": "hojokin.well-c.biz", "property": "532590163", "measurement": "G-CKY4MXRRK0", "file": "hojokin-site-dashboard.html", "tracking": "GA4送信確認済み"},
     {"host": "chat.well-c.biz", "property": "363826438", "measurement": "G-79C13F9DP5", "file": "chat-dashboard.html", "tracking": "GA4計測を確認中"},
+    {"host": "192office.net", "property": "480292502", "measurement": "G-TH1P40Q03X", "file": "192office-dashboard.html", "tracking": "GA4送信確認済み"},
     {"host": "takuken.fp-1.info", "property": "480292502", "measurement": "G-TH1P40Q03X", "file": "takuken-dashboard.html", "tracking": "GA4送信確認済み"},
     {"host": "hjp2026.fp-1.info", "property": "480292502", "measurement": "G-TH1P40Q03X", "file": "hjp2026-dashboard.html", "tracking": "GA4計測を確認中"},
 ]
