@@ -18,6 +18,7 @@ SITES = [
     {"host": "192office.net", "property": "480292502", "measurement": "G-TH1P40Q03X", "file": "192office-dashboard.html", "tracking": "GA4送信確認済み"},
     {"host": "takuken.fp-1.info", "property": "480292502", "measurement": "G-TH1P40Q03X", "file": "takuken-dashboard.html", "tracking": "GA4送信確認済み"},
     {"host": "hjp2026.fp-1.info", "property": "480292502", "measurement": "G-TH1P40Q03X", "file": "hjp2026-dashboard.html", "tracking": "GA4計測を確認中"},
+    {"host": "shouryokuka.fp-1.info", "property": "480292502", "measurement": "G-TH1P40Q03X", "file": "shouryokuka-dashboard.html", "tracking": "GA4送信確認済み（2026-08-27）"},
 ]
 
 
