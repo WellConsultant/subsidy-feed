@@ -41,7 +41,7 @@ SITES = [
         "file": "kensetsu-dashboard.html",
         "tracking": "GA4未実装・実測0（2026-08-27確認）",
     },
-    {"host": "shouryokuka.fp-1.info", "property": "480292502", "measurement": "G-TH1P40Q03X", "file": "shouryokuka-dashboard.html", "tracking": "GA4送信確認済み（2026-08-27）"},
+    {"host": "shouryokuka.fp-1.info", "property": "480292502", "measurement": "G-TH1P40Q03X", "file": "shouryokuka-dashboard.html", "tracking": "GA4送信・実測確認済み（2026-08-28）"},
 ]
 
 
