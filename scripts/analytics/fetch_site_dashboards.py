@@ -32,7 +32,7 @@ SITES = [
         "property": "480292502",
         "measurement": "G-TH1P40Q03X",
         "file": "hjp2026-dashboard.html",
-        "tracking": "GA4送信・実測確認済み（2026-08-27）",
+        "tracking": "Sites版4でGA4送信・実測確認済み（2026-08-28）",
     },
     {
         "host": "kensetsu.fp-1.info",
