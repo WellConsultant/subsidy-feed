@@ -128,8 +128,8 @@ def main():
         if site.get("realtime_screen_contains"):
             realtime = collect_realtime_screen(client, site["realtime_screen_contains"])
             base.TRACKING_STATUS = (
-                f"復旧版SitesでGA4リアルタイム受信確認済み"
-                f"（ユーザー{realtime['users']}・PV{realtime['views']}）"
+                f"復旧版SitesでGA4実送信確認済み（2026-09-01）／"
+                f"現在のリアルタイム（ユーザー{realtime['users']}・PV{realtime['views']}）"
             )
         out = BASE / site["file"]
         html = base.build(data)
