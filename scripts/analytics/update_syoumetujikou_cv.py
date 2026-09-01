@@ -17,7 +17,7 @@ def main():
     response = client.run_report(request)
     count = sum(int(row.metric_values[0].value or 0) for row in response.rows)
     html = OUT_HTML.read_text(encoding="utf-8")
-    html, n1 = re.subn(r'(<div class="label">CV（事業内容問い合わせ送信）</div><div class="value" id="business-inquiry-cv">)\d+(</div>)', rf'\g<1>{count}\g<2>', html, count=1)
+    html, n1 = re.subn(r'(<div class="label">CV（時効援用問い合わせ送信）</div><div class="value" id="business-inquiry-cv">)\d+(</div>)', rf'\g<1>{count}\g<2>', html, count=1)
     html, n2 = re.subn(r'(<td id="business-inquiry-event-count">)\d+(</td>)', rf'\g<1>{count}\g<2>', html, count=1)
     if n1 != 1 or n2 != 1: raise SystemExit("CV表示の更新箇所が見つからないため停止しました")
     OUT_HTML.write_text(html, encoding="utf-8")
