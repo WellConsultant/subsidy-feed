@@ -36,10 +36,11 @@ SITES = [
     },
     {
         "host": "kensetsu.fp-1.info",
+        "hosts": ["kensetsu.fp-1.info", "kensetsu-permit-recovery.kzhr192.chatgpt.site"],
         "property": "480292502",
         "measurement": "G-TH1P40Q03X",
         "file": "kensetsu-dashboard.html",
-        "tracking": "GA4未実装・実測0（2026-08-28再確認）",
+        "tracking": "復旧版SitesでGA4実送信確認済み（2026-09-01）",
     },
     {"host": "shouryokuka.fp-1.info", "property": "480292502", "measurement": "G-TH1P40Q03X", "file": "shouryokuka-dashboard.html", "tracking": "GA4送信・実測確認済み（2026-08-28）"},
 ]
