@@ -13,6 +13,7 @@ from google.analytics.data_v1beta.types import (
     FilterExpressionList,
     Metric,
     RunReportRequest,
+    RunRealtimeReportRequest,
 )
 
 BASE = Path(__file__).resolve().parents[2]
@@ -41,6 +42,7 @@ SITES = [
         "measurement": "G-TH1P40Q03X",
         "file": "kensetsu-dashboard.html",
         "tracking": "復旧版SitesでGA4実送信確認済み（2026-09-01）",
+        "realtime_screen_contains": "建設業許可",
     },
     {"host": "shouryokuka.fp-1.info", "property": "480292502", "measurement": "G-TH1P40Q03X", "file": "shouryokuka-dashboard.html", "tracking": "GA4送信・実測確認済み（2026-08-28）"},
 ]
@@ -95,6 +97,25 @@ def collect(client, hosts):
     return {"summary": totals, "daily": daily, "pages": pages, "channels": channels, "devices": devices, "regions": regions}
 
 
+def collect_realtime_screen(client, screen_name):
+    report = client.run_realtime_report(RunRealtimeReportRequest(
+        property=f"properties/{base.PROPERTY_ID}",
+        dimensions=[Dimension(name="unifiedScreenName")],
+        metrics=[Metric(name="activeUsers"), Metric(name="screenPageViews")],
+        dimension_filter=FilterExpression(filter=Filter(
+            field_name="unifiedScreenName",
+            string_filter=Filter.StringFilter(
+                match_type=Filter.StringFilter.MatchType.CONTAINS,
+                value=screen_name,
+            ),
+        )),
+        limit=100,
+    ))
+    users = sum(int(row.metric_values[0].value or 0) for row in report.rows)
+    views = sum(int(row.metric_values[1].value or 0) for row in report.rows)
+    return {"users": users, "views": views}
+
+
 def main():
     client = BetaAnalyticsDataClient(credentials=base.creds())
     for site in SITES:
@@ -104,6 +125,12 @@ def main():
         base.TRACKING_STATUS = site["tracking"]
         hosts = site.get("hosts", [site["host"]])
         data = collect(client, hosts)
+        if site.get("realtime_screen_contains"):
+            realtime = collect_realtime_screen(client, site["realtime_screen_contains"])
+            base.TRACKING_STATUS = (
+                f"復旧版SitesでGA4リアルタイム受信確認済み"
+                f"（ユーザー{realtime['users']}・PV{realtime['views']}）"
+            )
         out = BASE / site["file"]
         html = base.build(data)
         if len(hosts) > 1:
