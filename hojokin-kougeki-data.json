@@ -1,5 +1,5 @@
 {
-  "lastUpdate": "2026-09-01 00:00 JST",
+  "lastUpdate": "2026-09-02 00:00 JST",
   "campaignStart": "2026-04-20",
   "campaignEnd": "2026-12-31T23:59:59+09:00",
   "product": {
@@ -1228,6 +1228,15 @@
       "orderView": 0,
       "purchase": 0,
       "revenue": 0
+    },
+    {
+      "date": "2026-09-02",
+      "day": 136,
+      "pv": 0,
+      "cta": 0,
+      "orderView": 0,
+      "purchase": 0,
+      "revenue": 0
     }
   ],
   "hourly": [
@@ -1242,9 +1251,9 @@
     4,
     14,
     9,
-    11,
+    12,
     17,
-    13,
+    14,
     5,
     18,
     3,
