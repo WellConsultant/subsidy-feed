@@ -1,5 +1,5 @@
 {
-  "lastUpdate": "2026-09-13 00:00 JST",
+  "lastUpdate": "2026-09-17 00:00 JST",
   "campaignStart": "2026-04-20",
   "campaignEnd": "2026-12-31T23:59:59+09:00",
   "product": {
@@ -1331,6 +1331,42 @@
     {
       "date": "2026-09-13",
       "day": 147,
+      "pv": 0,
+      "cta": 0,
+      "orderView": 0,
+      "purchase": 0,
+      "revenue": 0
+    },
+    {
+      "date": "2026-09-14",
+      "day": 148,
+      "pv": 0,
+      "cta": 0,
+      "orderView": 0,
+      "purchase": 0,
+      "revenue": 0
+    },
+    {
+      "date": "2026-09-15",
+      "day": 149,
+      "pv": 0,
+      "cta": 0,
+      "orderView": 0,
+      "purchase": 0,
+      "revenue": 0
+    },
+    {
+      "date": "2026-09-16",
+      "day": 150,
+      "pv": 0,
+      "cta": 0,
+      "orderView": 0,
+      "purchase": 0,
+      "revenue": 0
+    },
+    {
+      "date": "2026-09-17",
+      "day": 151,
       "pv": 0,
       "cta": 0,
       "orderView": 0,
