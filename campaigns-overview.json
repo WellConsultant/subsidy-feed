@@ -1,5 +1,5 @@
 {
-  "lastUpdate": "2026-09-17 00:00 JST",
+  "lastUpdate": "2026-09-20 00:00 JST",
   "campaignCount": 2,
   "totals": {
     "pv": 0,
@@ -1446,6 +1446,33 @@
           "orderView": 0,
           "purchase": 0,
           "revenue": 0
+        },
+        {
+          "date": "2026-09-18",
+          "day": 152,
+          "pv": 0,
+          "cta": 0,
+          "orderView": 0,
+          "purchase": 0,
+          "revenue": 0
+        },
+        {
+          "date": "2026-09-19",
+          "day": 153,
+          "pv": 0,
+          "cta": 0,
+          "orderView": 0,
+          "purchase": 0,
+          "revenue": 0
+        },
+        {
+          "date": "2026-09-20",
+          "day": 154,
+          "pv": 0,
+          "cta": 0,
+          "orderView": 0,
+          "purchase": 0,
+          "revenue": 0
         }
       ]
     }
@@ -2203,6 +2230,21 @@
     },
     {
       "day": 151,
+      "purchase": 0,
+      "revenue": 0
+    },
+    {
+      "day": 152,
+      "purchase": 0,
+      "revenue": 0
+    },
+    {
+      "day": 153,
+      "purchase": 0,
+      "revenue": 0
+    },
+    {
+      "day": 154,
       "purchase": 0,
       "revenue": 0
     }
