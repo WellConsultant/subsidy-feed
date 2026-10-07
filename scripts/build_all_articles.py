@@ -204,6 +204,11 @@ main.article .info-box dd { font-size: 13px; margin: 0; color: #333; }
 main.article .disclaimer { margin-top: 32px; padding: 16px 20px; background: #fff8f0; border: 1px solid #f0d5a0; border-radius: 6px; font-size: 13px; line-height: 1.85; color: #7a5020; }
 main.article .source-link { margin-top: 22px; padding: 14px 18px; background: #f0f4f8; border-radius: 6px; font-size: 13px; }
 main.article .source-link a { color: #1a3a5c; font-weight: 700; word-break: break-all; }
+main.article .reader-table { width: 100%; border-collapse: collapse; margin: 12px 0 24px; font-size: 14px; }
+main.article .reader-table th, main.article .reader-table td { border: 1px solid #d9e1e8; padding: 10px; text-align: left; vertical-align: top; }
+main.article .reader-table th { background: #f0f4f8; }
+main.article .reader-ref { font-size: 12px; color: #52606d; white-space: nowrap; }
+main.article .reader-divider { border: 0; border-top: 1px solid #d9e1e8; margin: 32px 0; }
 main.article .article-cta { margin: 40px 0 0; padding: 30px 28px; background: linear-gradient(135deg, #1a3a5c 0%, #2c5282 100%); border-radius: 10px; text-align: center; color: white; }
 main.article .article-cta h3 { color: white; margin: 0 0 12px; font-size: 18px; line-height: 1.5; border: none; padding: 0; }
 main.article .article-cta p { color: rgba(255,255,255,0.9); font-size: 14px; line-height: 1.85; margin: 0 0 18px; text-align: center; }
@@ -296,6 +301,45 @@ def build_lead(item, regions):
     return ''.join(parts)
 
 
+def render_guideline_reader(reader):
+    """検証済みの公募要領リーダー結果を、指定の五部構成で表示する。"""
+    def cell(value):
+        return escape(str(value or '記載なし'))
+
+    def ref(row):
+        return f'<span class="reader-ref">（根拠：{cell(row["reference"])}）</span>'
+
+    def paragraph_rows(rows, field):
+        return ''.join(f'<p>{cell(row[field])} {ref(row)}</p>' for row in rows) if rows else '<p>記載なし</p>'
+
+    def table(rows, headers, fields):
+        if not rows:
+            return '<p>記載なし</p>'
+        head = ''.join(f'<th scope="col">{cell(h)}</th>' for h in headers + ['根拠'])
+        body = ''.join('<tr>' + ''.join(f'<td>{cell(row[key])}</td>' for key in fields)
+                       + f'<td>{cell(row["reference"])}</td></tr>' for row in rows)
+        return f'<div style="overflow-x:auto"><table class="reader-table"><thead><tr>{head}</tr></thead><tbody>{body}</tbody></table></div>'
+
+    overview = paragraph_rows(reader['overview'], 'text')
+    terms = table(reader['terms'], ['専門用語', '短い説明'], ['term', 'explanation']) if reader.get('terms') else ''
+    eligibility = table(reader['eligibility'], ['確認項目（はい／いいえ）', '対象となる条件'], ['question', 'condition'])
+    bonus = table(reader['bonus'], ['加点項目', '取り方', '準備期間'], ['name', 'how_to', 'prep_period'])
+    priority = table(reader['priority'], ['選考上の優先事項'], ['name']) if reader.get('priority') else ''
+    eligible = table(reader['eligible_expenses'], ['対象経費', '条件・勘どころ'], ['name', 'note'])
+    ineligible = table(reader['ineligible_expenses'], ['対象外経費', '条件・理由'], ['name', 'note'])
+    schedule = table(reader['schedule'], ['時期', '必要な行動'], ['when', 'action'])
+    preparation = table(reader['preparation'], ['今日からの準備'], ['action']) if reader['preparation'] else '<p>記載なし</p>'
+    return f'''<section><h2>第1部：まるごと解説（誰が・何をすると・いくら）</h2>{overview}{'<h3>専門用語の説明</h3>' + terms if terms else ''}</section>
+<hr class="reader-divider">
+<section><h2>第2部：対象要件チェックリスト</h2><p>各項目に当てはまるか、はい／いいえで確認してください。</p>{eligibility}</section>
+<hr class="reader-divider">
+<section><h2>第3部：加点項目一覧</h2>{bonus}{'<h3>選考上の優先事項</h3>' + priority if priority else ''}</section>
+<hr class="reader-divider">
+<section><h2>第4部：対象経費と対象外経費</h2><h3>対象経費</h3>{eligible}<h3>対象外経費</h3>{ineligible}</section>
+<hr class="reader-divider">
+<section><h2>第5部：スケジュール（時系列表＋今日からの逆算準備計画）</h2><h3>公募の時系列</h3>{schedule}<h3>今日からの準備</h3>{preparation}</section>'''
+
+
 def render_article(item, regions, canonical_url):
     """regions は都道府県のリスト。空なら全国扱い。"""
     name_raw = item.get('name') or '（補助金名不明）'
@@ -318,6 +362,8 @@ def render_article(item, regions, canonical_url):
     bonus_points = item.get('bonus_points') or []
     notes = item.get('notes') or []
     tags = item.get('tags') or []
+    reader = item.get('guideline_reader')
+    has_reader = isinstance(reader, dict) and isinstance(reader.get('overview'), list) and bool(reader['overview'])
 
     # info box
     info_items = []
@@ -474,7 +520,7 @@ def render_article(item, regions, canonical_url):
 {lis}
   </ul>''')
 
-    body_html = '\n\n'.join(sections)
+    body_html = render_guideline_reader(reader) if has_reader else '\n\n'.join(sections)
 
     # 情報源
     source_html = ''
@@ -483,10 +529,18 @@ def render_article(item, regions, canonical_url):
     <strong>◼︎ 情報源（公式ページ）</strong><br>
     <a href="{escape(detail_url)}" target="_blank" rel="noopener">{escape(detail_url)}</a>
   </div>'''
+    if has_reader and item.get('guideline_pdf_url'):
+        source_html += f'''  <div class="source-link"><strong>公募要領</strong><br>
+    <a href="{escape(item['guideline_pdf_url'], quote=True)}" target="_blank" rel="noopener">公募要領の原本を開く</a></div>'''
 
     # 免責
-    disclaimer_html = '''  <div class="disclaimer">
-    ※本記事は公的機関が公開している情報を自動収集し、記事化したものです。最新の公募要件・スケジュール・様式等は必ず公式ページでご確認ください。
+    if has_reader:
+        disclaimer_html = '''  <div class="disclaimer">
+    この記事は公募要領をもとに作成しています。記載のない項目は「記載なし」と表示しています。応募前に原本と最新の公式案内をご確認ください。
+  </div>'''
+    else:
+        disclaimer_html = '''  <div class="disclaimer">
+    ※本記事は公的機関が公開している情報を自動収集し、記事化したものです。公募要領を確認できない場合は公式ページの情報を使用しています。最新の公募要件・スケジュール・様式等は必ず公式ページでご確認ください。
   </div>'''
 
     # CTA
@@ -498,17 +552,41 @@ def render_article(item, regions, canonical_url):
   </div>'''
 
     # リード
-    lead_text = build_lead(item, regions)
+    lead_text = reader['overview'][0]['text'] if has_reader else build_lead(item, regions)
+    source_notice_html = '<p class="reader-ref">この記事は公募要領をもとに作成しています。各項目の根拠箇所を本文に記載しています。</p>' if has_reader else ''
+    info_box_html = '' if has_reader else f'''  <div class="info-box">
+    <dl>
+      {info_box_inner}
+    </dl>
+  </div>'''
 
     # メタ
-    meta_desc_parts = [name]
-    if max_amount_str:
-        meta_desc_parts.append(f'上限{max_amount_str}')
-    if subsidy_rate:
-        meta_desc_parts.append(f'補助率{subsidy_rate[:30]}')
-    if application_end:
-        meta_desc_parts.append(f'締切{application_end}')
-    meta_desc = ' / '.join(meta_desc_parts)[:160]
+    if has_reader:
+        meta_desc = f'{name} / {lead_text}'[:160]
+        h1_subline = ''
+    else:
+        meta_desc_parts = [name]
+        if max_amount_str:
+            meta_desc_parts.append(f'上限{max_amount_str}')
+        if subsidy_rate:
+            meta_desc_parts.append(f'補助率{subsidy_rate[:30]}')
+        if application_end:
+            meta_desc_parts.append(f'締切{application_end}')
+        meta_desc = ' / '.join(meta_desc_parts)[:160]
+
+    structured_data_html = ''
+    if has_reader:
+        article_data = {
+            '@context': 'https://schema.org',
+            '@type': 'BlogPosting',
+            'headline': name,
+            'description': meta_desc,
+            'dateModified': TODAY,
+            'publisher': {'@type': 'Organization', 'name': 'Well Consultant'},
+            'isBasedOn': item.get('guideline_pdf_url') or detail_url,
+        }
+        structured_data_html = '<script type="application/ld+json">' + json.dumps(
+            article_data, ensure_ascii=False).replace('<', '\\u003c') + '</script>'
 
     return f'''<!DOCTYPE html>
 <html lang="ja">
@@ -518,6 +596,7 @@ def render_article(item, regions, canonical_url):
 <title>{escape(name)}｜補助金情報フィード</title>
 <meta name="description" content="{escape(meta_desc)}">
 <link rel="canonical" href="{escape(canonical_url)}">
+{structured_data_html}
 <style>
 {PAGE_CSS}
 </style>
@@ -542,12 +621,9 @@ def render_article(item, regions, canonical_url):
 <main class="article">
 
   <p class="lead">{escape(lead_text)}</p>
+  {source_notice_html}
 
-  <div class="info-box">
-    <dl>
-      {info_box_inner}
-    </dl>
-  </div>
+{info_box_html}
 
 {body_html}
 
