@@ -1,5 +1,5 @@
 {
-  "lastUpdate": "2026-10-15 00:00 JST",
+  "lastUpdate": "2026-10-16 00:04 JST",
   "campaignCount": 2,
   "totals": {
     "pv": 0,
@@ -1698,6 +1698,15 @@
           "orderView": 0,
           "purchase": 0,
           "revenue": 0
+        },
+        {
+          "date": "2026-10-16",
+          "day": 180,
+          "pv": 0,
+          "cta": 0,
+          "orderView": 0,
+          "purchase": 0,
+          "revenue": 0
         }
       ]
     }
@@ -2595,6 +2604,11 @@
     },
     {
       "day": 179,
+      "purchase": 0,
+      "revenue": 0
+    },
+    {
+      "day": 180,
       "purchase": 0,
       "revenue": 0
     }
