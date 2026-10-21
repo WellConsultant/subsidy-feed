@@ -239,6 +239,7 @@ NAV_HTML = '''<nav class="site-nav">
     <ul class="nav-links">
       <li><a href="/">トップ</a></li>
       <li><a href="/blog/">解説記事</a></li>
+      <li><a href="https://fp-1.info/hojokin/zenkoku/" target="_blank" rel="noopener">都道府県・市町村で探す</a></li>
       <li><a class="nav-cta" href="/contact/">お問い合わせ</a></li>
     </ul>
   </div>
